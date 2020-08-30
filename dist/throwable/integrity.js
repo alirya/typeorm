@@ -12,7 +12,7 @@
     class Integrity extends Error {
         constructor(message, value) {
             super(message);
-            this.parameter = value;
+            this.value = value;
             this.code = 422;
         }
     }

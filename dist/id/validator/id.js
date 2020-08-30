@@ -14,12 +14,12 @@
     const value_partial_1 = require("@dikac/t-array/validator/value-partial");
     const and_1 = require("@dikac/t-array/validatable/and");
     const invalid_1 = require("@dikac/t-array/message/message/list/invalid");
-    function Id(messages) {
+    function Id(messages = invalid_1.default) {
         let validator = [
             number_standard_1.default(),
             positive_standard_1.default()
         ];
-        return value_partial_1.default(validator, and_1.default, invalid_1.default);
+        return value_partial_1.default(validator, and_1.default, messages);
     }
     exports.default = Id;
 });
