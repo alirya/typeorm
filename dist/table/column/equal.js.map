@@ -1,0 +1,1 @@
+{"version":3,"file":"equal.js","sourceRoot":"","sources":["../../../src/table/column/equal.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA,mCAA4B;IAE5B,MAAqB,KAGnB,SAAQ,eAAwB;QAE9B,YACI,QAAiB,EACjB,MAA4B,EAC5B,KAAiB;YAGjB,KAAK,CAAC,QAAQ,EAAE,MAAM,EAAE,KAAK,CAAC,CAAC;QACnC,CAAC;QAED,IAAI,KAAK;YAEL,OAAO,GAAG,IAAI,CAAC,MAAM,OAAO,IAAI,CAAC,SAAS,EAAE,CAAC;QACjD,CAAC;KACJ;IAlBD,wBAkBC"}

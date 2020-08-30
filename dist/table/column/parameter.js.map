@@ -1,0 +1,1 @@
+{"version":3,"file":"parameter.js","sourceRoot":"","sources":["../../../src/table/column/parameter.ts"],"names":[],"mappings":";;;;;;;;;;;IAGA,yCAAkC;IAElC,MAAqB,SAEnB,SAAQ,kBAAmB;QAIzB,YACK,KAAiB,EACjB,GAA4B;YAE7B,KAAK,CAAC,KAAK,EAAE,GAAG,CAAC,CAAC;YAClB,IAAI,CAAC,SAAS,GAAG,GAAG,KAAK,CAAC,KAAK,GAAG,GAAG,EAAE,CAAC;QAE5C,CAAC;KAEJ;IAfD,4BAeC"}
