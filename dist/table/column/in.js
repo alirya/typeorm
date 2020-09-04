@@ -4,19 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./value"], factory);
+        define(["require", "exports"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const value_1 = require("./value");
-    class In extends value_1.default {
-        constructor(argument, column, value) {
-            super(argument, column, value);
-        }
-        get query() {
-            return `${this.column} IN (:...${this.parameter})`;
-        }
+    function In(query, column) {
+        query.andWhere(`${column.column} IN (:...${column.parameter})`, column.argument);
+        return column;
     }
     exports.default = In;
 });

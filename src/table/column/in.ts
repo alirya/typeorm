@@ -1,23 +1,19 @@
 import Table from "../table";
-import Infer from "../entity/infer";
-import Value from "./value";
+import {QueryBuilder, WhereExpression} from "typeorm";
+import Column from "./column";
+import BaseParameter from "@dikac/t-function/parameter/parameter";
+import ArgumentContainer from "@dikac/t-function/argument/argument";
 
-export default class In<
-    Entity extends Table = Table,
-    ValueType extends unknown[] = unknown[]
-> extends Value<Entity, ValueType> {
+export default function In<ValueType extends unknown[],
+    ColumnType extends Column<Table<any>> & BaseParameter & ArgumentContainer<Record<string, ValueType>>
+>(
+    query : QueryBuilder<unknown> & WhereExpression,
+    column : ColumnType
+) : ColumnType {
 
-    constructor(
-        argument : Entity,
-        column : keyof Infer<Entity>,
-        value : ValueType,
-    ) {
+    query.andWhere(`${column.column} IN (:...${column.parameter})`, column.argument);
 
-        super(argument, column, value);
-    }
-
-    get query() : string {
-
-        return `${this.column} IN (:...${this.parameter})`;
-    }
+    return column;
 }
+
+

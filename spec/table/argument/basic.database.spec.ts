@@ -1,39 +1,39 @@
 import Connection from "../../connection";
-import GrandParentGenerate from "../../grand-parent/grand-parent-generate";
-import Insert from "../../../dist/database/insert";
+import GrandParentGenerate from "../../grand-parent/generate";
+import Insert from "../../../dist/entity/insert";
 import GrandParent from "../../grand-parent/grand-parent";
 import Argument from "../../../dist/table/column/value";
-import StdColumn from "../../../dist/table/entity";
-import Manager from "../../../dist/mapper/connection";
 import Entity from "../../../dist/table/entity";
+import {Connection as OrmConnection} from "typeorm";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 let entity : GrandParent;
+let connection : OrmConnection;
+
+it('open connection', (done)=>{
+
+    return Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
+});
 
 it('grand-parent', (done)=>{
 
-    Connection.then(function (connection) {
-
-        entity = GrandParentGenerate();
-        Insert(connection.manager,  entity).then((result)=>done());
-    })
+    entity = GrandParentGenerate();
+    Insert(connection.manager,  entity).then((result)=>done());
 })
 
 it('parent', (done)=>{
 
     Connection.then(function (connection) {
 
-        let query = new Manager(StdColumn(GrandParent), connection.manager);
+        let query = connection.getRepository(GrandParent).createQueryBuilder();
+        let table = Entity(query, GrandParent);
 
-        let column  = Entity(GrandParent);
-        let build = new Argument(column, 'id', entity.id);
+        let build = new Argument(table, 'id', entity.id);
 
+        query.andWhere(`${build.column}=:${build.parameter}`, build.argument);
 
-        let select = query.query.select();
-        select.andWhere(`${build.column}=:${build.parameter}`, build.argument);
-
-        select.getOne().then(record=>{
+        query.getOne().then(record=>{
 
             if(record) {
 

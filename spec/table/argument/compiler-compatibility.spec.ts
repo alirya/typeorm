@@ -5,4 +5,5 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 let standard  = new Standard(GrandParent, 'GP');
 
-let string : string = standard.table;
+let string : typeof GrandParent = standard.entity;
+

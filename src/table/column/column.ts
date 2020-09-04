@@ -3,14 +3,10 @@ import Infer from "../entity/infer";
 
 export default interface Column<
     TableType extends Table = Table,
+    Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
 > {
 
-    readonly key : keyof Infer<TableType>;
-
-    readonly table : TableType;
-
-    /**
-     * aliases
-     */
-    readonly column : string;
+    readonly table: TableType;
+    readonly column: string;
+    readonly key : Key,
 }

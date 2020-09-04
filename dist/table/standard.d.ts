@@ -1,7 +1,11 @@
-import { ObjectType } from "typeorm/common/ObjectType";
 import Table from "./table";
-export default class Standard<Type extends object = object> implements Table<Type> {
-    readonly entity: ObjectType<Type>;
-    readonly table: string;
-    constructor(entity: ObjectType<Type>, table: string);
+import Class from "@dikac/t-class/class";
+/**
+ * basic {@see Table} implementation
+ */
+export default class Standard<Constructor extends Class<object, unknown[]> = Class<object, unknown[]>> implements Table<Constructor> {
+    readonly entity: Constructor;
+    readonly alias: string;
+    readonly aliased: boolean;
+    constructor(entity: Constructor, alias?: string, aliased?: boolean);
 }

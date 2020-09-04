@@ -4,23 +4,19 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./value", "@dikac/t-string/affix-character"], factory);
+        define(["require", "exports", "@dikac/t-string/affix-character"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const value_1 = require("./value");
     const affix_character_1 = require("@dikac/t-string/affix-character");
-    class Like extends value_1.default {
-        constructor(argument, column, value, padding) {
-            if (padding) {
-                value = affix_character_1.default(value, '%', padding);
-            }
-            super(argument, column, value);
+    function Like(query, column, padding) {
+        let value = column.value;
+        if (padding) {
+            value = affix_character_1.default(value, '%', padding);
         }
-        get query() {
-            return `${this.column} LIKE :${this.parameter}`;
-        }
+        query.andWhere(`${column.column} LIKE :${column.parameter}`, { [column.parameter]: value });
+        return column;
     }
     exports.default = Like;
 });

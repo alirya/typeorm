@@ -5,19 +5,21 @@ import ArgumentContainer from "@dikac/t-function/argument/argument";
 import Parameter from "./parameter";
 
 export default class Value<
-    Entity extends Table = Table,
-    ValueType = unknown
-> extends Parameter<Entity> implements ValueInterface<ValueType>, ArgumentContainer<Record<string, ValueType>> {
+    ValueType,
+    TableType extends Table = Table,
+    Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
+> extends Parameter<TableType, Key> implements ValueInterface<ValueType>, ArgumentContainer<Record<string, ValueType>> {
 
     readonly argument: Record<string, ValueType>;
 
     constructor(
-        argument : Entity,
-        column : keyof Infer<Entity>,
-        readonly value : ValueType
+        table: TableType,
+        key : Key,
+        readonly value : ValueType,
+        parameter ?: string
     ) {
+        super(table, key, parameter);
 
-        super(argument, column);
         this.argument = {[this.parameter]:value};
     }
 

@@ -4,18 +4,16 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "@dikac/t-function/assert/callback", "../boolean/updated", "./throwable/undefined"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Updated(result, expectation) {
-        if (result.raw && isFinite(result.raw.affectedRows)) {
-            return result.raw.affectedRows === expectation;
-        }
-        else {
-            throw new Error('Update data not available');
-        }
+    const callback_1 = require("@dikac/t-function/assert/callback");
+    const updated_1 = require("../boolean/updated");
+    const undefined_1 = require("./throwable/undefined");
+    function Updated(result, expectation, error = undefined_1.default) {
+        callback_1.default(result, updated_1.default, error, expectation);
     }
     exports.default = Updated;
 });

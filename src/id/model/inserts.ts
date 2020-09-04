@@ -1,5 +1,5 @@
 import {EntityManager, ObjectType} from "typeorm";
-import IdForbid from "../assert/id-forbid";
+import Undefined from "../assert/undefined";
 import {Required} from "utility-types";
 import Id from "../id";
 import {QueryDeepPartialEntity} from "typeorm/query-builder/QueryPartialEntity";
@@ -19,7 +19,7 @@ export default function Inserts<Entity extends Id>(
     }
 
     // TODO IMPROVE THIS
-    entities.forEach((v)=>IdForbid(v));
+    entities.forEach((v)=>Undefined(v));
 
     if(!entity) {
 

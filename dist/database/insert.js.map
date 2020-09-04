@@ -1,1 +1,0 @@
-{"version":3,"file":"insert.js","sourceRoot":"","sources":["../../src/database/insert.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA;;;;;;OAMG;IACH,SAAwB,MAAM,CAC1B,OAAuB,EACvB,MAAe;QAGf,OAAO,OAAO,CAAC,aAAa,CAAC,MAAM,CAAC,WAAW,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,IAAI,CAAC,GAAE,EAAE,CAAA,MAAM,CAAC,CAAC;IACrF,CAAC;IAND,yBAMC"}

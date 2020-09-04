@@ -1,7 +1,7 @@
-export default interface Id {
+export default interface Id<Type extends number|string = number|string> {
 
     /**
      * unique identification
      */
-    id ?: number;
+    id ?: Type;
 }

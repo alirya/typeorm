@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../assert/id-forbid"], factory);
+        define(["require", "exports", "../assert/undefined"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const id_forbid_1 = require("../assert/id-forbid");
+    const undefined_1 = require("../assert/undefined");
     /**
      * basic insert operation
      *
@@ -19,7 +19,7 @@
             return Promise.resolve([]);
         }
         // TODO IMPROVE THIS
-        entities.forEach((v) => id_forbid_1.default(v));
+        entities.forEach((v) => undefined_1.default(v));
         if (!entity) {
             for (let value of entities) {
                 entity = value.constructor;

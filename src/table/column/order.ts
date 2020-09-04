@@ -1,19 +1,21 @@
 import Table from "../table";
-import Infer from "../entity/infer";
 import OrderEnum from "../../builder/order/mode/mode";
 import Null from "../../builder/order/null/null";
-import Parameter from "./parameter";
-import ValueInterface from "@dikac/t-value/value";
+import {SelectQueryBuilder} from "typeorm";
+import Column from "./column";
 
-export default class Order<Entity extends Table = Table> extends Parameter<Entity> implements ValueInterface<OrderEnum> {
 
-    constructor(
-        argument : Entity,
-        column : keyof Infer<Entity>,
-        readonly value : OrderEnum,
-        readonly nulls ?: Null
-    ) {
+export default function Order<
+    ValueType extends unknown[],
+    ColumnType extends Column<Table<any>> = Column<Table<any>>
+>(
+    query : SelectQueryBuilder<any>,
+    column : ColumnType,
+    value : OrderEnum,
+    nulls ?: Null,
+) : ColumnType {
 
-        super(argument, column);
-    }
+    query.orderBy(`${column.column}`, value, nulls);
+
+    return column;
 }

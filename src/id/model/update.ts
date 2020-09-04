@@ -1,6 +1,6 @@
 import {EntityManager} from "typeorm";
 import Id from "../id";
-import StandardUpdate from "../../database/update";
+import StandardUpdate from "../../entity/update";
 
 
 export default function Update<Entity extends Required<Id>>(

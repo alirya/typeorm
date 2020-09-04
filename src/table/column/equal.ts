@@ -1,23 +1,46 @@
 import Table from "../table";
-import Infer from "../entity/infer";
+import {QueryBuilder, WhereExpression} from "typeorm";
+import ArgumentContainer from "@dikac/t-function/argument/argument";
+import Column from "./column";
+import BaseParameter from "@dikac/t-function/parameter/parameter";
 import Value from "./value";
 
-export default class Equal<
-    Entity extends Table = Table,
-    ValueType extends unknown[] = unknown[]
-> extends Value<Entity, ValueType> {
 
-    constructor(
-        argument : Entity,
-        column : keyof Infer<Entity>,
-        value : ValueType,
-    ) {
+export default function Equal<
+    ColumnType extends Column<Table<any>> & BaseParameter
+>(
+    query : WhereExpression & QueryBuilder<object>,
+    column : ColumnType,
+    value : any
+) : ColumnType;
 
-        super(argument, column, value);
+export default function Equal<
+    ColumnType extends Column<Table<any>> & BaseParameter & ArgumentContainer<Record<string, any>>
+>(
+    query : WhereExpression & QueryBuilder<object>,
+    column : ColumnType
+) : ColumnType;
+
+export default function Equal<
+    ColumnType extends Column<Table<any>> & BaseParameter & ArgumentContainer<Record<string, any>>
+>(
+    query : WhereExpression & QueryBuilder<object>,
+    column : ColumnType,
+    value ?: any
+) : ColumnType {
+
+    if(column.argument === undefined) {
+
+        let argument = new Value(column.table, column.key, value, column.parameter);
+        Equal(query, argument);
+        return column;
+
+    } else {
+
+        query.andWhere(`${column.column} = :${column.parameter}`, column.argument);
     }
 
-    get query() : string {
 
-        return `${this.column} = :${this.parameter}`;
-    }
+
+    return column;
 }

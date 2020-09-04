@@ -11,7 +11,7 @@ export default class RequiredReadonlyStandard implements RequiredReadonly {
     get created () : Date {
 
         if(!this.entity.created) {
-
+            // TODO IMPROVE MESSAGE
             throw new Error('created is not provided')
         }
 
@@ -22,7 +22,7 @@ export default class RequiredReadonlyStandard implements RequiredReadonly {
     get updated () : Date {
 
         if(!this.entity.updated) {
-
+            // TODO IMPROVE MESSAGE
             throw new Error('updated is not provided')
         }
 

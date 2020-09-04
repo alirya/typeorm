@@ -11,8 +11,8 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const parameter_1 = require("./parameter");
     class Value extends parameter_1.default {
-        constructor(argument, column, value) {
-            super(argument, column);
+        constructor(table, key, value, parameter) {
+            super(table, key, parameter);
             this.value = value;
             this.argument = { [this.parameter]: value };
         }

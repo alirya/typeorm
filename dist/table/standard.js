@@ -9,10 +9,14 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * basic {@see Table} implementation
+     */
     class Standard {
-        constructor(entity, table) {
+        constructor(entity, alias = entity.name, aliased = true) {
             this.entity = entity;
-            this.table = table;
+            this.alias = alias;
+            this.aliased = aliased;
         }
     }
     exports.default = Standard;

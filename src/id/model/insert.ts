@@ -1,8 +1,8 @@
 import {EntityManager} from "typeorm";
 import Id from "../id";
-import NoId from "../validatable/no-id";
+import Undefined from "../validatable/undefined";
 import {Required} from "utility-types";
-import StandardInsert from "../../database/insert";
+import StandardInsert from "../../entity/insert";
 
 /**
  * basic id insert operation
@@ -16,7 +16,7 @@ export default function Insert<Entity extends Id>(
     entity : Entity
 ) : Promise<Required<Entity, 'id'>> {
 
-    let validatable = NoId(entity);
+    let validatable = Undefined(entity);
 
     if(!validatable.valid) {
 

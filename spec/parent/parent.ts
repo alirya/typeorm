@@ -1,6 +1,6 @@
 import {Entity, Column, Index, ManyToOne, OneToMany} from "typeorm";
 import {Mixin} from "ts-mixer";
-import IdAuto from "../../dist/id/id-auto";
+import IdAuto from "../../dist/id/automatic";
 import Timestamp from "../../dist/timestamp/timestamp";
 import GrandParent from "../grand-parent/grand-parent";
 import Children from "../children/children";

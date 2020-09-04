@@ -4,13 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../validatable/no-id", "../../database/insert"], factory);
+        define(["require", "exports", "../validatable/undefined", "../../entity/insert"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const no_id_1 = require("../validatable/no-id");
-    const insert_1 = require("../../database/insert");
+    const undefined_1 = require("../validatable/undefined");
+    const insert_1 = require("../../entity/insert");
     /**
      * basic id insert operation
      *
@@ -19,7 +19,7 @@
      * @constructor
      */
     function Insert(manager, entity) {
-        let validatable = no_id_1.default(entity);
+        let validatable = undefined_1.default(entity);
         if (!validatable.valid) {
             throw new Error(validatable.message);
         }

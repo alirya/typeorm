@@ -1,1 +1,0 @@
-{"version":3,"file":"connection.js","sourceRoot":"","sources":["../../src/mapper/connection.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA,yCAAkC;IAGlC,MAAqB,UAAqC,SAAQ,kBAAiE;QAE/H,YAAY,MAAmB,EAAE,UAAwC;YAErE,KAAK,CAAC,MAAM,EAAG,UAAU,CAAC,aAAa,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,kBAAkB,CAAC,MAAM,CAAC,KAAK,CAAgD,CAAC,CAAA;QAC3I,CAAC;KAEJ;IAPD,6BAOC"}

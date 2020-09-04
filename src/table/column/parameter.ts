@@ -5,17 +5,19 @@ import Standard from "./standard";
 
 export default class Parameter<
     TableType extends Table = Table,
-> extends Standard<TableType> implements  BaseParameter {
+    Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
+> extends Standard<TableType, Key> implements  BaseParameter {
 
     readonly parameter: string;
 
     constructor(
-         table : TableType,
-         key : keyof Infer<TableType>,
+        table: TableType,
+        key : Key,
+        parameter ?: string
     ) {
         super(table, key);
-        this.parameter = `${table.table}${key}`;
 
+        this.parameter = parameter ? parameter : this.column.replace('.', '');
     }
 
 }

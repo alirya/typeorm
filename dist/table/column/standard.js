@@ -13,7 +13,13 @@
         constructor(table, key) {
             this.table = table;
             this.key = key;
-            this.column = `${table.table}.${key}`;
+            this.column = '';
+            if (table.aliased) {
+                this.column = `${table.alias}.${key}`;
+            }
+            else {
+                this.column = key;
+            }
         }
     }
     exports.default = Standard;

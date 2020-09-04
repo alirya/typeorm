@@ -11,9 +11,9 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const standard_1 = require("./standard");
     class Parameter extends standard_1.default {
-        constructor(table, key) {
+        constructor(table, key, parameter) {
             super(table, key);
-            this.parameter = `${table.table}${key}`;
+            this.parameter = parameter ? parameter : this.column.replace('.', '');
         }
     }
     exports.default = Parameter;

@@ -1,28 +1,29 @@
-import Value from "./value";
+import Value from "@dikac/t-value/value";
 import Table from "../table";
-import Infer from "../entity/infer";
 import Padding from "@dikac/t-string/padding/padding";
 import AffixCharacter from "@dikac/t-string/affix-character";
+import {QueryBuilder, WhereExpression} from "typeorm";
+import Column from "./column";
+import BaseParameter from "@dikac/t-function/parameter/parameter";
 
-export default class Like<Entity extends Table = Table> extends Value<Entity, string> {
+export default function Like<ValueType extends unknown[],
+    ColumnType extends Column<Table<any>> &
+        BaseParameter &
+        Value<string>
+>(
+    query : QueryBuilder<unknown> & WhereExpression,
+    column : ColumnType,
+    padding : Padding|undefined
+) : ColumnType {
 
-    constructor(
-        argument : Entity,
-        column : keyof Infer<Entity>,
-        value : string,
-        padding : Padding|undefined
-    ) {
+    let value = column.value;
 
-        if(padding) {
+    if(padding) {
 
-            value = AffixCharacter(value, '%', padding);
-        }
-
-        super(argument, column, value);
+        value = AffixCharacter(value, '%', padding);
     }
 
-    get query() : string {
+    query.andWhere(`${column.column} LIKE :${column.parameter}`, {[column.parameter]:value});
 
-        return `${this.column} LIKE :${this.parameter}`;
-    }
+    return column;
 }

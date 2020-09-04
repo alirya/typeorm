@@ -5,7 +5,7 @@ export default interface Columns<
     TableType extends Table = Table,
 > {
 
-    readonly key : (keyof Infer<TableType>)[];
+    readonly key : (keyof Infer<TableType> & string)[];
 
     readonly table : TableType;
 

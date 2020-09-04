@@ -13,7 +13,6 @@
         constructor(message, value) {
             super(message);
             this.value = value;
-            this.code = 409;
         }
     }
     exports.default = Duplicate;

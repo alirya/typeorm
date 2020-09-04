@@ -1,18 +1,34 @@
 import Table from "../table";
 import Column from "./column";
 import Infer from "../entity/infer";
+import Class from "@dikac/t-class/class";
+
+
 
 export default class Standard<
-    TableType extends Table = Table,
-> implements Column<TableType> {
+    TableType extends Table<Class<object, unknown[]>> = Table<Class<object, unknown[]>>,
+    Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
+> implements Column<TableType, Key> {
 
-    readonly column: string;
+    readonly column: string = '';
 
     constructor(
-        readonly table : TableType,
-        readonly key : keyof Infer<TableType>,
+        readonly table: TableType,
+        readonly key : Key,
     ) {
-        this.column = `${table.table}.${key}`;
+
+        if(table.aliased) {
+
+            this.column = `${table.alias}.${key}`;
+
+        } else {
+
+            this.column = key;
+        }
+
     }
 
 }
+
+
+
