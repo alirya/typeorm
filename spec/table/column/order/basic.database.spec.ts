@@ -38,7 +38,7 @@ it('ascending', (done)=>{
 
     new Value(Entity(select, GrandParent), 'name');
 
-    Order(query, new Value(Entity(select, GrandParent), 'name'), OrderEnum.ASCENDING);
+    Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.ASCENDING);
 
    select.getOne().then(record=>{
 
@@ -61,7 +61,7 @@ it('descending', (done)=>{
 
     Entity(select, GrandParent);
 
-    Order(query, new Value(Entity(select, GrandParent), 'name'), OrderEnum.DESCENDING);
+    Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.DESCENDING);
 
     return select.getOne().then(record=>{
 
