@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-typeorm",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Typescript typeorm",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
@@ -11,7 +11,7 @@
     "@dikac/t-function": "^0.12.4",
     "@dikac/t-message": "^0.10.2",
     "@dikac/t-number": "^0.15.11",
-    "@dikac/t-object": "^0.32.8",
+    "@dikac/t-object": "^0.33.1",
     "@dikac/t-set": "^0.5.2",
     "@dikac/t-string": "^0.13.2",
     "@dikac/t-undefined": "^0.3.13",
