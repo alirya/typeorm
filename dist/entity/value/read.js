@@ -26,7 +26,7 @@
         get option() {
             return {
                 cache: this.cache || undefined,
-                relations: not_empty_2.default(this.select) ? [...new segment_1.default('.', this.relations)] : undefined,
+                relations: not_empty_2.default(this.relations) ? [...new segment_1.default('.', this.relations)] : undefined,
                 select: not_empty_2.default(this.select) ? this.select : undefined,
                 where: not_empty_1.default(this.where) ? this.where : undefined,
                 order: not_empty_1.default(this.order) ? this.order : undefined,

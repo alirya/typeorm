@@ -34,7 +34,7 @@ export default class Read<Entity> implements Readonly<Value<Promise<Entity>>>, F
 
         return {
             cache : this.cache || undefined,
-            relations : ArrayNotEmpty(this.select) ? [...new Segment('.', this.relations)] : undefined,
+            relations : ArrayNotEmpty(this.relations) ? [...new Segment('.', this.relations)] : undefined,
             select : ArrayNotEmpty(this.select) ? this.select : undefined,
             where : ObjectNotEmpty(this.where) ? this.where : undefined,
             order : ObjectNotEmpty(<object>this.order) ? this.order : undefined,
