@@ -8,7 +8,7 @@ export default class Parameter<
     Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
 > extends Standard<TableType, Key> implements  BaseParameter {
 
-    readonly parameter: string;
+    public parameter: string;
 
     constructor(
         table: TableType,

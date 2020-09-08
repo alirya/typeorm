@@ -14,7 +14,9 @@
         constructor(table, key, value, parameter) {
             super(table, key, parameter);
             this.value = value;
-            this.argument = { [this.parameter]: value };
+        }
+        get argument() {
+            return { [this.parameter]: this.value };
         }
     }
     exports.default = Value;
