@@ -9,7 +9,7 @@ import ValueInterface from "@dikac/t-value/value";
 
 export default class Value<
     Entity extends Table<any> = Table<any>,
-    ValueType extends Record<keyof InstanceType<Infer<Entity>> & string, any> = Record<keyof InstanceType<Infer<Entity>> & string, any>,
+    ValueType extends Partial<Record<keyof InstanceType<Infer<Entity>> & string, any>> = Partial<Record<keyof InstanceType<Infer<Entity>> & string, any>>,
 > implements Columns<Entity>, ArgumentContainer<Record<string, Object.UnionOf<ValueType>>>, ValueInterface<ValueType> {
 
     readonly key : (keyof InstanceType<Infer<Entity>> & string)[] = [];
