@@ -8,10 +8,33 @@ export default function Join<
 >(
     query : SelectQueryBuilder<any>,
     column : ColumnType,
-    Join : ColumnTypeJoin,
+    join : ColumnTypeJoin,
+    mode : 'left'|'inner' = 'left',
+    select : boolean = false
 ) : ColumnTypeJoin {
 
-    query.leftJoin(Join.table.entity, Join.table.alias, `${column.column} = ${Join.column}`);
+    if(mode === 'left') {
 
-    return Join;
+        if(select) {
+
+            query.leftJoinAndSelect(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+
+        } else {
+
+            query.leftJoin(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+        }
+
+    } else {
+
+        if(select) {
+
+            query.innerJoinAndSelect(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+
+        } else {
+
+            query.innerJoin(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+        }
+    }
+
+    return join;
 }
