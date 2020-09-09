@@ -10,9 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const positive_1 = require("@dikac/t-number/ensure/positive");
-    function Paginate(query, page, limit) {
-        page = positive_1.default(page);
-        limit = positive_1.default(limit);
+    function Paginate(query, paginate) {
+        const page = positive_1.default(paginate.page);
+        const limit = positive_1.default(paginate.limit);
         query.limit(limit);
         let skip = (page - 1) * limit;
         if (skip > 0) {
