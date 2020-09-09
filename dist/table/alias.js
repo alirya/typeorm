@@ -4,20 +4,26 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./metadata", "./string/entity-not-found"], factory);
+        define(["require", "exports", "./metadata", "./string/alias-not-found"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const metadata_1 = require("./metadata");
-    const entity_not_found_1 = require("./string/entity-not-found");
-    function Alias(builder, entity, alias) {
+    const alias_not_found_1 = require("./string/alias-not-found");
+    function Alias(builder, alias, entity) {
         for (let metadata of builder.expressionMap.aliases) {
-            if (metadata.target === entity && metadata.name === alias) {
-                return metadata_1.default(metadata, builder.expressionMap.aliasNamePrefixingEnabled);
+            if (metadata.name !== alias) {
+                continue;
             }
+            if (entity) {
+                if (metadata.target !== entity) {
+                    continue;
+                }
+            }
+            return metadata_1.default(metadata, builder.expressionMap.aliasNamePrefixingEnabled);
         }
-        throw new Error(entity_not_found_1.default(false, entity, builder, alias));
+        throw new Error(alias_not_found_1.default(false, builder, alias, entity));
     }
     exports.default = Alias;
 });

@@ -4,29 +4,30 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "../../table/alias"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Join(query, column, join, mode = 'left', select = false) {
+    const alias_1 = require("../../table/alias");
+    function Join(query, column, alias, mode = 'left', select = false) {
         if (mode === 'left') {
             if (select) {
-                query.leftJoinAndSelect(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+                query.leftJoinAndSelect(column.column, alias);
             }
             else {
-                query.leftJoin(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+                query.leftJoin(column.column, alias);
             }
         }
         else {
             if (select) {
-                query.innerJoinAndSelect(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+                query.innerJoinAndSelect(column.column, alias);
             }
             else {
-                query.innerJoin(join.table.entity, join.table.alias, `${column.column} = ${join.column}`);
+                query.innerJoin(column.column, alias);
             }
         }
-        return join;
+        return alias_1.default(query, alias);
     }
     exports.default = Join;
 });

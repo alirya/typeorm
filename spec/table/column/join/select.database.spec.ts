@@ -37,17 +37,29 @@ it('insert parent', (done)=>{
 
 it('manual', (done)=>{
 
-    let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
+    let query = connection.getRepository(GrandParent).createQueryBuilder('GrandParent');
 
-    let parentColumn = Join(query, new Parameter(Entity(query, GrandParent), 'children'),'parent');
+    query.leftJoinAndSelect('GrandParent.children',  'Parent');
 
-    Equal(query, new Parameter(parentColumn, 'id'), parent.id);
+    let parentColumnz = Join(query, new Parameter(Entity(query, GrandParent), 'children'),'P', 'left', true);
+
+    expect(parentColumnz.entity).toBe(Parent);
+
+    Equal(query, new Parameter(parentColumnz, 'id'), parent.id);
+
 
     query.getOne().then(record=>{
 
         if(record) {
 
             expect(grandParent.id).toBe(<number>record.id);
+
+            if(record.children) {
+                expect(record.children.length).toBe(1);
+            } else {
+
+                fail('children should exists');
+            }
 
         } else {
 

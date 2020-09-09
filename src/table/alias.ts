@@ -1,24 +1,33 @@
 import Table from "./table";
 import {QueryBuilder} from "typeorm";
 import Metadata from "./metadata";
-import Class from "@dikac/t-class/class";
-import EntityNotFound from "./string/entity-not-found";
+import AliasNotFound from "./string/alias-not-found";
 
 export default function Alias<
-    Constructor extends Class<object, unknown[]> = Class<object, unknown[]>
+    Constructor extends {new (...args: unknown[]): any} = {new (...args: unknown[]): any}
 >(
     builder : QueryBuilder<unknown>,
-    entity : Constructor,
-    alias : string
+    alias : string,
+    entity ?: Constructor,
 ) : Table<Constructor> {
 
     for (let metadata of builder.expressionMap.aliases) {
 
-        if(metadata.target === entity && metadata.name === alias) {
+        if(metadata.name !== alias) {
 
-            return Metadata(metadata, builder.expressionMap.aliasNamePrefixingEnabled) as Table< Constructor>;
+          continue;
         }
+
+        if(entity) {
+
+            if(metadata.target !== entity) {
+
+                continue;
+            }
+        }
+
+        return Metadata(metadata, builder.expressionMap.aliasNamePrefixingEnabled) as Table<Constructor>;
     }
 
-    throw new Error(EntityNotFound(false, entity, builder, alias));
+    throw new Error(AliasNotFound(false, builder, alias, entity));
 }

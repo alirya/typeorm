@@ -14,3 +14,4 @@ export default class GrandParent extends Mixin(IdAuto, Timestamp) {
     @OneToMany(type => Parent, type => type.parent)
     children ?: Parent[];
 }
+

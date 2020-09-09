@@ -1,10 +1,8 @@
-import Class from "@dikac/t-class/class";
-
 /**
  * table information
  */
 export default interface Table<
-    Constructor extends Class<object, unknown[]> = Class<object, unknown[]>
+    Constructor extends {new (...args: unknown[]): any} = {new (...args: unknown[]): any}
 >  {
     /**
      * constructor of entity
