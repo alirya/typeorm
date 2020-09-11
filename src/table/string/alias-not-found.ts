@@ -11,16 +11,17 @@ export default function AliasNotFound(
 ) {
 
     let sentence = new Sentences(valid);
-    sentence.subject.push('alias', alias);
+    sentence.subject.push('alias', `"${alias}"`);
 
     if(entity) {
-        sentence.subject.push('entity', Name(entity));
+
+        sentence.subject.push('for entity', `"${Name(entity)}"`);
     }
 
-    sentence.predicate.valid = [];
-    sentence.predicate.valid = ['not'];
+    sentence.accept = [];
+    sentence.reject = ['not'];
 
-    sentence.object.push('found in', Name(builder));
+    sentence.expect.push('found in', `"${Name(builder)}"`);
 
     return sentence.message;
 }

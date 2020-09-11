@@ -13,13 +13,13 @@
     const sentences_1 = require("@dikac/t-string/message/sentences");
     function EntityNotFound(valid, entity, builder, alias) {
         let sentence = new sentences_1.default(valid);
-        sentence.subject.push('entity', name_1.default(entity));
+        sentence.subject.push('entity', `"${name_1.default(entity)}"`);
         if (alias) {
             sentence.subject.push('with alias', alias);
         }
-        sentence.predicate.valid = [];
-        sentence.predicate.valid = ['not'];
-        sentence.object.push('found in', name_1.default(builder));
+        sentence.accept = [];
+        sentence.reject = ['not'];
+        sentence.expect.push('found in', `"${name_1.default(builder)}"`);
         return sentence.message;
     }
     exports.default = EntityNotFound;

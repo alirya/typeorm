@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const name_1 = require("@dikac/t-object/string/name");
     function MultipleEntityFound(entity, builder) {
-        return `multiple entity ${name_1.default(entity)} found in ${name_1.default(builder)}`;
+        return `multiple entity "${name_1.default(entity)}" found in "${name_1.default(builder)}".`;
     }
     exports.default = MultipleEntityFound;
 });

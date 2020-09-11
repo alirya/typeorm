@@ -3,7 +3,7 @@ import Connection from "../../../connection";
 import GrandParentGenerate from "../../../grand-parent/generate";
 import Insert from "../../../../dist/entity/insert";
 import Like from "../../../../dist/table/column/like";
-import Padding from "@dikac/t-string/padding/padding";
+import Padding from "@dikac/t-string/affix/affix";
 import Value from "../../../../dist/table/column/value";
 import Entity from "../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";

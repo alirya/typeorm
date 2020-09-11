@@ -4,9 +4,11 @@ import TypeNumber from "@dikac/t-number/boolean/number";
 import SqlError from "../mysql";
 import TypeArray from "@dikac/t-array/boolean/array";
 
-export default function Mysql(value : any) : value is SqlError {
+export default function Mysql(value : any) : value is SqlError
+export default function Mysql(value : SqlError) : value is SqlError
+export default function Mysql(value : SqlError) : value is SqlError {
 
-    if(!TypeObject<SqlError>(value)) {
+    if(!TypeObject(value)) {
         return false;
     }
 

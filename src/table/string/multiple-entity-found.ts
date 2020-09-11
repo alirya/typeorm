@@ -7,5 +7,5 @@ export default function MultipleEntityFound(
     builder : QueryBuilder<any>,
 ) {
 
-    return `multiple entity ${Name(entity)} found in ${Name(builder)}`;
+    return `multiple entity "${Name(entity)}" found in "${Name(builder)}".`;
 }

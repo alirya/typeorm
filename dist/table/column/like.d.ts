@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Table from "../table";
-import Padding from "@dikac/t-string/padding/padding";
+import Padding from "@dikac/t-string/affix/affix";
 import { QueryBuilder, WhereExpression } from "typeorm";
 import Column from "./column";
 import BaseParameter from "@dikac/t-function/parameter/parameter";
