@@ -8,7 +8,7 @@ import Parent from "../parent/parent";
 export default class GrandParent extends Mixin(IdAuto, Timestamp) {
 
     @Index({ unique: true })
-    @Column({nullable : false})
+    @Column({nullable : false, type:'varchar'})
     name ?: string;
 
     @OneToMany(type => Parent, type => type.parent)

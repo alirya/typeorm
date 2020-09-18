@@ -1,1 +1,1 @@
-{"version":3,"file":"pick.js","sourceRoot":"","sources":["../../src/timestamp/pick.ts"],"names":[],"mappings":";;;;;;;;;;;IACA,+CAA8C;IAE9C,SAAwB,IAAI,CAAkC,MAAsB;QAEhF,OAAO,cAAU,CAAC,MAAM,EAAE,SAAS,EAAC,SAAS,CAAC,CAAC;IACnD,CAAC;IAHD,uBAGC"}
+{"version":3,"file":"pick.js","sourceRoot":"","sources":["../../src/timestamp/pick.ts"],"names":[],"mappings":"AACA,OAAO,UAAU,MAAM,sBAAsB,CAAC;AAE9C,MAAM,CAAC,OAAO,UAAU,IAAI,CAAkC,MAAsB;IAEhF,OAAO,UAAU,CAAC,MAAM,EAAE,SAAS,EAAC,SAAS,CAAC,CAAC;AACnD,CAAC"}

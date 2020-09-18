@@ -7,28 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "typeorm", "ts-mixer"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const typeorm_1 = require("typeorm");
-    const ts_mixer_1 = require("ts-mixer");
-    /**
-     * integer primary
-     */
-    class Integer {
-    }
-    __decorate([
-        ts_mixer_1.decorate(typeorm_1.PrimaryColumn({ nullable: false, type: "int" })),
-        __metadata("design:type", Number)
-    ], Integer.prototype, "id", void 0);
-    exports.default = Integer;
-});
+import { PrimaryColumn } from "typeorm";
+import { decorate } from "ts-mixer";
+/**
+ * integer primary
+ */
+export default class Integer {
+}
+__decorate([
+    decorate(PrimaryColumn({ nullable: false, type: "int" })),
+    __metadata("design:type", Number)
+], Integer.prototype, "id", void 0);
 //# sourceMappingURL=integer.js.map

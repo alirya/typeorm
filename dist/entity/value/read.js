@@ -1,57 +1,44 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import ObjectNotEmpty from "@dikac/t-object/boolean/not-empty";
+import ArrayNotEmpty from "@dikac/t-array/boolean/not-empty";
+import Segment from "@dikac/t-set/segment";
+export default class Read {
+    constructor(manager, entity) {
+        this.manager = manager;
+        this.entity = entity;
+        this.relations = [];
+        this.select = [];
+        this.where = {};
+        this.cache = undefined;
+        this.order = {};
+        this.withDeleted = false;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-object/boolean/not-empty", "@dikac/t-array/boolean/not-empty", "@dikac/t-set/segment"], factory);
+    get option() {
+        return {
+            cache: this.cache || undefined,
+            relations: ArrayNotEmpty(this.relations) ? [...new Segment('.', this.relations)] : undefined,
+            select: ArrayNotEmpty(this.select) ? this.select : undefined,
+            where: ObjectNotEmpty(this.where) ? this.where : undefined,
+            order: ObjectNotEmpty(this.order) ? this.order : undefined,
+            lock: ObjectNotEmpty(this.lock) ? this.lock : undefined,
+            withDeleted: this.withDeleted,
+            loadRelationIds: this.loadRelationIds,
+            loadEagerRelations: this.loadEagerRelations,
+        };
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const not_empty_1 = require("@dikac/t-object/boolean/not-empty");
-    const not_empty_2 = require("@dikac/t-array/boolean/not-empty");
-    const segment_1 = require("@dikac/t-set/segment");
-    class Read {
-        constructor(manager, entity) {
-            this.manager = manager;
-            this.entity = entity;
-            this.relations = [];
-            this.select = [];
-            this.where = {};
-            this.cache = undefined;
-            this.order = {};
-            this.withDeleted = false;
-        }
-        get option() {
-            return {
-                cache: this.cache || undefined,
-                relations: not_empty_2.default(this.relations) ? [...new segment_1.default('.', this.relations)] : undefined,
-                select: not_empty_2.default(this.select) ? this.select : undefined,
-                where: not_empty_1.default(this.where) ? this.where : undefined,
-                order: not_empty_1.default(this.order) ? this.order : undefined,
-                lock: not_empty_1.default(this.lock) ? this.lock : undefined,
-                withDeleted: this.withDeleted,
-                loadRelationIds: this.loadRelationIds,
-                loadEagerRelations: this.loadEagerRelations,
-            };
-        }
-        lockOptimistic(version) {
-            this.lock = {
-                mode: 'optimistic',
-                version: version
-            };
-        }
-        lockDirtyRead() {
-            this.lock = { mode: "dirty_read" };
-        }
-        lockPessimistic(mode) {
-            this.lock = { mode: 'pessimistic_' + mode };
-        }
-        get value() {
-            return this.manager.getRepository(this.entity).findOneOrFail(this.option);
-        }
+    lockOptimistic(version) {
+        this.lock = {
+            mode: 'optimistic',
+            version: version
+        };
     }
-    exports.default = Read;
-});
+    lockDirtyRead() {
+        this.lock = { mode: "dirty_read" };
+    }
+    lockPessimistic(mode) {
+        this.lock = { mode: 'pessimistic_' + mode };
+    }
+    get value() {
+        return this.manager.getRepository(this.entity).findOneOrFail(this.option);
+    }
+}
 //# sourceMappingURL=read.js.map

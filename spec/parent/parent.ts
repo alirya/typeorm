@@ -9,7 +9,7 @@ import Children from "../children/children";
 export default class Parent extends Mixin(IdAuto, Timestamp) {
 
     @Index({ unique: true })
-    @Column({nullable : false})
+    @Column({nullable : false, type:'varchar'})
     name ?: string;
 
     @ManyToOne(type => GrandParent, {nullable : true})

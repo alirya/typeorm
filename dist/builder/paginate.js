@@ -1,25 +1,12 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import Positive from "@dikac/t-number/ensure/positive";
+export default function Paginate(query, paginate) {
+    const page = Positive(paginate.page);
+    const limit = Positive(paginate.limit);
+    query.limit(limit);
+    let skip = (page - 1) * limit;
+    if (skip > 0) {
+        query.skip(skip);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-number/ensure/positive"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const positive_1 = require("@dikac/t-number/ensure/positive");
-    function Paginate(query, paginate) {
-        const page = positive_1.default(paginate.page);
-        const limit = positive_1.default(paginate.limit);
-        query.limit(limit);
-        let skip = (page - 1) * limit;
-        if (skip > 0) {
-            query.skip(skip);
-        }
-        return query;
-    }
-    exports.default = Paginate;
-});
+    return query;
+}
 //# sourceMappingURL=paginate.js.map

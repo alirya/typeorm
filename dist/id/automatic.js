@@ -7,28 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "typeorm", "ts-mixer"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const typeorm_1 = require("typeorm");
-    const ts_mixer_1 = require("ts-mixer");
-    /**
-     * automatic primary generated
-     */
-    class Automatic {
-    }
-    __decorate([
-        ts_mixer_1.decorate(typeorm_1.PrimaryGeneratedColumn()),
-        __metadata("design:type", Number)
-    ], Automatic.prototype, "id", void 0);
-    exports.default = Automatic;
-});
+import { PrimaryGeneratedColumn } from "typeorm";
+import { decorate } from "ts-mixer";
+/**
+ * automatic primary generated
+ */
+export default class Automatic {
+}
+__decorate([
+    decorate(PrimaryGeneratedColumn()),
+    __metadata("design:type", Number)
+], Automatic.prototype, "id", void 0);
 //# sourceMappingURL=automatic.js.map

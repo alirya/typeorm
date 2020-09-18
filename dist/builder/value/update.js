@@ -1,17 +1,4 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    function Update(query, entity) {
-        return query.update(entity).execute();
-    }
-    exports.default = Update;
-});
+export default function Update(query, entity) {
+    return query.update(entity).execute();
+}
 //# sourceMappingURL=update.js.map

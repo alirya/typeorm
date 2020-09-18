@@ -1,18 +1,5 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../entity/update"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const update_1 = require("../../entity/update");
-    function Update(manager, entity, detaches = []) {
-        return update_1.default(manager, entity, 'id', detaches);
-    }
-    exports.default = Update;
-});
+import StandardUpdate from "../../entity/update";
+export default function Update(manager, entity, detaches = []) {
+    return StandardUpdate(manager, entity, 'id', detaches);
+}
 //# sourceMappingURL=update.js.map

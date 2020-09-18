@@ -1,21 +1,8 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import Mysql from "./mysql";
+export default function DuplicateEntry(value) {
+    if (Mysql(value)) {
+        return value.errno === 1062;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./mysql"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const mysql_1 = require("./mysql");
-    function DuplicateEntry(value) {
-        if (mysql_1.default(value)) {
-            return value.errno === 1062;
-        }
-        return false;
-    }
-    exports.default = DuplicateEntry;
-});
+    return false;
+}
 //# sourceMappingURL=duplicate-entry.js.map

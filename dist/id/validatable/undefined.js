@@ -1,21 +1,8 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-undefined/boolean/undefined", "./string/id-undefined", "@dikac/t-validator/validatable/callback-function"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const undefined_1 = require("@dikac/t-undefined/boolean/undefined");
-    const id_undefined_1 = require("./string/id-undefined");
-    const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
-    function Undefined(id) {
-        let callback = callback_function_1.default(id, (o) => undefined_1.default(o.id), id_undefined_1.default);
-        return callback;
-    }
-    exports.default = Undefined;
-});
+import IsUndefined from "@dikac/t-undefined/boolean/undefined";
+import NoIdString from "./string/id-undefined";
+import Callback from "@dikac/t-validator/validatable/callback-function";
+export default function Undefined(id) {
+    let callback = Callback(id, (o) => IsUndefined(o.id), NoIdString);
+    return callback;
+}
 //# sourceMappingURL=undefined.js.map

@@ -7,10 +7,12 @@ import Parent from "../parent/parent";
 @Entity({name:'children'})
 export default class Children extends Mixin(IdAuto, Timestamp) {
 
-    @Index({ unique: true })
-    @Column({nullable : false})
-    name ?: string;
 
     @ManyToOne(type => Parent, {nullable : true})
     parent ?: Parent;
+
+    @Index({ unique: true })
+    @Column({nullable : false, type:'varchar'})
+    name ?: string;
+
 }

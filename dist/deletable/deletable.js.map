@@ -1,1 +1,1 @@
-{"version":3,"file":"deletable.js","sourceRoot":"","sources":["../../src/deletable/deletable.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;IAAA,qCAAyC;IACzC,uCAAkC;IAElC,MAAqB,SAAS;KAK7B;IAFG;QADC,mBAAQ,CAAC,0BAAgB,EAAuB,CAAC;;8CAC7B;IAHzB,4BAKC"}
+{"version":3,"file":"deletable.js","sourceRoot":"","sources":["../../src/deletable/deletable.ts"],"names":[],"mappings":";;;;;;;;;AAAA,OAAO,EAAC,gBAAgB,EAAC,MAAM,SAAS,CAAC;AACzC,OAAO,EAAC,QAAQ,EAAC,MAAM,UAAU,CAAC;AAElC,MAAM,CAAC,OAAO,OAAO,SAAS;CAK7B;AAFG;IADC,QAAQ,CAAC,gBAAgB,EAAuB,CAAC;;0CAC7B"}
