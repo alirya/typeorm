@@ -1,11 +1,13 @@
 import {Entity, Column, Index, OneToMany} from "typeorm";
-import {Mixin} from "ts-mixer";
 import IdAuto from "../../dist/id/automatic";
 import Timestamp from "../../dist/timestamp/timestamp";
 import Parent from "../parent/parent";
 
 @Entity({name:'grand-parent'})
-export default class GrandParent extends Mixin(IdAuto, Timestamp) {
+export default class GrandParent extends IdAuto {
+
+    @Column(type => Timestamp)
+    timestamp ?: Timestamp;
 
     @Index({ unique: true })
     @Column({nullable : false, type:'varchar'})

@@ -8,11 +8,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { DeleteDateColumn } from "typeorm";
-import { decorate } from "ts-mixer";
 export default class Deletable {
 }
 __decorate([
-    decorate(DeleteDateColumn()),
+    DeleteDateColumn(),
     __metadata("design:type", Object)
 ], Deletable.prototype, "deleted", void 0);
 //# sourceMappingURL=deletable.js.map

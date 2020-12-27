@@ -8,14 +8,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { PrimaryColumn } from "typeorm";
-import { decorate } from "ts-mixer";
 /**
  * integer primary
  */
 export default class Integer {
 }
 __decorate([
-    decorate(PrimaryColumn({ nullable: false, type: "int" })),
+    PrimaryColumn({ nullable: false, type: "int" }),
     __metadata("design:type", Number)
 ], Integer.prototype, "id", void 0);
 //# sourceMappingURL=integer.js.map

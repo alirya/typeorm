@@ -8,14 +8,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { PrimaryGeneratedColumn } from "typeorm";
-import { decorate } from "ts-mixer";
 /**
  * automatic primary generated
  */
 export default class Automatic {
 }
 __decorate([
-    decorate(PrimaryGeneratedColumn()),
+    PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Automatic.prototype, "id", void 0);
 //# sourceMappingURL=automatic.js.map

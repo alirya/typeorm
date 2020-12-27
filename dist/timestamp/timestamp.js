@@ -8,15 +8,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Column } from "typeorm";
-import { decorate } from "ts-mixer";
 export default class Timestamp {
 }
 __decorate([
-    decorate(Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP" })),
+    Column({ type: 'timestamp', default: () => "CURRENT_TIMESTAMP" }),
     __metadata("design:type", Date)
 ], Timestamp.prototype, "created", void 0);
 __decorate([
-    decorate(Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()' })),
+    Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()' }),
     __metadata("design:type", Date)
 ], Timestamp.prototype, "updated", void 0);
 //# sourceMappingURL=timestamp.js.map
