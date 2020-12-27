@@ -1,4 +1,4 @@
 import TimestampEntity from "../timestamp";
-export default interface Timestamp {
+export default class Timestamp {
     timestamp?: TimestampEntity;
 }
