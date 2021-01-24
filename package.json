@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-typeorm",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Typescript typeorm",
   "dependencies": {
     "@dikac/deployer": "^0.1.8",
-    "@dikac/t-array": "^0.25.9",
+    "@dikac/t-array": "^0.25.10",
     "@dikac/t-class": "^0.2.2",
     "@dikac/t-code": "^0.2.2",
     "@dikac/t-enum": "^0.10.2",
@@ -19,17 +19,17 @@
     "@dikac/t-validator": "^0.17.2",
     "@dikac/t-value": "^0.14.5",
     "ts-toolbelt": "^8.0.7",
-    "typeorm": "^0.2.29",
+    "typeorm": "^0.2.30",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
     "@dikac/tn-filesystem": "^0.2.3",
     "@types/faker": "^4.1.12",
-    "@types/jasmine": "^3.6.2",
+    "@types/jasmine": "^3.6.3",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
     "faker": "^4.1.0",
-    "jasmine": "^3.6.3",
+    "jasmine": "^3.6.4",
     "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "mkdirp": "^1.0.4",
