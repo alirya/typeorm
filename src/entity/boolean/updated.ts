@@ -1,13 +1,8 @@
 import {UpdateResult as OrmUpdateResult} from "typeorm";
+import Affected from "../../number/affected";
 
 export default function Updated(result : OrmUpdateResult, expectation : number) : boolean {
 
-    if (result.raw && isFinite(result.raw.affectedRows)) {
+    return Affected(result) === expectation;
 
-        return result.raw.affectedRows === expectation;
-
-    } else {
-
-        throw new Error('Update data not available')
-    }
 }
