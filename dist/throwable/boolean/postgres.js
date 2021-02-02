@@ -2,14 +2,26 @@ import TypeObject from "@dikac/t-object/boolean/object";
 import TypeString from "@dikac/t-string/boolean/string";
 import TypeNumber from "@dikac/t-number/boolean/number";
 import TypeArray from "@dikac/t-array/boolean/array";
-export default function Mysql(value) {
+export default function Postgres(value) {
     if (!TypeObject(value)) {
         return false;
     }
-    if (!TypeString(value.sqlMessage)) {
+    if (!TypeString(value.table)) {
         return false;
     }
-    if (!TypeString(value.sqlState)) {
+    if (!TypeString(value.line)) {
+        return false;
+    }
+    if (!TypeString(value.routine)) {
+        return false;
+    }
+    if (!TypeString(value.detail)) {
+        return false;
+    }
+    if (!TypeString(value.constraint)) {
+        return false;
+    }
+    if (!TypeNumber(value.length)) {
         return false;
     }
     if (!TypeString(value.name)) {
@@ -21,16 +33,16 @@ export default function Mysql(value) {
     if (!TypeString(value.code)) {
         return false;
     }
-    if (!TypeString(value.sql)) {
+    if (!TypeString(value.schema)) {
+        return false;
+    }
+    if (!TypeString(value.severity)) {
+        return false;
+    }
+    if (!TypeString(value.file)) {
         return false;
     }
     if (!TypeString(value.query)) {
-        return false;
-    }
-    if (!TypeNumber(value.index)) {
-        return false;
-    }
-    if (!TypeNumber(value.errno)) {
         return false;
     }
     if (!TypeArray(value.parameters)) {
@@ -38,4 +50,4 @@ export default function Mysql(value) {
     }
     return true;
 }
-//# sourceMappingURL=mysql.js.map
+//# sourceMappingURL=postgres.js.map

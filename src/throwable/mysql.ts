@@ -1,6 +1,6 @@
-import {QueryFailedError} from "typeorm";
+import QueryError from "./query-error";
 
-export default interface Mysql extends QueryFailedError {
+export default interface Mysql extends QueryError {
 
     code: string;
     errno: number;
@@ -8,6 +8,4 @@ export default interface Mysql extends QueryFailedError {
     sqlState: string;
     index: number;
     sql:string;
-    query: string;
-    parameters: (string|number)[];
 }

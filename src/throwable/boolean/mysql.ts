@@ -12,6 +12,14 @@ export default function Mysql(value : SqlError) : value is SqlError {
         return false;
     }
 
+    if(!TypeString(value.sqlMessage)) {
+        return false
+    }
+
+    if(!TypeString(value.sqlState)) {
+        return false
+    }
+
     if(!TypeString(value.name)) {
         return false
     }
@@ -21,14 +29,6 @@ export default function Mysql(value : SqlError) : value is SqlError {
     }
 
     if(!TypeString(value.code)) {
-        return false
-    }
-
-    if(!TypeString(value.sqlMessage)) {
-        return false
-    }
-
-    if(!TypeString(value.sqlState)) {
         return false
     }
 
