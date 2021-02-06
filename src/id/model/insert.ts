@@ -1,7 +1,6 @@
 import {EntityManager} from "typeorm";
-import Id from "../id";
+import Id from "../required";
 import Undefined from "../validatable/undefined";
-import {Required} from "utility-types";
 import StandardInsert from "../../entity/insert";
 
 /**
@@ -11,10 +10,10 @@ import StandardInsert from "../../entity/insert";
  * @param entity
  * @constructor
  */
-export default function Insert<Entity extends Id>(
+export default function Insert<Entity extends Id<number|string>>(
     manager : EntityManager,
     entity : Entity
-) : Promise<Required<Entity, 'id'>> {
+) : Promise<Entity> {
 
     let validatable = Undefined(entity);
 
@@ -23,6 +22,6 @@ export default function Insert<Entity extends Id>(
         throw new Error(validatable.message)
     }
 
-    return StandardInsert<Entity>(manager, entity) as Promise<Required<Entity, 'id'>>
+    return StandardInsert<Entity>(manager, entity);
 
 }
