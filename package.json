@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-typeorm",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Typescript typeorm",
   "dependencies": {
     "@dikac/deployer": "^0.1.8",

@@ -1,5 +1,6 @@
 import { EntityManager } from "typeorm";
-import Id from "../required";
+import Id from "../id";
+import { Required } from "utility-types";
 /**
  * basic id insert operation
  *
@@ -7,4 +8,4 @@ import Id from "../required";
  * @param entity
  * @constructor
  */
-export default function Insert<Entity extends Id<number | string>>(manager: EntityManager, entity: Entity): Promise<Entity>;
+export default function Insert<Entity extends Id>(manager: EntityManager, entity: Entity): Promise<Required<Entity, 'id'>>;
