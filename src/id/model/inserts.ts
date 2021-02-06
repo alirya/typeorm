@@ -1,17 +1,17 @@
 import {EntityManager, ObjectType} from "typeorm";
 import Undefined from "../assert/undefined";
 import {Required} from "utility-types";
-import Id from "../id";
+import Id from "../required";
 import {QueryDeepPartialEntity} from "typeorm/query-builder/QueryPartialEntity";
 /**
  * basic insert operation
  *
  */
-export default function Inserts<Entity extends Id>(
+export default function Inserts<Entity extends Id<number|string>>(
     manager : EntityManager,
     entities : Entity[],
     entity ?: ObjectType<Entity>
-) : Promise<Required<Entity, 'id'>[]> {
+) : Promise<Entity[]> {
 
     if(entities.length === 0) {
 
@@ -30,7 +30,7 @@ export default function Inserts<Entity extends Id>(
         }
     }
 
-    return <Promise<Required<Entity, 'id'>[]>> manager.getRepository(<ObjectType<Entity>>entity).insert(<QueryDeepPartialEntity<Entity>[]>entities).then(
+    return manager.getRepository(<ObjectType<Entity>>entity).insert(<QueryDeepPartialEntity<Entity>>entities).then(
         ()=>entities
     );
 
