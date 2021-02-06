@@ -4,7 +4,7 @@
   "description": "Typescript typeorm",
   "dependencies": {
     "@dikac/deployer": "^0.1.8",
-    "@dikac/t-array": "^0.25.10",
+    "@dikac/t-array": "^0.25.11",
     "@dikac/t-class": "^0.2.2",
     "@dikac/t-code": "^0.2.2",
     "@dikac/t-enum": "^0.10.2",
@@ -18,7 +18,7 @@
     "@dikac/t-validatable": "^0.19.2",
     "@dikac/t-validator": "^0.17.2",
     "@dikac/t-value": "^0.14.5",
-    "ts-toolbelt": "^8.0.7",
+    "ts-toolbelt": "^8.4.0",
     "typeorm": "^0.2.30",
     "utility-types": "^3.10.0"
   },
