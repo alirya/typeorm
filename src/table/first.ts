@@ -6,7 +6,7 @@ export default function First<
     Constructor extends {new (...args: unknown[]): any} = {new (...args: unknown[]): any}
 >(builder : QueryBuilder<unknown>) : Table<Constructor> {
 
-    const alias = this.builder.expressionMap.aliases[0];
+    const alias = builder.expressionMap.aliases[0];
 
     if(alias) {
 
