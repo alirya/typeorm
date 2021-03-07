@@ -1,4 +1,4 @@
-import {EntityManager, UpdateResult} from "typeorm";
+import {EntityManager, ObjectType, UpdateResult} from "typeorm";
 import Updated from "./boolean/updated";
 import Unique from "@dikac/t-array/unique";
 import OmitUndefined from "@dikac/t-object/omit-undefined";
@@ -7,12 +7,13 @@ import NotEmpty from "@dikac/t-object/boolean/not-empty";
 import NotFound from "../throwable/not-found";
 import Name from "@dikac/t-object/string/name";
 import PrimaryKeyRequired from "./assert/not-undefined";
+import {QueryDeepPartialEntity} from "typeorm/query-builder/QueryPartialEntity";
 
 export default function Update<Entity extends object>(
     manager : EntityManager,
     data : Entity,
     key : keyof Entity,
-    entity ?: new()=>Entity,
+    entity ?: ObjectType<Entity>,
     detaches : (keyof Entity)[] = []
 ) : Promise<Entity> {
 
@@ -44,7 +45,7 @@ export default function Update<Entity extends object>(
 
     } else {
 
-        promise = manager.getRepository(entity || data.constructor).update(primary, data).then((result : UpdateResult)=>{
+        promise = manager.getRepository(entity || data.constructor).update(primary, data as QueryDeepPartialEntity<Entity>).then((result : UpdateResult)=>{
 
             if(!Updated(result, 1)) {
 

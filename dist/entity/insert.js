@@ -2,10 +2,10 @@
  * basic insert operation
  *
  * @param manager
+ * @param insert
  * @param entity
- * @constructor
  */
-export default function Insert(manager, entity) {
-    return manager.getRepository(entity.constructor).insert(entity).then(() => entity);
+export default function Insert(manager, insert, entity) {
+    return manager.getRepository(entity || insert.constructor).insert(insert).then(() => insert);
 }
 //# sourceMappingURL=insert.js.map
