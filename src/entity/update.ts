@@ -8,7 +8,6 @@ import NotFound from "../throwable/not-found";
 import Name from "@dikac/t-object/string/name";
 import PrimaryKeyRequired from "./assert/not-undefined";
 
-
 export default function Update<Entity extends object>(
     manager : EntityManager,
     entity : Entity,
@@ -20,16 +19,23 @@ export default function Update<Entity extends object>(
 
     OmitUndefined(entity);
 
-    let primary = entity[key];
-    detaches.push(key);
-    detaches = Unique(detaches);
+    const primary = entity[key];
 
-    let extract = new Extract(entity, detaches);
+    const detach : boolean = detaches.length !== 0;
 
-    let valid = NotEmpty(entity);
+    let extract : Extract<Entity, (keyof Entity)[]>|undefined;
+
+    if(detach) {
+
+        detaches.push(key);
+        detaches = Unique(detaches);
+
+        extract = new Extract(entity, detaches);
+    }
 
     let promise : Promise<Entity>;
 
+    const valid = NotEmpty(entity);
 
     if(!valid) {
 
@@ -49,8 +55,17 @@ export default function Update<Entity extends object>(
         });
     }
 
-    return promise.finally(()=>{
+    if(extract) {
 
-        Object.assign(entity, extract.return);
-    })
+        return promise.finally(()=>{
+
+            Object.assign(entity, (extract as Extract<Entity, (keyof Entity)[]>).return);
+        })
+
+    } else {
+
+        return promise;
+    }
+
+
 }

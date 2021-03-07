@@ -9,12 +9,16 @@ import PrimaryKeyRequired from "./assert/not-undefined";
 export default function Update(manager, entity, key, detaches = []) {
     PrimaryKeyRequired(entity, key);
     OmitUndefined(entity);
-    let primary = entity[key];
-    detaches.push(key);
-    detaches = Unique(detaches);
-    let extract = new Extract(entity, detaches);
-    let valid = NotEmpty(entity);
+    const primary = entity[key];
+    const detach = detaches.length !== 0;
+    let extract;
+    if (detach) {
+        detaches.push(key);
+        detaches = Unique(detaches);
+        extract = new Extract(entity, detaches);
+    }
     let promise;
+    const valid = NotEmpty(entity);
     if (!valid) {
         promise = Promise.resolve(entity);
     }
@@ -26,8 +30,13 @@ export default function Update(manager, entity, key, detaches = []) {
             return entity;
         });
     }
-    return promise.finally(() => {
-        Object.assign(entity, extract.return);
-    });
+    if (extract) {
+        return promise.finally(() => {
+            Object.assign(entity, extract.return);
+        });
+    }
+    else {
+        return promise;
+    }
 }
 //# sourceMappingURL=update.js.map
