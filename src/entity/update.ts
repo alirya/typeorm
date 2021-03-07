@@ -10,16 +10,17 @@ import PrimaryKeyRequired from "./assert/not-undefined";
 
 export default function Update<Entity extends object>(
     manager : EntityManager,
-    entity : Entity,
+    data : Entity,
     key : keyof Entity,
+    entity ?: new()=>Entity,
     detaches : (keyof Entity)[] = []
 ) : Promise<Entity> {
 
-    PrimaryKeyRequired<Entity, keyof Entity>(entity, key);
+    PrimaryKeyRequired<Entity, keyof Entity>(data, key);
 
-    OmitUndefined(entity);
+    OmitUndefined(data);
 
-    const primary = entity[key];
+    const primary = data[key];
 
     const detach : boolean = detaches.length !== 0;
 
@@ -30,27 +31,27 @@ export default function Update<Entity extends object>(
         detaches.push(key);
         detaches = Unique(detaches);
 
-        extract = new Extract(entity, detaches);
+        extract = new Extract(data, detaches);
     }
 
     let promise : Promise<Entity>;
 
-    const valid = NotEmpty(entity);
+    const valid = NotEmpty(data);
 
     if(!valid) {
 
-        promise = Promise.resolve(entity);
+        promise = Promise.resolve(data);
 
     } else {
 
-        promise = manager.getRepository(entity.constructor).update(primary, entity).then((result : UpdateResult)=>{
+        promise = manager.getRepository(entity || data.constructor).update(primary, data).then((result : UpdateResult)=>{
 
             if(!Updated(result, 1)) {
 
-                throw new NotFound(`${primary} is not found for ${Name(entity)}`);
+                throw new NotFound(`${primary} is not found for ${Name(data)}`);
             }
 
-            return entity;
+            return data;
 
         });
     }
@@ -59,7 +60,7 @@ export default function Update<Entity extends object>(
 
         return promise.finally(()=>{
 
-            Object.assign(entity, (extract as Extract<Entity, (keyof Entity)[]>).return);
+            Object.assign(data, (extract as Extract<Entity, (keyof Entity)[]>).return);
         })
 
     } else {
