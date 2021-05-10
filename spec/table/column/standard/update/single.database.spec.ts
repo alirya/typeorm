@@ -9,20 +9,19 @@ import {Connection as OrmConnection} from "typeorm";
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 
-
 let entities  = [GrandParentGenerate(), GrandParentGenerate()];
 let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 
 
 it('insert grand-parent', (done)=>{
 
-    return Inserts(connection.manager, entities, 'id').then(done);
+    Inserts(connection.manager, entities, 'id').then(done);
 });
 
 it('auto', (done)=>{

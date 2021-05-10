@@ -15,7 +15,7 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 

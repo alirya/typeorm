@@ -1,6 +1,6 @@
 import {SelectQueryBuilder} from "typeorm";
-import Positive from "@dikac/t-number/ensure/positive";
 import Pagination from "../pagination/pagination";
+import SkipTake from "../pagination/query/argument/skip-take";
 
 /**
  * @link https://github.com/typeorm/typeorm/issues/3354
@@ -14,16 +14,13 @@ export default function Paginate<Entity, Key extends keyof Entity>(
     paginate : Pagination,
 ) : SelectQueryBuilder<Entity> {
 
-    const page = Positive(paginate.page);
-    const limit = Positive(paginate.limit);
+    const skipTake = SkipTake(paginate);
 
-    query.take(limit);
+    query.take(skipTake.take);
 
-    let skip = (page - 1) * limit;
+    if(skipTake.skip > 0) {
 
-    if(skip > 0) {
-
-        query.skip(skip);
+        query.skip(skipTake.skip);
     }
 
     return query;

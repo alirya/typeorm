@@ -15,14 +15,14 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 
 
 it('insert grand-parent', (done)=>{
 
-    return Inserts(connection.manager, entities, 'id').then(done).catch(fail).then(done);
+    Inserts(connection.manager, entities, 'id').then(done).catch(fail).then(done);
 
 });
 
@@ -35,7 +35,7 @@ it('builder', (done)=>{
 
     In(standard, new Value(Entity(standard, GrandParent), 'id', ids));
 
-    return  standard.getMany().then(records=>{
+    standard.getMany().then(records=>{
 
         expect(records.length).toBe(entities.length);
 

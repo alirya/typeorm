@@ -20,7 +20,7 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 
@@ -32,6 +32,7 @@ it('insert grand-parent', (done)=>{
         parents  = [ParentGenerate(record.id), ParentGenerate(record.id)];
 
         return Inserts(connection.manager, parents, 'id').then(done);
+
     }).catch(fail);
 
 });

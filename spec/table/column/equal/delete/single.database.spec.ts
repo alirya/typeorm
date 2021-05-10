@@ -15,13 +15,13 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
+    Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
 
 });
 
 it('insert grand-parent', (done)=>{
 
-    return Inserts(connection.manager, entities, 'id').then(done).catch(fail).then(done);
+    Inserts(connection.manager, entities, 'id').then(done).catch(fail).then(done);
 });
 
 it('auto', (done)=>{

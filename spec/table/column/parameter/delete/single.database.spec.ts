@@ -15,13 +15,13 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 
 it('insert grand-parent', (done)=>{
 
-    return Inserts(connection.manager, entities, 'id').then(done).catch(fail);
+    Inserts(connection.manager, entities, 'id').then(done).catch(fail);
 });
 
 it('auto', (done)=>{
@@ -48,7 +48,6 @@ it('auto', (done)=>{
 
 
 it('alias', (done)=>{
-
 
     let repository = connection.getRepository(GrandParent);
 

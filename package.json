@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-typeorm",
-  "version": "0.5.10",
+  "version": "0.5.11",
   "description": "Typescript typeorm",
   "dependencies": {
     "@dikac/t-array": "^0.25.15",
@@ -13,7 +13,7 @@
     "@dikac/t-object": "^0.36.11",
     "@dikac/t-set": "^0.6.8",
     "@dikac/t-string": "^0.15.4",
-    "@dikac/t-undefined": "^0.4.3",
+    "@dikac/t-undefined": "^0.4.4",
     "@dikac/t-validatable": "^0.19.3",
     "@dikac/t-validator": "^0.17.5",
     "@dikac/t-value": "^0.14.6",

@@ -1,4 +1,4 @@
-import Positive from "@dikac/t-number/ensure/positive";
+import SkipTake from "../pagination/query/argument/skip-take";
 /**
  * @link https://github.com/typeorm/typeorm/issues/3354
  *
@@ -7,12 +7,10 @@ import Positive from "@dikac/t-number/ensure/positive";
  * @constructor
  */
 export default function Paginate(query, paginate) {
-    const page = Positive(paginate.page);
-    const limit = Positive(paginate.limit);
-    query.take(limit);
-    let skip = (page - 1) * limit;
-    if (skip > 0) {
-        query.skip(skip);
+    const skipTake = SkipTake(paginate);
+    query.take(skipTake.take);
+    if (skipTake.skip > 0) {
+        query.skip(skipTake.skip);
     }
     return query;
 }

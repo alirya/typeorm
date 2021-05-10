@@ -19,7 +19,7 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
+    Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
 
 });
 
@@ -40,12 +40,12 @@ it('ascending', (done)=>{
 
     Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.ASCENDING);
 
-   select.getOne().then(record=>{
+    select.getOne().then(record=>{
 
-       if(!record) {
+        if(!record) {
 
-           throw new Error('record should exist');
-       }
+            throw new Error('record should exist');
+        }
 
         ascending = record;
 
@@ -63,7 +63,7 @@ it('descending', (done)=>{
 
     Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.DESCENDING);
 
-    return select.getOne().then(record=>{
+    select.getOne().then(record=>{
 
         if(!record) {
 

@@ -16,13 +16,13 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    return Connection.then((con)=>connection = con).then(done).catch(fail);
+    Connection.then((con)=>connection = con).then(done).catch(fail);
 
 });
 
 it('insert grand-parent', (done)=>{
 
-    return Connection.then(function (connection) {
+    Connection.then(function (connection) {
 
         return Inserts(connection.manager, entities, 'id').then(done);
 

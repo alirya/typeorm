@@ -9,10 +9,9 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 it('entity alias', (done)=>{
 
-    return Connection.then(connection=>{
+    Connection.then(connection=>{
 
         let builder = connection.getRepository(Parent).createQueryBuilder('P').select();
-
 
         builder.leftJoinAndSelect(GrandParent, 'GF', 'P.parent = :GF.id');
         builder.leftJoinAndSelect(GrandParent, 'GM', 'P.mother = :GM.id');
