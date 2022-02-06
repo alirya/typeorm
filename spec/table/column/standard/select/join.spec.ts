@@ -2,7 +2,7 @@ import Connection from "../../../../connection";
 import Parent from "../../../../parent/parent";
 import Standard from "../../../../../dist/table/column/standard";
 import GrandParent from "../../../../grand-parent/grand-parent";
-import TableEntity from "../../../../../dist/table/entity";
+import TableEntity from "../../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -20,11 +20,11 @@ it('string', ()=>{
 
     let builder = connection.getRepository(Parent).createQueryBuilder();
 
-    let parent = new Standard(TableEntity(builder, Parent), 'parent');
+    let parent = Standard(TableEntity(builder, Parent), 'parent');
 
     builder.leftJoinAndSelect(parent.column, 'GP');
 
-    let grandPrent = new Standard(TableEntity(builder, GrandParent), 'name');
+    let grandPrent = Standard(TableEntity(builder, GrandParent), 'name');
 
     expect(parent.key).toBe('parent');
     expect(parent.column).toBe('Parent.parent');
@@ -38,11 +38,11 @@ it('entity alias', ()=>{
 
     let builder = connection.getRepository(Parent).createQueryBuilder('P').select();
 
-    let parent = new Standard(TableEntity(builder, Parent), 'parent');
+    let parent = Standard(TableEntity(builder, Parent), 'parent');
 
     builder.leftJoinAndSelect(parent.column, 'GP');
 
-    let grandPrent = new Standard(TableEntity(builder, GrandParent), 'name');
+    let grandPrent = Standard(TableEntity(builder, GrandParent), 'name');
 
     expect(parent.key).toBe('parent');
     expect(parent.column).toBe('P.parent');

@@ -5,7 +5,7 @@ import OrderEnum from "../../../../dist/builder/order/mode/mode";
 import Inserts from "../../../../dist/entity/array/inserts";
 import Order from "../../../../dist/table/column/order";
 import Value from "../../../../dist/table/column/standard";
-import Entity from "../../../../dist/table/entity";
+import Entity from "../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 
 
@@ -36,9 +36,9 @@ it('ascending', (done)=>{
 
     let select = query.select();
 
-    new Value(Entity(select, GrandParent), 'name');
+    Value(Entity(select, GrandParent), 'name');
 
-    Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.ASCENDING);
+    Order(query, Value(Entity(select, GrandParent), 'id'), OrderEnum.ASCENDING);
 
     select.getOne().then(record=>{
 
@@ -61,7 +61,7 @@ it('descending', (done)=>{
 
     Entity(select, GrandParent);
 
-    Order(query, new Value(Entity(select, GrandParent), 'id'), OrderEnum.DESCENDING);
+    Order(query, Value(Entity(select, GrandParent), 'id'), OrderEnum.DESCENDING);
 
     select.getOne().then(record=>{
 

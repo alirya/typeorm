@@ -2,7 +2,7 @@ import Table from "../table";
 import Infer from "../entity/infer";
 import BaseParameter from "@alirya/function/parameter/parameter";
 import Standard from "./standard";
-import Class from "../../../../class/dist/class";
+import Class from "@alirya/class/class";
 import Column from "./column";
 
 // export default class Parameter<

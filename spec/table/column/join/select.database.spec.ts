@@ -2,14 +2,15 @@ import GrandParent from "../../../grand-parent/grand-parent";
 import Connection from "../../../connection";
 import GrandParentGenerate from "../../../grand-parent/generate";
 import Insert from "../../../../dist/entity/insert";
-import Join from "../../../../dist/table/column/join";
+import Join from "../../../../dist/builder/left-join";
 import Parameter from "../../../../dist/table/column/parameter";
-import Entity from "../../../../dist/table/entity";
+import Entity from "../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 import Parent from "../../../parent/parent";
 import ParentGenerate from "../../../parent/generate";
-import Equal from "../../../../dist/table/column/equal";
+import Equal from "../../../../dist/builder/equal";
 import Standard from "../../../../dist/table/column/standard";
+import FindAlias from "../../../../dist/table/find-alias";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -41,13 +42,14 @@ it('manual', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder('GrandParent');
 
     query.leftJoinAndSelect('GrandParent.children',  'Parent');
+    let grandParentTable = Entity(query, GrandParent);
 
-    let parentColumnz = Join(query, Parameter(new Standard(Entity(query, GrandParent), 'children')),'P', 'left', true);
+    query = Join(query, Parameter(Standard(grandParentTable, 'children')),  'P', true);
 
-    expect(parentColumnz.entity).toBe(Parent);
+    const parentColumn = FindAlias(query, 'P');
+    expect(parentColumn.entity).toBe(Parent);
 
-    Equal(query, Parameter(new Standard(parentColumnz, 'id')), parent.id);
-
+    query = Equal(query, Parameter(Standard(parentColumn, 'id')), parent.id);
 
     query.getOne().then(record=>{
 

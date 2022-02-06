@@ -3,7 +3,7 @@ import Standard from "../../../../../dist/table/column/standard";
 import GrandParent from "../../../../grand-parent/grand-parent";
 import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
-import Entity from "../../../../../dist/table/entity";
+import Entity from "../../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -32,7 +32,7 @@ it('auto', (done)=>{
         name : entities[0].name + 'updated'
     });
 
-    let standard = new Standard(Entity(builder, GrandParent), 'id');
+    let standard = Standard(Entity(builder, GrandParent), 'id');
 
     builder.where(`${standard.column}=:parameter`, {parameter:entities[0].id});
 
@@ -66,7 +66,7 @@ it('alias', (done)=>{
         name : entities[1].name + 'updated'
     });
 
-    let standard = new Standard(Entity(builder, GrandParent), 'id');
+    let standard = Standard(Entity(builder, GrandParent), 'id');
 
     builder.where(`${standard.column}=:parameter`, {parameter:entities[1].id})
 

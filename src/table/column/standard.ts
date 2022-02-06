@@ -3,30 +3,53 @@ import Column from "./column";
 import Infer from "../entity/infer";
 import Class from "@alirya/class/class";
 
+//
+//
+// export default class Standard<
+//     TableType extends Table<Class<object, unknown[]>> = Table<Class<object, unknown[]>>,
+//     Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
+// > implements Column<TableType, Key> {
+//
+//     readonly column: string = '';
+//
+//     constructor(
+//         readonly table: TableType,
+//         readonly key : Key,
+//     ) {
+//
+//         if(table.aliased) {
+//
+//             this.column = `${table.alias}.${key}`;
+//
+//         } else {
+//
+//             this.column = key;
+//         }
+//
+//     }
+//
+// }
 
-
-export default class Standard<
+export default function Standard<
     TableType extends Table<Class<object, unknown[]>> = Table<Class<object, unknown[]>>,
     Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
-> implements Column<TableType, Key> {
+>(
+    table: TableType,
+    key : Key,
+) : Column<TableType, Key>  {
 
-    readonly column: string = '';
+    let column : string;
 
-    constructor(
-        readonly table: TableType,
-        readonly key : Key,
-    ) {
+    if(table.aliased) {
 
-        if(table.aliased) {
+        column = `${table.alias}.${key}`;
 
-            this.column = `${table.alias}.${key}`;
+    } else {
 
-        } else {
-
-            this.column = key;
-        }
-
+        column = key;
     }
+
+    return {table, key, column}
 
 }
 

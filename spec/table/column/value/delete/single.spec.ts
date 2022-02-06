@@ -1,7 +1,7 @@
 import Connection from "../../../../connection";
 import Parent from "../../../../parent/parent";
 import Value from "../../../../../dist/table/column/value";
-import Entity from "../../../../../dist/table/entity";
+import Entity from "../../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 import Parameter from "../../../../../dist/table/column/parameter";
 import Standard from "../../../../../dist/table/column/standard";
@@ -22,7 +22,7 @@ it('auto', ()=>{
 
     let builder = connection.getRepository(Parent).createQueryBuilder().delete();
 
-    let standard = Value(Parameter(new Standard(Entity(builder, Parent), 'parent')), 1);
+    let standard = Value(Parameter(Standard(Entity(builder, Parent), 'parent')), 1);
 
     expect(standard.key).toBe('parent');
     expect(standard.column).toBe('parent');
@@ -36,7 +36,7 @@ it('alias', ()=>{
 
     let builder = connection.getRepository(Parent).createQueryBuilder('P').delete();
 
-    let standard = Value(Parameter(new Standard(Entity(builder, Parent), 'parent')), 1);
+    let standard = Value(Parameter(Standard(Entity(builder, Parent), 'parent')), 1);
 
     expect(standard.key).toBe('parent');
     expect(standard.column).toBe('parent');

@@ -2,9 +2,9 @@ import GrandParent from "../../../grand-parent/grand-parent";
 import Connection from "../../../connection";
 import GrandParentGenerate from "../../../grand-parent/generate";
 import Inserts from "../../../../dist/entity/array/inserts";
-import In from "../../../../dist/table/column/in";
+import In from "../../../../dist/builder/in";
 import Value from "../../../../dist/table/column/value";
-import Entity from "../../../../dist/table/entity";
+import Entity from "../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 import Parameter from "../../../../dist/table/column/parameter";
 import Standard from "../../../../dist/table/column/standard";
@@ -35,7 +35,7 @@ it('builder', (done)=>{
 
     let ids = entities.map(entity=>entity.id);
 
-    In(standard, Value(Parameter(new Standard(Entity(standard, GrandParent), 'id')), ids));
+    In(standard, Value(Parameter(Standard(Entity(standard, GrandParent), 'id')), ids));
 
     standard.getMany().then(records=>{
 

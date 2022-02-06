@@ -7,9 +7,9 @@ import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
 import ParentGenerate from "../../../../parent/generate";
 import Insert from "../../../../../dist/id/model/insert";
-import TableEntity from "../../../../../dist/table/entity";
+import TableEntity from "../../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
-import Equal from "../../../../../dist/table/column/equal";
+import Equal from "../../../../../dist/builder/equal";
 import Standard from "../../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -42,11 +42,11 @@ it('auto', (done)=>{
 
     let builder = connection.getRepository(GrandParent).createQueryBuilder().select();
 
-    let stdGrandParent = Parameter(new Standard(TableEntity(builder, GrandParent), 'children'));
+    let stdGrandParent = Parameter(Standard(TableEntity(builder, GrandParent), 'children'));
 
     builder.leftJoin(stdGrandParent.column, 'P');
 
-    let parent = Value(Parameter(new Standard(TableEntity(builder, Parent), 'id')), parents[0].id);
+    let parent = Value(Parameter(Standard(TableEntity(builder, Parent), 'id')), parents[0].id);
 
     Equal(builder, parent);
 
@@ -75,7 +75,7 @@ it('alias', (done)=>{
 
     builder.leftJoin(Parent, 'P', 'GP.id = P.parent');
 
-    let parent = Value(Parameter(new Standard(TableEntity(builder, Parent), 'id')), parents[1].id);
+    let parent = Value(Parameter(Standard(TableEntity(builder, Parent), 'id')), parents[1].id);
 
     Equal(builder, parent);
 

@@ -1,13 +1,13 @@
 import Value from "@alirya/value/value";
-import Table from "../table";
+import Table from "../table/table";
 import Padding from "@alirya/string/affix/affix";
 import CricumfixParameter from "@alirya/string/circumfix-parameters";
 import {QueryBuilder, WhereExpression, WhereExpressionBuilder} from "typeorm";
-import Column from "./column";
+import Column from "../table/column/column";
 import BaseParameter from "@alirya/function/parameter/parameter";
 import CircumfixParameters from "@alirya/string/circumfix-parameters";
-import PrefixParameters from "../../../../string/dist/prefix-parameters";
-import SuffixParameters from "../../../../string/dist/suffix-parameters";
+import PrefixParameters from "@alirya/string/prefix-parameters";
+import SuffixParameters from "@alirya/string/suffix-parameters";
 import NotUndefined from "@alirya/undefined/boolean/not-undefined";
 
 export default function Like<ValueType extends unknown[],

@@ -2,7 +2,7 @@ import Class from "@alirya/class/class";
 import {QueryBuilder} from "typeorm";
 import Name from "@alirya/object/string/name";
 // import Sentences from "@alirya/string/message/sentences";
-import TemplateParameter from "../../../../string/dist/function/template-parameter";
+import TemplateParameter from "@alirya/string/function/template-parameter";
 
 type Argument = Record<'entity'|'alias'|'predicate'|'builder', string>;
 

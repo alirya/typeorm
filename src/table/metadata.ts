@@ -17,5 +17,5 @@ export default function Metadata<
 
     let constructor = <Constructor> EnsureClass(alias.target, (value)=>ThrowableClass(value, 'Alias.metadata'));
 
-    return new Standard(constructor, alias.name, aliased);
+    return Standard(constructor, alias.name, aliased);
 }

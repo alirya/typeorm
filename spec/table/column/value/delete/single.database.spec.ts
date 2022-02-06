@@ -3,7 +3,7 @@ import Value from "../../../../../dist/table/column/value";
 import GrandParent from "../../../../grand-parent/grand-parent";
 import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
-import Entity from "../../../../../dist/table/entity";
+import Entity from "../../../../../dist/table/find-entity";
 import {Connection as OrmConnection} from "typeorm";
 import Parameter from "../../../../../dist/table/column/parameter";
 import Standard from "../../../../../dist/table/column/standard";
@@ -33,7 +33,7 @@ it('auto', (done)=>{
 
     let builder = repository.createQueryBuilder().delete();
 
-    let standard = Value(Parameter(new Standard(Entity(builder, GrandParent), 'id')), entities[0].id);
+    let standard = Value(Parameter(Standard(Entity(builder, GrandParent), 'id')), entities[0].id);
 
     builder.where(`${standard.column}=:${standard.parameter}`, standard.argument);
 
@@ -57,7 +57,7 @@ it('alias', (done)=>{
 
     let builder = repository.createQueryBuilder('GP').delete();
 
-    let standard = Value(Parameter(new Standard(Entity(builder, GrandParent), 'id')), entities[1].id);
+    let standard = Value(Parameter(Standard(Entity(builder, GrandParent), 'id')), entities[1].id);
 
     builder.where(`${standard.column}=:${standard.parameter}`, standard.argument)
 

@@ -1,11 +1,11 @@
 import Connection from "../../../../connection";
 import Value from "../../../../../dist/table/column/value";
-import TableConnection from "../../../../../dist/table/entity";
+import TableConnection from "../../../../../dist/table/find-entity";
 import GrandParent from "../../../../grand-parent/grand-parent";
 import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
 import {Connection as OrmConnection} from "typeorm";
-import Equal from "../../../../../dist/table/column/equal";
+import Equal from "../../../../../dist/builder/equal";
 import Parameter from "../../../../../dist/table/column/parameter";
 import Standard from "../../../../../dist/table/column/standard";
 
@@ -33,7 +33,7 @@ it('auto', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder();
     let table = TableConnection(query, GrandParent);
 
-    let standard = Value(Parameter(new Standard(table, 'id')), <number>entities[0].id);
+    let standard = Value(Parameter(Standard(table, 'id')), <number>entities[0].id);
 
     Equal(query, standard);
 
@@ -60,7 +60,7 @@ it('alias', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
     let table = TableConnection(query, GrandParent);
 
-    let standard = Value(Parameter(new Standard(table, 'id')), entities[1].id);
+    let standard = Value(Parameter(Standard(table, 'id')), entities[1].id);
 
     Equal(query, standard);
 

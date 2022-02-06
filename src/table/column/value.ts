@@ -4,7 +4,7 @@ import ValueInterface from "@alirya/value/value";
 import ArgumentContainer from "@alirya/function/argument/argument";
 import Parameter from "./parameter";
 import Column from "./column";
-import BaseParameter from "../../../../function/dist/parameter/parameter";
+import BaseParameter from "@alirya/function/parameter/parameter";
 
 // export default class Value<
 //     ValueType,
