@@ -1,1 +1,0 @@
-{"version":3,"file":"required-readonly-standard.d.ts","sourceRoot":"","sources":["../../src/timestamp/required-readonly-standard.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,aAAa,CAAC;AACpC,OAAO,gBAAgB,MAAM,qBAAqB,CAAC;AAEnD,MAAM,CAAC,OAAO,OAAO,wBAAyB,YAAW,gBAAgB;IAGjE,OAAO,CAAC,MAAM;gBAAN,MAAM,EAAG,SAAS;IAI9B,IAAI,OAAO,IAAM,IAAI,CASpB;IAED,IAAI,OAAO,IAAM,IAAI,CAQpB;CAEJ"}

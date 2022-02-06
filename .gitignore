@@ -1,5 +1,6 @@
 .idea/
 dist-spec/
+dist/
 database.json
 dist/compiler-cache
 

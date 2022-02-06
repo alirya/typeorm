@@ -1,1 +1,0 @@
-{"version":3,"file":"postgres.d.ts","sourceRoot":"","sources":["../../../src/throwable/boolean/postgres.ts"],"names":[],"mappings":"AAGA,OAAO,aAAa,MAAM,aAAa,CAAC;AAGxC,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAC,KAAK,EAAG,GAAG,GAAI,KAAK,IAAI,aAAa,CAAA;AACtE,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAC,KAAK,EAAG,aAAa,GAAI,KAAK,IAAI,aAAa,CAAA"}

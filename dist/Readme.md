@@ -1,2 +1,0 @@
-# t-typeorm
-typescipt typeorm

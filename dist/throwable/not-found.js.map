@@ -1,1 +1,0 @@
-{"version":3,"file":"not-found.js","sourceRoot":"","sources":["../../src/throwable/not-found.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,mBAAmB,EAAC,MAAM,mCAAmC,CAAC;AAItE,MAAM,CAAC,OAAO,OAAO,QAAgB,SAAQ,mBAAmB;IAE5D,YACI,cAA4D,kBAAkB,EAC9E,WAAgB,IAAI,EACX,KAAc;QAGvB,KAAK,CAAC,WAAW,EAAE,QAAQ,CAAC,CAAC;QAHpB,UAAK,GAAL,KAAK,CAAS;IAI3B,CAAC;CACJ"}
