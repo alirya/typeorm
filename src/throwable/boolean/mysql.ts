@@ -1,8 +1,8 @@
-import TypeObject from "@dikac/t-object/boolean/object";
-import TypeString from "@dikac/t-string/boolean/string";
-import TypeNumber from "@dikac/t-number/boolean/number";
+import TypeObject from "@alirya/object/boolean/object";
+import TypeString from "@alirya/string/boolean/string";
+import TypeNumber from "@alirya/number/boolean/number";
 import SqlError from "../mysql";
-import TypeArray from "@dikac/t-array/boolean/array";
+import TypeArray from "@alirya/array/boolean/array";
 
 export default function Mysql(value : any) : value is SqlError
 export default function Mysql(value : SqlError) : value is SqlError

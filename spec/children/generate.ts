@@ -1,6 +1,6 @@
 import Children from "./children";
 import * as Faker from "faker";
-import StrictAssign from "@dikac/t-object/strict-assign";
+import StrictAssign from "@alirya/object/strict-assign";
 import Parent from "../parent/parent";
 
 export default function Generate(parent : number) {

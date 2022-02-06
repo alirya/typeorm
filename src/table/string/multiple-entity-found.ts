@@ -1,6 +1,6 @@
-import Class from "@dikac/t-class/class";
+import Class from "@alirya/class/class";
 import {QueryBuilder} from "typeorm";
-import Name from "@dikac/t-object/string/name";
+import Name from "@alirya/object/string/name";
 
 export default function MultipleEntityFound(
     entity : Class<object, any[]>,

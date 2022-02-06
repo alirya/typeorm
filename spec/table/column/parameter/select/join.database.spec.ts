@@ -8,6 +8,7 @@ import ParentGenerate from "../../../../parent/generate";
 import Insert from "../../../../../dist/id/model/insert";
 import TableEntity from "../../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
+import Standard from "../../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -41,11 +42,11 @@ it('auto', (done)=>{
 
     let builder = connection.getRepository(GrandParent).createQueryBuilder().select();
 
-    let stdGrandParent = new Parameter(TableEntity(builder, GrandParent), 'children');
+    let stdGrandParent = Parameter(Parameter(new Standard(TableEntity(builder, GrandParent), 'children')));
 
     builder.leftJoin(stdGrandParent.column, 'P');
 
-    let parent = new Parameter(TableEntity(builder, Parent), 'id');
+    let parent = Parameter(Parameter(new Standard(TableEntity(builder, Parent), 'id')));
 
     builder.where(`${parent.column}=:${parent.parameter}`, {[parent.parameter]:parents[0].id})
 
@@ -74,7 +75,7 @@ it('alias', (done)=>{
 
     builder.leftJoin(Parent, 'P', 'GP.id = P.parent');
 
-    let stdParent = new Parameter(TableEntity(builder, Parent), 'id');
+    let stdParent = Parameter(Parameter(new Standard(TableEntity(builder, Parent), 'id')));
 
     builder.where(`${stdParent.column}=:${stdParent.parameter}`, {[stdParent.parameter]:parents[1].id})
 

@@ -1,6 +1,6 @@
 import {Required} from "utility-types";
 import Id from "../id";
-import NotUndefinedType from "@dikac/t-undefined/boolean/not-undefined";
+import NotUndefinedType from "@alirya/undefined/boolean/not-undefined";
 
 /**
  * check if id is set

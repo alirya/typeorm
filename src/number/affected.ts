@@ -1,5 +1,5 @@
 import {UpdateResult} from "typeorm/query-builder/result/UpdateResult";
-import Number from "@dikac/t-number/boolean/number";
+import Number from "@alirya/number/boolean/number";
 
 export default function Affected(result : UpdateResult) : number {
 

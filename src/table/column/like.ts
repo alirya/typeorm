@@ -1,26 +1,31 @@
-import Value from "@dikac/t-value/value";
+import Value from "@alirya/value/value";
 import Table from "../table";
-import Padding from "@dikac/t-string/affix/affix";
-import AffixCharacter from "@dikac/t-string/affix-character";
-import {QueryBuilder, WhereExpression} from "typeorm";
+import Padding from "@alirya/string/affix/affix";
+import CricumfixParameter from "@alirya/string/circumfix-parameters";
+import {QueryBuilder, WhereExpression, WhereExpressionBuilder} from "typeorm";
 import Column from "./column";
-import BaseParameter from "@dikac/t-function/parameter/parameter";
+import BaseParameter from "@alirya/function/parameter/parameter";
+import CircumfixParameters from "@alirya/string/circumfix-parameters";
+import PrefixParameters from "../../../../string/dist/prefix-parameters";
+import SuffixParameters from "../../../../string/dist/suffix-parameters";
+import NotUndefined from "@alirya/undefined/boolean/not-undefined";
 
 export default function Like<ValueType extends unknown[],
     ColumnType extends Column<Table<any>> &
         BaseParameter &
         Value<string>
 >(
-    query : QueryBuilder<unknown> & WhereExpression,
+    query : QueryBuilder<unknown> & WhereExpressionBuilder,
     column : ColumnType,
     padding : Padding|undefined
 ) : ColumnType {
 
     let value = column.value;
 
-    if(padding) {
+    if(NotUndefined(padding)) {
 
-        value = AffixCharacter(value, '%', padding);
+        value = CircumfixParameters(value, PrefixParameters, SuffixParameters, padding, ['%']);
+
     }
 
     query.andWhere(`${column.column} LIKE :${column.parameter}`, {[column.parameter]:value});

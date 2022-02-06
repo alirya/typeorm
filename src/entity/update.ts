@@ -1,11 +1,11 @@
 import {EntityManager, ObjectType, UpdateResult} from "typeorm";
 import Updated from "./boolean/updated";
-import Unique from "@dikac/t-array/unique";
-import OmitUndefined from "@dikac/t-object/omit-undefined";
-import Extract from "@dikac/t-object/extract";
-import NotEmpty from "@dikac/t-object/boolean/not-empty";
+import Unique from "@alirya/array/unique-parameters";
+import OmitUndefined from "@alirya/object/omit-undefined";
+import Extract from "@alirya/object/extract";
+import NotEmpty from "@alirya/object/boolean/not-empty";
 import NotFound from "../throwable/not-found";
-import Name from "@dikac/t-object/string/name";
+import Name from "@alirya/object/string/name";
 import PrimaryKeyRequired from "./assert/not-undefined";
 import {QueryDeepPartialEntity} from "typeorm/query-builder/QueryPartialEntity";
 

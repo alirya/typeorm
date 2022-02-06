@@ -9,6 +9,7 @@ import {Connection as OrmConnection} from "typeorm";
 import Parent from "../../../parent/parent";
 import ParentGenerate from "../../../parent/generate";
 import Equal from "../../../../dist/table/column/equal";
+import Standard from "../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -41,11 +42,11 @@ it('manual', (done)=>{
 
     query.leftJoinAndSelect('GrandParent.children',  'Parent');
 
-    let parentColumnz = Join(query, new Parameter(Entity(query, GrandParent), 'children'),'P', 'left', true);
+    let parentColumnz = Join(query, Parameter(new Standard(Entity(query, GrandParent), 'children')),'P', 'left', true);
 
     expect(parentColumnz.entity).toBe(Parent);
 
-    Equal(query, new Parameter(parentColumnz, 'id'), parent.id);
+    Equal(query, Parameter(new Standard(parentColumnz, 'id')), parent.id);
 
 
     query.getOne().then(record=>{

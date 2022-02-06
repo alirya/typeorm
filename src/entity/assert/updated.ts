@@ -1,5 +1,5 @@
 import {UpdateResult as OrmUpdateResult} from "typeorm";
-import Callback from "@dikac/t-function/assert/callback";
+import Callback from "@alirya/function/assert/callback-parameters";
 import Guard from "../boolean/updated";
 import UndefinedError from "./throwable/undefined";
 

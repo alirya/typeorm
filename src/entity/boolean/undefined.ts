@@ -1,5 +1,5 @@
 import {Optional} from "utility-types";
-import UndefinedType from "@dikac/t-undefined/boolean/undefined";
+import UndefinedType from "@alirya/undefined/boolean/undefined";
 
 
 export default function NotUndefined<

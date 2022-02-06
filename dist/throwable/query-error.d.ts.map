@@ -1,0 +1,1 @@
+{"version":3,"file":"query-error.d.ts","sourceRoot":"","sources":["../../src/throwable/query-error.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,gBAAgB,EAAC,MAAM,SAAS,CAAC;AAEzC,MAAM,CAAC,OAAO,WAAW,UAAW,SAAQ,gBAAgB;IAExD,UAAU,EAAE,CAAC,IAAI,GAAC,MAAM,GAAC,MAAM,CAAC,EAAE,CAAC;IACnC,KAAK,EAAE,MAAM,CAAC;CAEjB"}

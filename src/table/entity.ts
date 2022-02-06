@@ -2,7 +2,7 @@ import Table from "./table";
 import {QueryBuilder} from "typeorm";
 import {Alias} from "typeorm/query-builder/Alias";
 import Metadata from "./metadata";
-import Class from "@dikac/t-class/class";
+import Class from "@alirya/class/class";
 import MultipleEntityFound from "./string/multiple-entity-found";
 import EntityNotFound from "./string/entity-not-found";
 

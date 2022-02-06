@@ -1,7 +1,7 @@
 import Table from "../table";
 import Column from "./column";
 import Infer from "../entity/infer";
-import Class from "@dikac/t-class/class";
+import Class from "@alirya/class/class";
 
 
 

@@ -1,6 +1,6 @@
 import Id from "./id";
 import RequiredReadonly from "./required-readonly";
-import EnsureString from "@dikac/t-string/ensure/string";
+import EnsureString from "@alirya/string/ensure/string";
 
 export default class RequiredReadonlyNumber implements RequiredReadonly<string> {
 

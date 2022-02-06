@@ -6,6 +6,8 @@ import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
 import {Connection as OrmConnection} from "typeorm";
 import Equal from "../../../../../dist/table/column/equal";
+import Parameter from "../../../../../dist/table/column/parameter";
+import Standard from "../../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -31,7 +33,7 @@ it('auto', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder();
     let table = TableConnection(query, GrandParent);
 
-    let standard = new Value(table, 'id', <number>entities[0].id);
+    let standard = Value(Parameter(new Standard(table, 'id')), <number>entities[0].id);
 
     Equal(query, standard);
 
@@ -58,7 +60,7 @@ it('alias', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
     let table = TableConnection(query, GrandParent);
 
-    let standard = new Value(table, 'id', entities[1].id);
+    let standard = Value(Parameter(new Standard(table, 'id')), entities[1].id);
 
     Equal(query, standard);
 

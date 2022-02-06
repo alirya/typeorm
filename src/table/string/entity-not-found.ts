@@ -1,7 +1,14 @@
-import Class from "@dikac/t-class/class";
+import Class from "@alirya/class/class";
 import {QueryBuilder} from "typeorm";
-import Name from "@dikac/t-object/string/name";
-import Sentences from "@dikac/t-string/message/sentences";
+import Name from "@alirya/object/string/name";
+import TemplateParameter from "../../../../string/dist/function/template-parameter";
+
+type Argument = Record<'entity'|'alias'|'predicate'|'builder', string>;
+
+const template = TemplateParameter<Argument>({
+    string : 'entity {entity} {alias} {predicate} found in {builder}.',
+    callback : (string)=>string.replace(/ +/g, ' ')
+})
 
 export default function EntityNotFound(
     valid : boolean,
@@ -10,18 +17,32 @@ export default function EntityNotFound(
     alias ?: string
 ) {
 
-    let sentence = new Sentences(valid);
-    sentence.subject.push('entity', `"${Name(entity)}"`);
+    const argument : Partial<Argument> = {
+        entity : `"${Name(entity)}"`,
+        predicate : valid ? '' : 'not',
+        builder : `"${Name(builder)}"`
+    };
 
     if(alias) {
 
-        sentence.subject.push('with alias', alias);
+        argument.alias = `with alias ${alias}}`;
     }
 
-    sentence.accept = [];
-    sentence.reject = ['not'];
+    return template(argument);
 
-    sentence.expect.push('found in', `"${Name(builder)}"`);
-
-    return sentence.message;
+    //
+    // let sentence = new Sentences(valid);
+    // sentence.subject.push('entity', `"${Name(entity)}"`);
+    //
+    // if(alias) {
+    //
+    //     sentence.subject.push('with alias', alias);
+    // }
+    //
+    // sentence.accept = [];
+    // sentence.reject = ['not'];
+    //
+    // sentence.expect.push('found in', `"${Name(builder)}"`);
+    //
+    // return sentence.message;
 }

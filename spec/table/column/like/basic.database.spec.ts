@@ -3,10 +3,12 @@ import Connection from "../../../connection";
 import GrandParentGenerate from "../../../grand-parent/generate";
 import Insert from "../../../../dist/entity/insert";
 import Like from "../../../../dist/table/column/like";
-import Padding from "@dikac/t-string/affix/affix";
+import Padding from "@alirya/string/affix/affix";
 import Value from "../../../../dist/table/column/value";
 import Entity from "../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
+import Standard from "../../../../dist/table/column/standard";
+import Parameter from "../../../../dist/table/column/parameter";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -30,8 +32,8 @@ it('manual', (done)=>{
     let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
 
     let names = entity.name.split(' ');
-
-    Like(query, new Value(Entity(query, GrandParent), 'name', names[0]), Padding.CIRCUMFIX);
+    Value(Parameter(new Standard(Entity(query, GrandParent), 'name')), names[0])
+    Like(query, Value(Parameter(new Standard(Entity(query, GrandParent), 'name')), names[0]), Padding.CIRCUMFIX);
 
     query.getMany().then(records=>{
 

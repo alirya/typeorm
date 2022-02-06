@@ -1,9 +1,11 @@
 import Table from "../table";
 import {QueryBuilder, WhereExpression} from "typeorm";
-import ArgumentContainer from "@dikac/t-function/argument/argument";
+import ArgumentContainer from "@alirya/function/argument/argument";
 import Column from "./column";
-import BaseParameter from "@dikac/t-function/parameter/parameter";
+import BaseParameter from "@alirya/function/parameter/parameter";
 import Value from "./value";
+import Standard from "./standard";
+import Parameter from "./parameter";
 
 
 export default function Equal<
@@ -31,7 +33,7 @@ export default function Equal<
 
     if(column.argument === undefined) {
 
-        let argument = new Value(column.table, column.key, value, column.parameter);
+        let argument = Value(Parameter(new Standard(column.table, column.key), column.parameter), value);
         Equal(query, argument);
         return column;
 

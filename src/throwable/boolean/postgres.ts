@@ -1,8 +1,8 @@
-import TypeObject from "@dikac/t-object/boolean/object";
-import TypeString from "@dikac/t-string/boolean/string";
-import TypeNumber from "@dikac/t-number/boolean/number";
+import TypeObject from "@alirya/object/boolean/object";
+import TypeString from "@alirya/string/boolean/string";
+import TypeNumber from "@alirya/number/boolean/number";
 import PostgresError from "../postgres";
-import TypeArray from "@dikac/t-array/boolean/array";
+import TypeArray from "@alirya/array/boolean/array";
 
 export default function Postgres(value : any) : value is PostgresError
 export default function Postgres(value : PostgresError) : value is PostgresError

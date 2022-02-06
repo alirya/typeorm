@@ -1,7 +1,7 @@
 import Id from "../../id";
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Name from "@dikac/t-object/string/name";
+import Value from "@alirya/value/value";
+import Validatable from "@alirya/validatable/validatable";
+import Name from "@alirya/object/string/name";
 
 export default function IdUndefined(object : Value<Id> & Validatable) {
 

@@ -1,5 +1,5 @@
 import Table from "./table";
-import Class from "@dikac/t-class/class";
+import Class from "@alirya/class/class";
 
 /**
  * basic {@see Table} implementation

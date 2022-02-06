@@ -1,11 +1,11 @@
-import ValidatorInterface from "@dikac/t-validator/validator";
-import NumberStandard from "@dikac/t-number/validator/number-standard";
-import PositiveStandard from "@dikac/t-number/validator/positive-standard";
-import ValuePartial from "@dikac/t-array/validator/value-partial";
-import And from "@dikac/t-array/validatable/and";
-import InvalidMessageMap from "@dikac/t-array/message/message/list/invalid";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
+import ValidatorInterface from "@alirya/validator/validator";
+import NumberStandard from "@alirya/number/validator/number-parameters";
+import PositiveStandard from "@alirya/number/validator/positive-parameters";
+import ValuePartial from "@alirya/array/validator/value-partial-parameters";
+import And from "@alirya/array/validatable/and-parameters";
+import InvalidMessageMap from "@alirya/array/message/message/list/invalid";
+import Validatable from "@alirya/validatable/validatable";
+import Message from "@alirya/message/message";
 
 export default function Integer(messages : (results : (Message & Validatable)[])=>any = InvalidMessageMap ) : ValidatorInterface<any, number> {
 

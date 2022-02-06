@@ -6,6 +6,8 @@ import In from "../../../../dist/table/column/in";
 import Value from "../../../../dist/table/column/value";
 import Entity from "../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
+import Parameter from "../../../../dist/table/column/parameter";
+import Standard from "../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -33,7 +35,7 @@ it('builder', (done)=>{
 
     let ids = entities.map(entity=>entity.id);
 
-    In(standard, new Value(Entity(standard, GrandParent), 'id', ids));
+    In(standard, Value(Parameter(new Standard(Entity(standard, GrandParent), 'id')), ids));
 
     standard.getMany().then(records=>{
 

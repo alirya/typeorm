@@ -9,6 +9,7 @@ import {Connection as OrmConnection} from "typeorm";
 import Parent from "../../../parent/parent";
 import ParentGenerate from "../../../parent/generate";
 import Equal from "../../../../dist/table/column/equal";
+import Standard from "../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -39,9 +40,9 @@ it('manual', (done)=>{
 
     let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
 
-    let parentColumn = Join(query, new Parameter(Entity(query, GrandParent), 'children'),'parent');
+    let parentColumn = Join(query, Parameter(new Standard(Entity(query, GrandParent), 'children')),'parent');
 
-    Equal(query, new Parameter(parentColumn, 'id'), parent.id);
+    Equal(query, Parameter(new Standard(parentColumn, 'id')), parent.id);
 
     query.getOne().then(record=>{
 

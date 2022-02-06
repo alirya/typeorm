@@ -1,10 +1,10 @@
-import ListAll from "@dikac/t-array/validator/list-all";
-import AndList from "@dikac/t-array/validatable/and";
-import InvalidMessageList from "@dikac/t-array/message/message/list/invalid";
+import ListAll from "@alirya/array/validator/list-all-parameters";
+import AndList from "@alirya/array/validatable/and-parameters";
+import InvalidMessageList from "@alirya/array/message/message/list/invalid";
 import Integer from "../../validator/integer";
-import ValuePartial from "@dikac/t-array/validator/value-partial";
-import ArrayStandard from "@dikac/t-array/validator/array-standard";
-import And from "@dikac/t-array/validatable/and";
+import ValuePartial from "@alirya/array/validator/value-partial-parameters";
+import ArrayStandard from "@alirya/array/validator/array-parameters";
+import And from "@alirya/array/validatable/and-parameters";
 
 export default function IntegerIds() {
 

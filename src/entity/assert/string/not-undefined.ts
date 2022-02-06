@@ -1,4 +1,4 @@
-import Name from "@dikac/t-object/string/name";
+import Name from "@alirya/object/string/name";
 
 
 export default function NotUndefined(

@@ -3,6 +3,8 @@ import Argument from "../../../dist/table/column/value";
 import Entity from "../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
 import Connection from "../../connection";
+import Parameter from "../../../dist/table/column/parameter";
+import Standard from "../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -18,7 +20,7 @@ it('basic', ()=>{
 
     let query = connection.getRepository(GrandParent).createQueryBuilder();
     let column  = Entity(query, GrandParent);
-    let build = new Argument(column, 'id', 5);
+    let build = Argument(Parameter(new Standard(column, 'id')), 5);
 
     expect(build.column).toBe('GrandParent.id');
     expect(build.parameter).toBe('GrandParentid');

@@ -5,6 +5,7 @@ import GrandParentGenerate from "../../../../grand-parent/generate";
 import Inserts from "../../../../../dist/entity/array/inserts";
 import Entity from "../../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
+import Standard from "../../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -33,7 +34,7 @@ it('auto', (done)=>{
         name : entities[0].name + 'updated'
     });
 
-    let standard = new Parameter(Entity(builder, GrandParent), 'id');
+    let standard = Parameter(new Standard(Entity(builder, GrandParent), 'id'));
 
     builder.where(`${standard.column}=:${standard.parameter}`, {[standard.parameter]:entities[0].id});
 
@@ -67,7 +68,7 @@ it('alias', (done)=>{
         name : entities[1].name + 'updated'
     });
 
-    let standard = new Parameter(Entity(builder, GrandParent), 'id');
+    let standard = Parameter(new Standard(Entity(builder, GrandParent), 'id'));
 
     builder.where(`${standard.column}=:${standard.parameter}`, {[standard.parameter]:entities[1].id})
 

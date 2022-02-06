@@ -1,4 +1,4 @@
-import New from "@dikac/t-function/new";
+import New from "@alirya/function/new";
 import UndefinedMessage from "../string/undefined";
 
 export default function Undefined(

@@ -1,27 +1,49 @@
 import Table from "../table";
 import Infer from "../entity/infer";
-import ValueInterface from "@dikac/t-value/value";
-import ArgumentContainer from "@dikac/t-function/argument/argument";
+import ValueInterface from "@alirya/value/value";
+import ArgumentContainer from "@alirya/function/argument/argument";
 import Parameter from "./parameter";
+import Column from "./column";
+import BaseParameter from "../../../../function/dist/parameter/parameter";
 
-export default class Value<
+// export default class Value<
+//     ValueType,
+//     TableType extends Table = Table,
+//     Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
+// > extends Parameter<TableType, Key> implements ValueInterface<ValueType>, Readonly<ArgumentContainer<Record<string, ValueType>>> {
+//
+//     constructor(
+//         table: TableType,
+//         key : Key,
+//         public value : ValueType,
+//         parameter ?: string
+//     ) {
+//         super(table, key, parameter);
+//     }
+//
+//     get argument() : Record<string, ValueType> {
+//
+//         return {[this.parameter]:this.value}
+//     }
+//
+// }
+
+
+export default function Value<
     ValueType,
     TableType extends Table = Table,
     Key extends (keyof InstanceType<Infer<TableType>>) & string = (keyof InstanceType<Infer<TableType>>) & string
-> extends Parameter<TableType, Key> implements ValueInterface<ValueType>, Readonly<ArgumentContainer<Record<string, ValueType>>> {
+>(
+    column : Column<TableType, Key> & BaseParameter,
+    value : ValueType
+) : Column<TableType, Key> & BaseParameter & Readonly<ArgumentContainer<Record<string, ValueType>>> & ValueInterface<ValueType> {
 
-    constructor(
-        table: TableType,
-        key : Key,
-        public value : ValueType,
-        parameter ?: string
-    ) {
-        super(table, key, parameter);
-    }
+    const argument : Readonly<ArgumentContainer<Record<string, ValueType>>> & ValueInterface<ValueType> = {
+        argument : {
+            [column.parameter]: value
+        },
+        value
+    };
 
-    get argument() : Record<string, ValueType> {
-
-        return {[this.parameter]:this.value}
-    }
-
+    return Object.assign(argument, column);
 }

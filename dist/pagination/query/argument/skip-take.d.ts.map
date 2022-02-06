@@ -1,0 +1,1 @@
+{"version":3,"file":"skip-take.d.ts","sourceRoot":"","sources":["../../../../src/pagination/query/argument/skip-take.ts"],"names":[],"mappings":"AAAA,OAAO,UAAU,MAAM,kBAAkB,CAAC;AAG1C,MAAM,CAAC,OAAO,UAAU,QAAQ,CAAC,UAAU,EAAE,UAAU,GAAI;IAAC,IAAI,EAAC,MAAM,CAAC;IAAC,IAAI,EAAC,MAAM,CAAA;CAAC,CAcpF"}

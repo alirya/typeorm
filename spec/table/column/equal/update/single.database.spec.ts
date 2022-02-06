@@ -6,6 +6,8 @@ import Inserts from "../../../../../dist/entity/array/inserts";
 import Entity from "../../../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
 import Equal from "../../../../../dist/table/column/equal";
+import Parameter from "../../../../../dist/table/column/parameter";
+import Standard from "../../../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -30,7 +32,7 @@ it('auto', (done)=>{
         name : entities[0].name + 'updated'
     });
 
-    let standard = new Value(Entity(builder, GrandParent), 'id', entities[0].id);
+    let standard = Value(Parameter(new Standard(Entity(builder, GrandParent), 'id')), entities[0].id);
 
     Equal(builder, standard);
 
@@ -38,7 +40,7 @@ it('auto', (done)=>{
 
         let select =  repository.createQueryBuilder().select();
 
-        let standard = new Value(Entity(select, GrandParent), 'id', entities[0].id);
+        let standard = Value(Parameter(new Standard(Entity(select, GrandParent), 'id')), entities[0].id);
 
         Equal(select, standard);
 
@@ -70,7 +72,7 @@ it('alias', (done)=>{
         name : entities[1].name + 'updated'
     });
 
-    let standard = new Value(Entity(builder, GrandParent), 'id', entities[1].id);
+    let standard = Value(Parameter(new Standard(Entity(builder, GrandParent), 'id')), entities[1].id);
 
     Equal(builder, standard);
 
@@ -78,7 +80,7 @@ it('alias', (done)=>{
 
         let select =  repository.createQueryBuilder('GP');
 
-        let standard = new Value(Entity(select, GrandParent), 'id', entities[1].id);
+        let standard = Value(Parameter(new Standard(Entity(select, GrandParent), 'id')), entities[1].id);
 
         Equal(select, standard);
 

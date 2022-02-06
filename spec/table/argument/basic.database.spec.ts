@@ -3,8 +3,10 @@ import GrandParentGenerate from "../../grand-parent/generate";
 import Insert from "../../../dist/entity/insert";
 import GrandParent from "../../grand-parent/grand-parent";
 import Argument from "../../../dist/table/column/value";
+import Parameter from "../../../dist/table/column/parameter";
 import Entity from "../../../dist/table/entity";
 import {Connection as OrmConnection} from "typeorm";
+import Standard from "../../../dist/table/column/standard";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -29,7 +31,7 @@ it('parent', (done)=>{
         let query = connection.getRepository(GrandParent).createQueryBuilder();
         let table = Entity(query, GrandParent);
 
-        let build = new Argument(table, 'id', entity.id);
+        let build = Argument(Parameter(new Standard(table, 'id')), entity.id);
 
         query.andWhere(`${build.column}=:${build.parameter}`, build.argument);
 

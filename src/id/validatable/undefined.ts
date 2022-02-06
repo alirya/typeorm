@@ -1,10 +1,10 @@
 import Id from "../id";
-import IsUndefined from "@dikac/t-undefined/boolean/undefined";
+import IsUndefined from "@alirya/undefined/boolean/undefined";
 import NoIdString from "./string/id-undefined";
-import Callback from "@dikac/t-validator/validatable/callback-function";
-import Value from "@dikac/t-value/value";
-import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
+import Callback from "@alirya/validator/validatable/callback-function-parameters";
+import Value from "@alirya/value/value";
+import Validatable from "@alirya/validatable/validatable";
+import Message from "@alirya/message/message";
 import {Required} from "utility-types";
 
 type Return<Entity extends Id> =
@@ -13,7 +13,5 @@ type Return<Entity extends Id> =
 
 export default function Undefined<Entity extends Id>(id : Entity) : Return<Entity> {
 
-    let callback = <Return<Entity>> Callback<Entity>(id, (o)=>IsUndefined(o.id), NoIdString);
-
-    return callback;
+    return <Return<Entity>> Callback<Entity, Entity>(id, (o)=>IsUndefined(o.id), NoIdString);
 }

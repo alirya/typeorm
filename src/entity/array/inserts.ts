@@ -1,6 +1,6 @@
 import {Connection, EntityManager, ObjectType} from "typeorm";
 import {Required} from "utility-types";
-import Undefined from "@dikac/t-undefined/assert/undefined";
+import Undefined from "@alirya/undefined/assert/undefined";
 /**
  * basic bulk insert operation
  *
