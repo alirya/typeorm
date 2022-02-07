@@ -36,7 +36,7 @@ export default function Equal<
 
     if(column.argument === undefined) {
 
-        let argument = Value(Parameter(new Standard(column.table, column.key), column.parameter), value);
+        let argument = Value(Parameter(Standard(column.table, column.key), column.parameter), value);
         return  Equal(query, argument);
     }
 

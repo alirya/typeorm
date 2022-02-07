@@ -27,7 +27,7 @@ export default class Value<
 
         this.argument = MapKeyCallback(value, (key : keyof InstanceType<Infer<Entity>> & string)=>{
 
-            let standard = new Standard<Entity>(table, key);
+            let standard = Standard<Entity>(table, key);
 
             this.key.push(key);
             this.column.push(standard.column);
