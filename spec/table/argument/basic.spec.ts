@@ -1,6 +1,6 @@
 import GrandParent from '../../grand-parent/grand-parent';
 import Argument from '../../../dist/table/column/value';
-import Entity from '../../../dist/table/find-entity';
+import Entity from '../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Connection from '../../connection';
 import Parameter from '../../../dist/table/column/parameter';

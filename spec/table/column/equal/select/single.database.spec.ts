@@ -1,6 +1,6 @@
 import Connection from '../../../../connection';
 import Value from '../../../../../dist/table/column/value';
-import TableConnection from '../../../../../dist/table/find-entity';
+import TableConnection from '../../../../../dist/table/entity';
 import GrandParent from '../../../../grand-parent/grand-parent';
 import GrandParentGenerate from '../../../../grand-parent/generate';
 import Inserts from '../../../../../dist/entity/array/inserts';

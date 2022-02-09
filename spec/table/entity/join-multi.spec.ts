@@ -2,7 +2,7 @@ import Connection from '../../connection';
 import Parent from '../../parent/parent';
 import Standard from '../../../dist/table/column/standard';
 import GrandParent from '../../grand-parent/grand-parent';
-import TableEntity from '../../../dist/table/find-entity';
+import TableEntity from '../../../dist/table/entity';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -6,7 +6,15 @@ import Class from '@alirya/class/class';
 import MultipleEntityFound from './string/multiple-entity-found';
 import EntityNotFound from './string/entity-not-found';
 
-export default function FindEntity<
+/**
+ * find Entity with given {@param entity} inside {@param builder}
+ *
+ * @param builder
+ *
+ * @param entity
+ * and entity to be entity, if provided
+ */
+export default function Entity<
     Constructor extends Class<object, unknown[]> = Class<object, unknown[]>
 >(
     builder : QueryBuilder<unknown>,

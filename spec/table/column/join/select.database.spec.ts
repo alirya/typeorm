@@ -4,13 +4,13 @@ import GrandParentGenerate from '../../../grand-parent/generate';
 import Insert from '../../../../dist/entity/insert';
 import Join from '../../../../dist/builder/left-join';
 import Parameter from '../../../../dist/table/column/parameter';
-import Entity from '../../../../dist/table/find-entity';
+import Entity from '../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Parent from '../../../parent/parent';
 import ParentGenerate from '../../../parent/generate';
 import Equal from '../../../../dist/builder/equal';
 import Standard from '../../../../dist/table/column/standard';
-import FindAlias from '../../../../dist/table/find-alias';
+import FindAlias from '../../../../dist/table/alias';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

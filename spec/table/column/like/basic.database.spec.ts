@@ -5,7 +5,7 @@ import Insert from '../../../../dist/entity/insert';
 import Like from '../../../../dist/builder/like';
 import Padding from '@alirya/string/affix/affix';
 import Value from '../../../../dist/table/column/value';
-import Entity from '../../../../dist/table/find-entity';
+import Entity from '../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Standard from '../../../../dist/table/column/standard';
 import Parameter from '../../../../dist/table/column/parameter';

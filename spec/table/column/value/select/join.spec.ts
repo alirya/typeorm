@@ -2,7 +2,7 @@ import Connection from '../../../../connection';
 import Parent from '../../../../parent/parent';
 import Value from '../../../../../dist/table/column/value';
 import GrandParent from '../../../../grand-parent/grand-parent';
-import TableEntity from '../../../../../dist/table/find-entity';
+import TableEntity from '../../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Parameter from '../../../../../dist/table/column/parameter';
 import Standard from '../../../../../dist/table/column/standard';

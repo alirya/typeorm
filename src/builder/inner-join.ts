@@ -5,7 +5,7 @@ import {SelectQueryBuilder} from 'typeorm';
 import {List} from 'ts-toolbelt';
 import Infer from '../table/column/table/infer';
 import KeyInfer from '../table/column/key/infer';
-import FindAlias from '../table/find-alias';
+import Alias from '../table/alias';
 
 /**
  * @private

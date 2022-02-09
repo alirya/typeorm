@@ -3,7 +3,7 @@ import Parameter from '../../../../../dist/table/column/parameter';
 import GrandParent from '../../../../grand-parent/grand-parent';
 import GrandParentGenerate from '../../../../grand-parent/generate';
 import Inserts from '../../../../../dist/entity/array/inserts';
-import Entity from '../../../../../dist/table/find-entity';
+import Entity from '../../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Standard from '../../../../../dist/table/column/standard';
 

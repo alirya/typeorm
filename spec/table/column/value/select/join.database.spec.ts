@@ -7,7 +7,7 @@ import GrandParentGenerate from '../../../../grand-parent/generate';
 import Inserts from '../../../../../dist/entity/array/inserts';
 import ParentGenerate from '../../../../parent/generate';
 import Insert from '../../../../../dist/id/model/insert';
-import TableEntity from '../../../../../dist/table/find-entity';
+import TableEntity from '../../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Standard from '../../../../../dist/table/column/standard';
 

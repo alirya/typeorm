@@ -1,7 +1,7 @@
 import Connection from '../../../../connection';
 import Parent from '../../../../parent/parent';
 import Parameter from '../../../../../dist/table/column/parameter';
-import Entity from '../../../../../dist/table/find-entity';
+import Entity from '../../../../../dist/table/entity';
 import {Connection as OrmConnection} from 'typeorm';
 import Standard from '../../../../../dist/table/column/standard';
 
