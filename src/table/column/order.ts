@@ -1,8 +1,8 @@
-import Table from "../table";
-import OrderEnum from "../../builder/order/mode/mode";
-import Null from "../../builder/order/null/null";
-import {SelectQueryBuilder} from "typeorm";
-import Column from "./column";
+import Table from '../table';
+import OrderEnum from '../../builder/order/mode/mode';
+import Null from '../../builder/order/null/null';
+import {SelectQueryBuilder} from 'typeorm';
+import Column from './column';
 
 
 export default function Order<

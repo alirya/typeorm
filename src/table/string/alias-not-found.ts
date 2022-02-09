@@ -1,15 +1,15 @@
-import Class from "@alirya/class/class";
-import {QueryBuilder} from "typeorm";
-import Name from "@alirya/object/string/name";
+import Class from '@alirya/class/class';
+import {QueryBuilder} from 'typeorm';
+import Name from '@alirya/object/string/name';
 // import Sentences from "@alirya/string/message/sentences";
-import TemplateParameter from "@alirya/string/function/template-parameter";
+import TemplateParameter from '@alirya/string/function/template-parameter';
 
 type Argument = Record<'entity'|'alias'|'predicate'|'builder', string>;
 
 const template = TemplateParameter<Argument>({
     string : 'alias {alias} {predicate} found in {builder}.',
     callback : (string)=>string.replace(/ +/g, ' ')
-})
+});
 
 export default function AliasNotFound(
     valid : boolean,

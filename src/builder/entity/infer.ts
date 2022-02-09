@@ -1,4 +1,4 @@
-import {QueryBuilder} from "typeorm";
+import {QueryBuilder} from 'typeorm';
 
 type Infer<Type> = Type extends QueryBuilder<infer As> ? As : never;
 

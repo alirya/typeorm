@@ -1,11 +1,11 @@
-import TypeObject from "@alirya/object/boolean/object";
-import TypeString from "@alirya/string/boolean/string";
-import TypeNumber from "@alirya/number/boolean/number";
-import PostgresError from "../postgres";
-import TypeArray from "@alirya/array/boolean/array";
+import TypeObject from '@alirya/object/boolean/object';
+import TypeString from '@alirya/string/boolean/string';
+import TypeNumber from '@alirya/number/boolean/number';
+import PostgresError from '../postgres';
+import TypeArray from '@alirya/array/boolean/array';
 
-export default function Postgres(value : any) : value is PostgresError
-export default function Postgres(value : PostgresError) : value is PostgresError
+export default function Postgres(value : any) : value is PostgresError;
+export default function Postgres(value : PostgresError) : value is PostgresError;
 export default function Postgres(value : PostgresError) : value is PostgresError {
 
     if(!TypeObject(value)) {
@@ -13,60 +13,60 @@ export default function Postgres(value : PostgresError) : value is PostgresError
     }
 
     if(!TypeString(value.table)) {
-        return false
+        return false;
     }
 
 
     if(!TypeString(value.line)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.routine)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.detail)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.constraint)) {
-        return false
+        return false;
     }
 
     if(!TypeNumber(value.length)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.name)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.message)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.code)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.schema)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.severity)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.file)) {
-        return false
+        return false;
     }
 
     if(!TypeString(value.query)) {
-        return false
+        return false;
     }
 
     if(!TypeArray(value.parameters)) {
-        return false
+        return false;
     }
 
     return true;

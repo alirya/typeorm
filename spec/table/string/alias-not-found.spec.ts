@@ -1,9 +1,9 @@
-import AliasNotFound from "../../../dist/table/string/alias-not-found";
-import {Connection as OrmConnection} from "typeorm";
-import Connection from "../../connection";
-import Parent from "../../parent/parent";
+import AliasNotFound from '../../../dist/table/string/alias-not-found';
+import {Connection as OrmConnection} from 'typeorm';
+import Connection from '../../connection';
+import Parent from '../../parent/parent';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let connection : OrmConnection;
 

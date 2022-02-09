@@ -1,9 +1,9 @@
-import Table from "./table";
-import EnsureClass from "@alirya/class/ensure/class";
-import ThrowableClass from "@alirya/class/assert/throwable/class-parameters";
-import {Alias} from "typeorm/query-builder/Alias";
-import Standard from "./standard";
-import Class from "@alirya/class/class";
+import Table from './table';
+import EnsureClass from '@alirya/class/ensure/class';
+import ThrowableClass from '@alirya/class/assert/throwable/class-parameters';
+import {Alias} from 'typeorm/query-builder/Alias';
+import Standard from './standard';
+import Class from '@alirya/class/class';
 
 /**
  * create {@see Table} from {@see Alias}

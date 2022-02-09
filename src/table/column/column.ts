@@ -1,5 +1,5 @@
-import Table from "../table";
-import Infer from "../entity/infer";
+import Table from '../table';
+import Infer from '../entity/infer';
 
 /**
  * Describe column data
@@ -16,7 +16,7 @@ export default interface Column<
     /**
      * column name on specified table, always without prefix
      */
-    readonly key : Key,
+    readonly key : Key;
     /**
      * final column name
      */

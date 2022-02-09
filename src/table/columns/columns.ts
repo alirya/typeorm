@@ -1,5 +1,5 @@
-import Table from "../table";
-import Infer from "../entity/infer";
+import Table from '../table';
+import Infer from '../entity/infer';
 
 export default interface Columns<
     TableType extends Table = Table,

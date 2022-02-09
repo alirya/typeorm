@@ -1,5 +1,5 @@
-import RequiredReadonly from "./required-readonly";
-import Deletable from "./deletable";
+import RequiredReadonly from './required-readonly';
+import Deletable from './deletable';
 
 export default class RequiredReadonlyStandard<Argument, Return> implements RequiredReadonly {
 
@@ -12,7 +12,7 @@ export default class RequiredReadonlyStandard<Argument, Return> implements Requi
 
         if(this.entity.deleted === undefined) {
 
-            throw new Error('deleted is not provided')
+            throw new Error('deleted is not provided');
         }
 
         return this.entity.deleted;

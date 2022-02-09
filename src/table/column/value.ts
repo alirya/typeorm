@@ -1,10 +1,10 @@
-import Table from "../table";
-import Infer from "../entity/infer";
-import ValueInterface from "@alirya/value/value";
-import ArgumentContainer from "@alirya/function/argument/argument";
-import Parameter from "./parameter";
-import Column from "./column";
-import BaseParameter from "@alirya/function/parameter/parameter";
+import Table from '../table';
+import Infer from '../entity/infer';
+import ValueInterface from '@alirya/value/value';
+import ArgumentContainer from '@alirya/function/argument/argument';
+import Parameter from './parameter';
+import Column from './column';
+import BaseParameter from '@alirya/function/parameter/parameter';
 
 // export default class Value<
 //     ValueType,

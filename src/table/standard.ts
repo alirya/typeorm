@@ -1,5 +1,5 @@
-import Table from "./table";
-import Class from "@alirya/class/class";
+import Table from './table';
+import Class from '@alirya/class/class';
 
 /**
  * basic {@see Table} implementation
@@ -13,5 +13,5 @@ export default function Standard<
     aliased : boolean = true,
 ) : Table<Constructor> {
 
-    return {entity, alias, aliased}
+    return {entity, alias, aliased};
 }

@@ -1,7 +1,7 @@
-import Guard from "../boolean/not-undefined";
-import Callback from "@alirya/function/assert/callback-parameters";
-import NotUndefinedError from "./throwable/not-undefined";
-import {Optional, Required} from "utility-types";
+import Guard from '../boolean/not-undefined';
+import Callback from '@alirya/function/assert/callback-parameters';
+import NotUndefinedError from './throwable/not-undefined';
+import {Optional, Required} from 'utility-types';
 
 export default function NotUndefined<
     Entity extends object,

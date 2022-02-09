@@ -1,6 +1,6 @@
-import AssertUndefined from "../assert/undefined";
-import UndefinedError from "../assert/throwable/undefined";
-import {Optional} from "utility-types";
+import AssertUndefined from '../assert/undefined';
+import UndefinedError from '../assert/throwable/undefined';
+import {Optional} from 'utility-types';
 
 export default function Undefined<
     Entity extends object,

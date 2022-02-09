@@ -1,7 +1,7 @@
-import {Entity, Column, Index, ManyToOne} from "typeorm";
-import IdAuto from "../../dist/id/automatic";
-import Timestamp from "../../dist/timestamp/timestamp";
-import Parent from "../parent/parent";
+import {Entity, Column, Index, ManyToOne} from 'typeorm';
+import IdAuto from '../../dist/id/automatic';
+import Timestamp from '../../dist/timestamp/timestamp';
+import Parent from '../parent/parent';
 
 @Entity({name:'children'})
 export default class Children extends IdAuto {

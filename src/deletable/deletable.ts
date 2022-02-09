@@ -1,4 +1,4 @@
-import {DeleteDateColumn} from "typeorm";
+import {DeleteDateColumn} from 'typeorm';
 
 export default class Deletable {
 

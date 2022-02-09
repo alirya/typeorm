@@ -1,10 +1,10 @@
-import Table from "./table";
-import {QueryBuilder} from "typeorm";
-import {Alias} from "typeorm/query-builder/Alias";
-import Metadata from "./metadata";
-import Class from "@alirya/class/class";
-import MultipleEntityFound from "./string/multiple-entity-found";
-import EntityNotFound from "./string/entity-not-found";
+import Table from './table';
+import {QueryBuilder} from 'typeorm';
+import {Alias} from 'typeorm/query-builder/Alias';
+import Metadata from './metadata';
+import Class from '@alirya/class/class';
+import MultipleEntityFound from './string/multiple-entity-found';
+import EntityNotFound from './string/entity-not-found';
 
 export default function FindEntity<
     Constructor extends Class<object, unknown[]> = Class<object, unknown[]>

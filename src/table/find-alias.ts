@@ -1,7 +1,7 @@
-import Table from "./table";
-import {QueryBuilder} from "typeorm";
-import Metadata from "./metadata";
-import AliasNotFound from "./string/alias-not-found";
+import Table from './table';
+import {QueryBuilder} from 'typeorm';
+import Metadata from './metadata';
+import AliasNotFound from './string/alias-not-found';
 
 export default function FindAlias<
     Constructor extends {new (...args: unknown[]): any} = {new (...args: unknown[]): any}

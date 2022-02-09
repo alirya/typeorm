@@ -1,21 +1,21 @@
-import Connection from "../../../../connection";
-import Parent from "../../../../parent/parent";
-import Parameter from "../../../../../dist/table/column/parameter";
-import GrandParent from "../../../../grand-parent/grand-parent";
-import GrandParentGenerate from "../../../../grand-parent/generate";
-import Inserts from "../../../../../dist/entity/array/inserts";
-import ParentGenerate from "../../../../parent/generate";
-import Insert from "../../../../../dist/id/model/insert";
-import TableEntity from "../../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Standard from "../../../../../dist/table/column/standard";
+import Connection from '../../../../connection';
+import Parent from '../../../../parent/parent';
+import Parameter from '../../../../../dist/table/column/parameter';
+import GrandParent from '../../../../grand-parent/grand-parent';
+import GrandParentGenerate from '../../../../grand-parent/generate';
+import Inserts from '../../../../../dist/entity/array/inserts';
+import ParentGenerate from '../../../../parent/generate';
+import Insert from '../../../../../dist/id/model/insert';
+import TableEntity from '../../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Standard from '../../../../../dist/table/column/standard';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 
 let grandParent  = GrandParentGenerate();
-let parents : [Parent, Parent]
+let parents : [Parent, Parent];
 
 let connection : OrmConnection;
 
@@ -48,7 +48,7 @@ it('auto', (done)=>{
 
     let parent = Parameter(Parameter(Standard(TableEntity(builder, Parent), 'id')));
 
-    builder.where(`${parent.column}=:${parent.parameter}`, {[parent.parameter]:parents[0].id})
+    builder.where(`${parent.column}=:${parent.parameter}`, {[parent.parameter]:parents[0].id});
 
     builder.getOne().then(record=>{
 
@@ -59,7 +59,7 @@ it('auto', (done)=>{
 
         } else {
 
-            fail('record should exits')
+            fail('record should exits');
         }
 
         done();
@@ -77,7 +77,7 @@ it('alias', (done)=>{
 
     let stdParent = Parameter(Parameter(Standard(TableEntity(builder, Parent), 'id')));
 
-    builder.where(`${stdParent.column}=:${stdParent.parameter}`, {[stdParent.parameter]:parents[1].id})
+    builder.where(`${stdParent.column}=:${stdParent.parameter}`, {[stdParent.parameter]:parents[1].id});
 
     builder.getOne().then(record=>{
 
@@ -88,7 +88,7 @@ it('alias', (done)=>{
 
         } else {
 
-            fail('record should exits')
+            fail('record should exits');
         }
 
         done();

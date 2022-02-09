@@ -1,4 +1,4 @@
-import {FindOperator} from "typeorm/find-options/FindOperator";
+import {FindOperator} from 'typeorm/find-options/FindOperator';
 
 /**
  * Used for find operations.

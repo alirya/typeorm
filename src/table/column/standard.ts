@@ -1,7 +1,7 @@
-import Table from "../table";
-import Column from "./column";
-import Infer from "../entity/infer";
-import Class from "@alirya/class/class";
+import Table from '../table';
+import Column from './column';
+import Infer from '../entity/infer';
+import Class from '@alirya/class/class';
 
 //
 //
@@ -49,7 +49,7 @@ export default function Standard<
         column = key;
     }
 
-    return {table, key, column}
+    return {table, key, column};
 
 }
 

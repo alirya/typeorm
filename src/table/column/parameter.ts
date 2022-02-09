@@ -1,9 +1,9 @@
-import Table from "../table";
-import Infer from "../entity/infer";
-import BaseParameter from "@alirya/function/parameter/parameter";
-import Standard from "./standard";
-import Class from "@alirya/class/class";
-import Column from "./column";
+import Table from '../table';
+import Infer from '../entity/infer';
+import BaseParameter from '@alirya/function/parameter/parameter';
+import Standard from './standard';
+import Class from '@alirya/class/class';
+import Column from './column';
 
 // export default class Parameter<
 //     TableType extends Table = Table,
@@ -35,5 +35,5 @@ export default function Parameter<
 
     parameter = (parameter ? parameter : column.column.replace('.', ''));
 
-    return Object.assign({parameter}, column)
+    return Object.assign({parameter}, column);
 }

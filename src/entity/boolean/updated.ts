@@ -1,5 +1,5 @@
-import {UpdateResult as OrmUpdateResult} from "typeorm";
-import Affected from "../../number/affected";
+import {UpdateResult as OrmUpdateResult} from 'typeorm';
+import Affected from '../../number/affected';
 
 export default function Updated(result : OrmUpdateResult, expectation : number) : boolean {
 

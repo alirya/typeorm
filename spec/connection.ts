@@ -1,9 +1,9 @@
-import {ConnectionOptions, createConnection} from "typeorm";
-import Children from "./children/children";
-import Parent from "./parent/parent";
-import Fs from "fs";
-import GrandParent from "./grand-parent/grand-parent";
-import {Required} from "utility-types";
+import {ConnectionOptions, createConnection} from 'typeorm';
+import Children from './children/children';
+import Parent from './parent/parent';
+import Fs from 'fs';
+import GrandParent from './grand-parent/grand-parent';
+import {Required} from 'utility-types';
 
 
 const configPath = __dirname + '/../database.json';

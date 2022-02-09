@@ -1,4 +1,4 @@
-import {EntityManager, ObjectType} from "typeorm";
+import {EntityManager, ObjectType} from 'typeorm';
 
 /**
  * basic insert operation

@@ -1,8 +1,8 @@
-import Guard from "../boolean/undefined";
-import Callback from "@alirya/function/assert/callback-parameters";
-import UndefinedError from "./throwable/undefined";
-import {Optional} from "utility-types";
-import Id from "../id";
+import Guard from '../boolean/undefined';
+import Callback from '@alirya/function/assert/callback-parameters';
+import UndefinedError from './throwable/undefined';
+import {Optional} from 'utility-types';
+import Id from '../id';
 
 export default function Undefined(
     entity : Id,

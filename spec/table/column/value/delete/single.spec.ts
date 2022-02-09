@@ -1,12 +1,12 @@
-import Connection from "../../../../connection";
-import Parent from "../../../../parent/parent";
-import Value from "../../../../../dist/table/column/value";
-import Entity from "../../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Parameter from "../../../../../dist/table/column/parameter";
-import Standard from "../../../../../dist/table/column/standard";
+import Connection from '../../../../connection';
+import Parent from '../../../../parent/parent';
+import Value from '../../../../../dist/table/column/value';
+import Entity from '../../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Parameter from '../../../../../dist/table/column/parameter';
+import Standard from '../../../../../dist/table/column/standard';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let connection : OrmConnection;

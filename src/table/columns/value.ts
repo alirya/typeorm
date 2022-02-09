@@ -1,11 +1,11 @@
-import Columns from "./columns";
-import Table from "../table";
-import Infer from "../entity/infer";
-import {Object} from "ts-toolbelt";
-import MapKeyCallback from "@alirya/object/map-key-callback";
-import Standard from "../column/standard";
-import ArgumentContainer from "@alirya/function/argument/argument";
-import ValueInterface from "@alirya/value/value";
+import Columns from './columns';
+import Table from '../table';
+import Infer from '../entity/infer';
+import {Object} from 'ts-toolbelt';
+import MapKeyCallback from '@alirya/object/map-key-callback';
+import Standard from '../column/standard';
+import ArgumentContainer from '@alirya/function/argument/argument';
+import ValueInterface from '@alirya/value/value';
 
 export default class Value<
     Entity extends Table<any> = Table<any>,
@@ -32,7 +32,7 @@ export default class Value<
             this.key.push(key);
             this.column.push(standard.column);
             return standard.column;
-        })
+        });
     }
 
 

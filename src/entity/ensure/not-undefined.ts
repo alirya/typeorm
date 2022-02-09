@@ -1,6 +1,6 @@
-import AssertNotUndefined from "../assert/not-undefined";
-import NotUndefinedError from "../assert/throwable/not-undefined";
-import {Optional} from "utility-types";
+import AssertNotUndefined from '../assert/not-undefined';
+import NotUndefinedError from '../assert/throwable/not-undefined';
+import {Optional} from 'utility-types';
 
 export default function NotUndefined<
     Entity extends object,

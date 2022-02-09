@@ -1,6 +1,6 @@
-import {QueryBuilder} from "typeorm";
-import Metadata from "./metadata";
-import Table from "./table";
+import {QueryBuilder} from 'typeorm';
+import Metadata from './metadata';
+import Table from './table';
 
 export default function First<
     Constructor extends {new (...args: unknown[]): any} = {new (...args: unknown[]): any}

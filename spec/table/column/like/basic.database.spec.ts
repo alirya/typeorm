@@ -1,16 +1,16 @@
-import GrandParent from "../../../grand-parent/grand-parent";
-import Connection from "../../../connection";
-import GrandParentGenerate from "../../../grand-parent/generate";
-import Insert from "../../../../dist/entity/insert";
-import Like from "../../../../dist/builder/like";
-import Padding from "@alirya/string/affix/affix";
-import Value from "../../../../dist/table/column/value";
-import Entity from "../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Standard from "../../../../dist/table/column/standard";
-import Parameter from "../../../../dist/table/column/parameter";
+import GrandParent from '../../../grand-parent/grand-parent';
+import Connection from '../../../connection';
+import GrandParentGenerate from '../../../grand-parent/generate';
+import Insert from '../../../../dist/entity/insert';
+import Like from '../../../../dist/builder/like';
+import Padding from '@alirya/string/affix/affix';
+import Value from '../../../../dist/table/column/value';
+import Entity from '../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Standard from '../../../../dist/table/column/standard';
+import Parameter from '../../../../dist/table/column/parameter';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let entity  = GrandParentGenerate();
 
@@ -25,14 +25,14 @@ it('open connection', (done)=>{
 it('insert grand-parent', (done)=>{
 
     Insert(connection.manager, entity).then(done).catch(fail).then(done);
-})
+});
 
 it('manual', (done)=>{
 
     let query = connection.getRepository(GrandParent).createQueryBuilder('GP');
 
     let names = entity.name.split(' ');
-    Value(Parameter(Standard(Entity(query, GrandParent), 'name')), names[0])
+    Value(Parameter(Standard(Entity(query, GrandParent), 'name')), names[0]);
     Like(query, Value(Parameter(Standard(Entity(query, GrandParent), 'name')), names[0]), Padding.CIRCUMFIX);
 
     query.getMany().then(records=>{
@@ -49,8 +49,8 @@ it('manual', (done)=>{
             }
         }
 
-        expect(found).toBe(true, 'entity not found')
+        expect(found).toBe(true, 'entity not found');
 
     }).then(done).catch(fail).then(done);
 
-})
+});

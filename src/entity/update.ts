@@ -1,13 +1,13 @@
-import {EntityManager, ObjectType, UpdateResult} from "typeorm";
-import Updated from "./boolean/updated";
-import Unique from "@alirya/array/unique-parameters";
-import OmitUndefined from "@alirya/object/omit-undefined";
-import Extract from "@alirya/object/extract";
-import NotEmpty from "@alirya/object/boolean/not-empty";
-import NotFound from "../throwable/not-found";
-import Name from "@alirya/object/string/name";
-import PrimaryKeyRequired from "./assert/not-undefined";
-import {QueryDeepPartialEntity} from "typeorm/query-builder/QueryPartialEntity";
+import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
+import Updated from './boolean/updated';
+import Unique from '@alirya/array/unique-parameters';
+import OmitUndefined from '@alirya/object/omit-undefined';
+import Extract from '@alirya/object/extract';
+import NotEmpty from '@alirya/object/boolean/not-empty';
+import NotFound from '../throwable/not-found';
+import Name from '@alirya/object/string/name';
+import PrimaryKeyRequired from './assert/not-undefined';
+import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';
 
 export default function Update<Entity extends object>(
     manager : EntityManager,
@@ -62,7 +62,7 @@ export default function Update<Entity extends object>(
         return promise.finally(()=>{
 
             Object.assign(data, (extract as Extract<Entity, (keyof Entity)[]>).return);
-        })
+        });
 
     } else {
 

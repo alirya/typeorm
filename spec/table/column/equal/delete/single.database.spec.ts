@@ -1,15 +1,15 @@
-import Connection from "../../../../connection";
-import Value from "../../../../../dist/table/column/value";
-import Equal from "../../../../../dist/builder/equal";
-import GrandParent from "../../../../grand-parent/grand-parent";
-import GrandParentGenerate from "../../../../grand-parent/generate";
-import Inserts from "../../../../../dist/entity/array/inserts";
-import Entity from "../../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Parameter from "../../../../../dist/table/column/parameter";
-import Standard from "../../../../../dist/table/column/standard";
+import Connection from '../../../../connection';
+import Value from '../../../../../dist/table/column/value';
+import Equal from '../../../../../dist/builder/equal';
+import GrandParent from '../../../../grand-parent/grand-parent';
+import GrandParentGenerate from '../../../../grand-parent/generate';
+import Inserts from '../../../../../dist/entity/array/inserts';
+import Entity from '../../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Parameter from '../../../../../dist/table/column/parameter';
+import Standard from '../../../../../dist/table/column/standard';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let entities  = [GrandParentGenerate(), GrandParentGenerate()];
 
@@ -44,7 +44,7 @@ it('auto', (done)=>{
 
         return select.getOne().then(record=>{
 
-            expect(record).toBe(undefined)
+            expect(record).toBe(undefined);
 
             done();
         });

@@ -1,7 +1,7 @@
-import * as Faker from "faker";
-import StrictAssign from "@alirya/object/strict-assign";
-import Parent from "./parent";
-import GrandParent from "../grand-parent/grand-parent";
+import * as Faker from 'faker';
+import StrictAssign from '@alirya/object/strict-assign';
+import Parent from './parent';
+import GrandParent from '../grand-parent/grand-parent';
 
 export default function Generate(parent : number) {
 

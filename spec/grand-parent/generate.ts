@@ -1,6 +1,6 @@
-import * as Faker from "faker";
-import GrandParent from "./grand-parent";
-import {Required} from "utility-types";
+import * as Faker from 'faker';
+import GrandParent from './grand-parent';
+import {Required} from 'utility-types';
 
 export default function Generate() : Required<GrandParent, 'name'> {
 

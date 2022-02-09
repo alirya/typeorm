@@ -1,6 +1,6 @@
 enum Null {
-    FIRST = "NULLS FIRST",
-    LAST = "NULLS LAST"
+    FIRST = 'NULLS FIRST',
+    LAST = 'NULLS LAST'
 }
 
 export default Null;

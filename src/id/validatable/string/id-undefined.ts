@@ -1,7 +1,7 @@
-import Id from "../../id";
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import Name from "@alirya/object/string/name";
+import Id from '../../id';
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import Name from '@alirya/object/string/name';
 
 export default function IdUndefined(object : Value<Id> & Validatable) {
 

@@ -1,18 +1,18 @@
-import {Object, Union} from "ts-toolbelt";
-import {EntityManager, ObjectType} from "typeorm";
-import {FindOneOptions} from "typeorm/find-options/FindOneOptions";
-import ObjectNotEmpty from "@alirya/object/boolean/not-empty";
-import ArrayNotEmpty from "@alirya/array/boolean/not-empty";
-import Value from "@alirya/value/value";
-import {JoinOptions} from "typeorm/find-options/JoinOptions";
-import Segment from "@alirya/set/segment";
+import {Object, Union} from 'ts-toolbelt';
+import {EntityManager, ObjectType} from 'typeorm';
+import {FindOneOptions} from 'typeorm/find-options/FindOneOptions';
+import ObjectNotEmpty from '@alirya/object/boolean/not-empty';
+import ArrayNotEmpty from '@alirya/array/boolean/not-empty';
+import Value from '@alirya/value/value';
+import {JoinOptions} from 'typeorm/find-options/JoinOptions';
+import Segment from '@alirya/set/segment';
 
 export default class Read<Entity> implements Readonly<Value<Promise<Entity>>>, FindOneOptions<Entity> {
 
     public relations : string[] = [];
     public select : (keyof Entity)[] = [];
     public where : Union.Exclude<FindOneOptions<Entity>['where'], string|undefined> = {};
-    public cache : FindOneOptions<Entity>['cache'] = undefined
+    public cache : FindOneOptions<Entity>['cache'] = undefined;
     public order : FindOneOptions<Entity>['order'] = {};
     public lock : FindOneOptions<Entity>['lock'];
     public withDeleted : boolean = false;
@@ -42,7 +42,7 @@ export default class Read<Entity> implements Readonly<Value<Promise<Entity>>>, F
             withDeleted : this.withDeleted,
             loadRelationIds : this.loadRelationIds,
             loadEagerRelations : this.loadEagerRelations,
-        }
+        };
     }
 
     lockOptimistic(version : number | Date) {
@@ -53,10 +53,10 @@ export default class Read<Entity> implements Readonly<Value<Promise<Entity>>>, F
     }
 
     lockDirtyRead() {
-        this.lock = {mode:"dirty_read"};
+        this.lock = {mode:'dirty_read'};
     }
 
-    lockPessimistic(mode : "read" | "write"  | "partial_write" | "write_or_fail") {
+    lockPessimistic(mode : 'read' | 'write'  | 'partial_write' | 'write_or_fail') {
 
         this.lock = <FindOneOptions<Entity>['lock']>{mode:'pessimistic_' + mode};
     }

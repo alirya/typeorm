@@ -1,6 +1,6 @@
-import DeletableEntity from "../deletable";
+import DeletableEntity from '../deletable';
 
 export default interface Deletable {
 
-    deletable ?: DeletableEntity
+    deletable ?: DeletableEntity;
 }

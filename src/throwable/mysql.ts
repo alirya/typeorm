@@ -1,4 +1,4 @@
-import QueryError from "./query-error";
+import QueryError from './query-error';
 
 export default interface Mysql extends QueryError {
 

@@ -1,8 +1,8 @@
-import {EntityManager, ObjectType} from "typeorm";
-import Id from "../id";
-import Undefined from "../validatable/undefined";
-import {Required} from "utility-types";
-import StandardInsert from "../../entity/insert";
+import {EntityManager, ObjectType} from 'typeorm';
+import Id from '../id';
+import Undefined from '../validatable/undefined';
+import {Required} from 'utility-types';
+import StandardInsert from '../../entity/insert';
 
 /**
  * basic id insert operation
@@ -21,9 +21,9 @@ export default function Insert<Entity extends Id>(
 
     if(!validatable.valid) {
 
-        throw new Error(validatable.message)
+        throw new Error(validatable.message);
     }
 
-    return StandardInsert<Entity>(manager, insert, entity) as Promise<Required<Entity, 'id'>>
+    return StandardInsert<Entity>(manager, insert, entity) as Promise<Required<Entity, 'id'>>;
 
 }

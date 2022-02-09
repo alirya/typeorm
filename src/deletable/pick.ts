@@ -1,6 +1,6 @@
-import Deletable from "./deletable";
+import Deletable from './deletable';
 
 export default function Pick<DeletableType extends Deletable>(object : DeletableType) : Pick<DeletableType, 'deleted'> {
 
-    return {deleted:object.deleted}
+    return {deleted:object.deleted};
 }

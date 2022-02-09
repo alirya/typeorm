@@ -1,5 +1,5 @@
-import New from "@alirya/function/new";
-import UndefinedMessage from "../string/undefined";
+import New from '@alirya/function/new';
+import UndefinedMessage from '../string/undefined';
 
 export default function Undefined(
     entity : object,
@@ -7,5 +7,5 @@ export default function Undefined(
     error : (string : string)=>Error = New(Error)
 ) : Error {
 
-    return error(UndefinedMessage(false, entity, primaryKey))
+    return error(UndefinedMessage(false, entity, primaryKey));
 }

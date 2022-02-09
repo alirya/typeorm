@@ -1,6 +1,6 @@
-import {EntityNotFoundError} from "typeorm/error/EntityNotFoundError";
-import {ObjectType} from "typeorm/common/ObjectType";
-import {EntitySchema} from "typeorm";
+import {EntityNotFoundError} from 'typeorm/error/EntityNotFoundError';
+import {ObjectType} from 'typeorm/common/ObjectType';
+import {EntitySchema} from 'typeorm';
 
 export default class NotFound<Value> extends EntityNotFoundError {
 

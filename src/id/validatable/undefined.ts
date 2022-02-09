@@ -1,11 +1,11 @@
-import Id from "../id";
-import IsUndefined from "@alirya/undefined/boolean/undefined";
-import NoIdString from "./string/id-undefined";
-import Callback from "@alirya/validator/validatable/callback-function-parameters";
-import Value from "@alirya/value/value";
-import Validatable from "@alirya/validatable/validatable";
-import Message from "@alirya/message/message";
-import {Required} from "utility-types";
+import Id from '../id';
+import IsUndefined from '@alirya/undefined/boolean/undefined';
+import NoIdString from './string/id-undefined';
+import Callback from '@alirya/validator/validatable/callback-function-parameters';
+import Value from '@alirya/value/value';
+import Validatable from '@alirya/validatable/validatable';
+import Message from '@alirya/message/message';
+import {Required} from 'utility-types';
 
 type Return<Entity extends Id> =
     Readonly<Value<Entity> & Validatable<true> & Message<string>>  |

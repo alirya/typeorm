@@ -1,11 +1,11 @@
-import Insert from "../../dist/entity/insert";
-import Connection from "../connection";
-import GrandParentGenerate from "../grand-parent/generate";
-import ChildrenGenerate from "../children/generate";
-import ParentGenerate from "../parent/generate";
-import {Connection as OrmConnection} from "typeorm";
+import Insert from '../../dist/entity/insert';
+import Connection from '../connection';
+import GrandParentGenerate from '../grand-parent/generate';
+import ChildrenGenerate from '../children/generate';
+import ParentGenerate from '../parent/generate';
+import {Connection as OrmConnection} from 'typeorm';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let grandParent : number;
 let prent : number;
@@ -20,16 +20,16 @@ it('open connection', (done)=>{
 
 it('grand-parent', (done)=>{
 
-    let entity = GrandParentGenerate()
+    let entity = GrandParentGenerate();
 
     Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
-        expect(typeof result.id).toBe("number");
+        expect(typeof result.id).toBe('number');
         grandParent = <number>result.id;
 
     }).then(done).catch(fail).then(done);
-})
+});
 
 it('parent', (done)=>{
 
@@ -37,11 +37,11 @@ it('parent', (done)=>{
     Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
-        expect(typeof result.id).toBe("number");
+        expect(typeof result.id).toBe('number');
         prent = <number>result.id;
 
     }).then(done).catch(fail).then(done);
-})
+});
 
 it('children', (done)=>{
 
@@ -50,7 +50,7 @@ it('children', (done)=>{
     Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
-        expect(typeof result.id).toBe("number");
+        expect(typeof result.id).toBe('number');
         done();
     });
 });

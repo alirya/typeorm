@@ -1,5 +1,5 @@
-import {UpdateResult} from "typeorm/query-builder/result/UpdateResult";
-import Number from "@alirya/number/boolean/number";
+import {UpdateResult} from 'typeorm/query-builder/result/UpdateResult';
+import Number from '@alirya/number/boolean/number';
 
 export default function Affected(result : UpdateResult) : number {
 
@@ -17,6 +17,6 @@ export default function Affected(result : UpdateResult) : number {
     }
 
     const json = JSON.stringify(result, null, 2);
-    throw new Error(`Could not determine affected row on update, ${json}`)
+    throw new Error(`Could not determine affected row on update, ${json}`);
 
 }

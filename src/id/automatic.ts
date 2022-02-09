@@ -1,5 +1,5 @@
-import {PrimaryGeneratedColumn} from "typeorm";
-import Id from "./id";
+import {PrimaryGeneratedColumn} from 'typeorm';
+import Id from './id';
 
 /**
  * automatic primary generated

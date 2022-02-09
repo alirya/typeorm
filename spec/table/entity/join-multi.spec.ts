@@ -1,10 +1,10 @@
-import Connection from "../../connection";
-import Parent from "../../parent/parent";
-import Standard from "../../../dist/table/column/standard";
-import GrandParent from "../../grand-parent/grand-parent";
-import TableEntity from "../../../dist/table/find-entity";
+import Connection from '../../connection';
+import Parent from '../../parent/parent';
+import Standard from '../../../dist/table/column/standard';
+import GrandParent from '../../grand-parent/grand-parent';
+import TableEntity from '../../../dist/table/find-entity';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 it('entity alias', (done)=>{
@@ -28,7 +28,7 @@ it('entity alias', (done)=>{
 
         done();
 
-    }).catch(fail).then(done)
+    }).catch(fail).then(done);
 
 });
 

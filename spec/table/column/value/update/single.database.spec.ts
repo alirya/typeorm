@@ -1,14 +1,14 @@
-import Connection from "../../../../connection";
-import Value from "../../../../../dist/table/column/value";
-import GrandParent from "../../../../grand-parent/grand-parent";
-import GrandParentGenerate from "../../../../grand-parent/generate";
-import Inserts from "../../../../../dist/entity/array/inserts";
-import Entity from "../../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Parameter from "../../../../../dist/table/column/parameter";
-import Standard from "../../../../../dist/table/column/standard";
+import Connection from '../../../../connection';
+import Value from '../../../../../dist/table/column/value';
+import GrandParent from '../../../../grand-parent/grand-parent';
+import GrandParentGenerate from '../../../../grand-parent/generate';
+import Inserts from '../../../../../dist/entity/array/inserts';
+import Entity from '../../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Parameter from '../../../../../dist/table/column/parameter';
+import Standard from '../../../../../dist/table/column/standard';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 
 let entities  = [GrandParentGenerate(), GrandParentGenerate()];
@@ -42,12 +42,12 @@ it('auto', (done)=>{
 
             if(record) {
 
-                expect(record.id).toBe(entities[0].id)
-                expect(record.name).toBe(entities[0].name + 'updated')
+                expect(record.id).toBe(entities[0].id);
+                expect(record.name).toBe(entities[0].name + 'updated');
 
             } else {
 
-                fail('record should exits')
+                fail('record should exits');
             }
 
             done();
@@ -68,7 +68,7 @@ it('alias', (done)=>{
 
     let standard = Value(Parameter(Standard(Entity(builder, GrandParent), 'id')), entities[1].id);
 
-    builder.where(`${standard.column}=:${standard.parameter}`, standard.argument)
+    builder.where(`${standard.column}=:${standard.parameter}`, standard.argument);
 
     builder.execute().then(()=>{
 
@@ -76,11 +76,11 @@ it('alias', (done)=>{
 
             if(record) {
 
-                expect(record.id).toBe(entities[1].id)
+                expect(record.id).toBe(entities[1].id);
 
             } else {
 
-                fail('record should exits')
+                fail('record should exits');
             }
 
         });

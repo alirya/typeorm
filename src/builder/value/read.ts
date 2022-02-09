@@ -1,5 +1,5 @@
-import {SelectQueryBuilder} from "typeorm";
-import NotFound from "../../throwable/not-found";
+import {SelectQueryBuilder} from 'typeorm';
+import NotFound from '../../throwable/not-found';
 
 export default function Read<Entity>(query : SelectQueryBuilder<Entity>) : Promise<Entity> {
 
@@ -10,6 +10,6 @@ export default function Read<Entity>(query : SelectQueryBuilder<Entity>) : Promi
             return entity;
         }
 
-        throw new NotFound(`record ${query.alias} not found`, query.getParameters())
+        throw new NotFound(`record ${query.alias} not found`, query.getParameters());
     });
 }

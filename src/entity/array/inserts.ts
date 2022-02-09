@@ -1,6 +1,6 @@
-import {Connection, EntityManager, ObjectType} from "typeorm";
-import {Required} from "utility-types";
-import Undefined from "@alirya/undefined/assert/undefined";
+import {Connection, EntityManager, ObjectType} from 'typeorm';
+import {Required} from 'utility-types';
+import Undefined from '@alirya/undefined/assert/undefined';
 /**
  * basic bulk insert operation
  *

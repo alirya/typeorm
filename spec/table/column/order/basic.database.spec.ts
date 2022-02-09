@@ -1,15 +1,15 @@
-import GrandParent from "../../../grand-parent/grand-parent";
-import Connection from "../../../connection";
-import GrandParentGenerate from "../../../grand-parent/generate";
-import OrderEnum from "../../../../dist/builder/order/mode/mode";
-import Inserts from "../../../../dist/entity/array/inserts";
-import Order from "../../../../dist/table/column/order";
-import Value from "../../../../dist/table/column/standard";
-import Entity from "../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
+import GrandParent from '../../../grand-parent/grand-parent';
+import Connection from '../../../connection';
+import GrandParentGenerate from '../../../grand-parent/generate';
+import OrderEnum from '../../../../dist/builder/order/mode/mode';
+import Inserts from '../../../../dist/entity/array/inserts';
+import Order from '../../../../dist/table/column/order';
+import Value from '../../../../dist/table/column/standard';
+import Entity from '../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
 
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let entities  = [GrandParentGenerate()];
 let ascending : GrandParent;

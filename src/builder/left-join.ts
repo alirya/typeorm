@@ -1,11 +1,11 @@
-import Column from "../table/column/column";
-import Table from "../table/table";
-import TableInfer from "../table/entity/infer";
-import {SelectQueryBuilder} from "typeorm";
-import {List} from "ts-toolbelt";
-import Infer from "../table/column/table/infer";
-import KeyInfer from "../table/column/key/infer";
-import FindAlias from "../table/find-alias";
+import Column from '../table/column/column';
+import Table from '../table/table';
+import TableInfer from '../table/entity/infer';
+import {SelectQueryBuilder} from 'typeorm';
+import {List} from 'ts-toolbelt';
+import Infer from '../table/column/table/infer';
+import KeyInfer from '../table/column/key/infer';
+import FindAlias from '../table/find-alias';
 
 /**
  * @private

@@ -1,9 +1,9 @@
-import EntityNotFound from "../../../dist/table/string/entity-not-found";
-import Parent from "../../parent/parent";
-import {Connection as OrmConnection} from "typeorm";
-import Connection from "../../connection";
+import EntityNotFound from '../../../dist/table/string/entity-not-found';
+import Parent from '../../parent/parent';
+import {Connection as OrmConnection} from 'typeorm';
+import Connection from '../../connection';
 
-it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let connection : OrmConnection;
 

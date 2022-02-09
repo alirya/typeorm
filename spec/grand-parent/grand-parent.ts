@@ -1,7 +1,7 @@
-import {Entity, Column, Index, OneToMany} from "typeorm";
-import IdAuto from "../../dist/id/automatic";
-import Timestamp from "../../dist/timestamp/timestamp";
-import Parent from "../parent/parent";
+import {Entity, Column, Index, OneToMany} from 'typeorm';
+import IdAuto from '../../dist/id/automatic';
+import Timestamp from '../../dist/timestamp/timestamp';
+import Parent from '../parent/parent';
 
 @Entity({name:'grand-parent'})
 export default class GrandParent extends IdAuto {

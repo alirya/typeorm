@@ -1,5 +1,5 @@
-import New from "@alirya/function/new";
-import NotUndefinedMessage from "../string/not-undefined";
+import New from '@alirya/function/new';
+import NotUndefinedMessage from '../string/not-undefined';
 
 export default function NotUndefined(
     entity : object,
@@ -7,5 +7,5 @@ export default function NotUndefined(
     error : (string : string)=>Error = New(Error)
 ) : Error {
 
-    return error(NotUndefinedMessage(false, entity, primaryKey))
+    return error(NotUndefinedMessage(false, entity, primaryKey));
 }

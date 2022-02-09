@@ -1,15 +1,15 @@
-import GrandParent from "../../../grand-parent/grand-parent";
-import Connection from "../../../connection";
-import GrandParentGenerate from "../../../grand-parent/generate";
-import Inserts from "../../../../dist/entity/array/inserts";
-import In from "../../../../dist/builder/in";
-import Value from "../../../../dist/table/column/value";
-import Entity from "../../../../dist/table/find-entity";
-import {Connection as OrmConnection} from "typeorm";
-import Parameter from "../../../../dist/table/column/parameter";
-import Standard from "../../../../dist/table/column/standard";
+import GrandParent from '../../../grand-parent/grand-parent';
+import Connection from '../../../connection';
+import GrandParentGenerate from '../../../grand-parent/generate';
+import Inserts from '../../../../dist/entity/array/inserts';
+import In from '../../../../dist/builder/in';
+import Value from '../../../../dist/table/column/value';
+import Entity from '../../../../dist/table/find-entity';
+import {Connection as OrmConnection} from 'typeorm';
+import Parameter from '../../../../dist/table/column/parameter';
+import Standard from '../../../../dist/table/column/standard';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let entities  = [GrandParentGenerate(), GrandParentGenerate(), GrandParentGenerate()];
 
@@ -43,11 +43,11 @@ it('builder', (done)=>{
 
         for (let [index, record] of records.entries()) {
 
-            expect(record.id).toBe(entities[index].id, 'entity not found')
+            expect(record.id).toBe(entities[index].id, 'entity not found');
         }
 
         done();
 
     }).catch(fail).then(done);
 
-})
+});
