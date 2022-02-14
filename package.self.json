@@ -1,6 +1,6 @@
 {
   "name": "@alirya/typeorm",
-  "version": "0.5.11",
+  "version": "0.6.0",
   "description": "Typescript typeorm",
   "dependencies": {
     "@alirya/array": "^0.26.0",
