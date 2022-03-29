@@ -39,8 +39,10 @@ export default function Value<
 ) : Column<TableType, Key> & BaseParameter & Readonly<ArgumentContainer<Record<string, ValueType>>> & ValueInterface<ValueType> {
 
     const argument : Readonly<ArgumentContainer<Record<string, ValueType>>> & ValueInterface<ValueType> = {
-        argument : {
-            [column.parameter]: value
+        get argument () {
+            return {
+                [column.parameter] : value
+            }
         },
         value
     };
