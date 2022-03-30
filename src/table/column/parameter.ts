@@ -6,7 +6,7 @@ import Class from '@alirya/class/class';
 import Column from './column';
 import Callable from "@alirya/function/callable";
 import String from "@alirya/string/boolean/string";
-import PickAlpha from "../../../../string/dist/pick-alpha";
+import PickAlpha from "@alirya/string/pick-alpha";
 
 // export default class Parameter<
 //     TableType extends Table = Table,
