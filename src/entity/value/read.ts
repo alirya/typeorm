@@ -7,10 +7,14 @@ import Value from '@alirya/value/value';
 import {JoinOptions} from 'typeorm/find-options/JoinOptions';
 import Segment from '@alirya/set/segment';
 
+/**
+ * @deprecated
+ */
 export default class Read<Entity> implements Readonly<Value<Promise<Entity>>>, FindOneOptions<Entity> {
 
     public relations : string[] = [];
     public select : (keyof Entity)[] = [];
+    // @ts-ignore
     public where : Union.Exclude<FindOneOptions<Entity>['where'], string|undefined> = {};
     public cache : FindOneOptions<Entity>['cache'] = undefined;
     public order : FindOneOptions<Entity>['order'] = {};

@@ -19,7 +19,8 @@ if(!Fs.existsSync(configPath)) {
 let config = <Required<ConnectionOptions, 'entities'>>JSON.parse(Fs.readFileSync(configPath).toString());
 
 
-config.entities.push(Children, Parent, GrandParent);
+// TODO FIX ANY
+(config.entities as any[]).push(Children, Parent, GrandParent);
 
 const Connection = createConnection(<ConnectionOptions>config);
 

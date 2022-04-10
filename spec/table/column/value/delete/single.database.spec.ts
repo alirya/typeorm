@@ -41,7 +41,7 @@ it('auto', (done)=>{
 
         repository.createQueryBuilder().select().where(`${standard.column}=:${standard.parameter}`, standard.argument).getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
 
             done();
         });
@@ -65,7 +65,7 @@ it('alias', (done)=>{
 
         repository.createQueryBuilder('GP').where(`${standard.column}=:${standard.parameter}`, standard.argument).select().getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
             done();
         });
 

@@ -18,7 +18,7 @@
     "@alirya/validator": "^0.19.2",
     "@alirya/value": "^0.15.0",
     "ts-toolbelt": "^9.6.0",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.3.5"
   },
   "devDependencies": {
     "@dikac/tn-filesystem": "^0.2.3",

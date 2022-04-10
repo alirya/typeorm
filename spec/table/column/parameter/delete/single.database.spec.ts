@@ -39,7 +39,7 @@ it('auto', (done)=>{
 
         repository.createQueryBuilder().select().where(`${standard.column}=:${standard.parameter}`, {[standard.parameter]:entities[0].id}).getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
 
             done();
         });
@@ -62,7 +62,7 @@ it('alias', (done)=>{
 
         repository.createQueryBuilder('GP').where(`${standard.column}=:${standard.parameter}`, {[standard.parameter]:entities[1].id}).select().getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
             done();
         });
     }).catch(fail);

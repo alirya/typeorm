@@ -44,7 +44,7 @@ it('auto', (done)=>{
 
         return select.getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
 
             done();
         });
@@ -71,7 +71,7 @@ it('alias', (done)=>{
 
         return select.getOne().then(record=>{
 
-            expect(record).toBe(undefined);
+            expect(record).toBe(null);
             done();
         });
 
