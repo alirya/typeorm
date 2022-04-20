@@ -49,7 +49,8 @@
     "@dikac/tn-filesystem": "^0.2.3",
     "@types/faker": "^4.1.12",
     "faker": "^4.1.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "cpx": "^1.5.0"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
