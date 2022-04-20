@@ -1,23 +1,30 @@
 {
   "name": "@alirya/typeorm",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Typescript typeorm",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "author": {
+    "name": "Andika Candra"
+  },
+  "license": "Apache-2.0",
   "dependencies": {
     "tslib": "^2.3.1",
-    "@alirya/array": "^0.26.1",
-    "@alirya/class": "^0.3.2",
-    "@alirya/code": "^0.3.2",
-    "@alirya/enum": "^0.12.3",
-    "@alirya/function": "^0.16.0",
-    "@alirya/message": "^0.12.1",
-    "@alirya/number": "^0.17.2",
-    "@alirya/object": "^0.37.3",
-    "@alirya/set": "^0.8.0",
-    "@alirya/string": "^0.16.6",
-    "@alirya/undefined": "^0.5.1",
-    "@alirya/validatable": "^0.20.1",
-    "@alirya/validator": "^0.19.3",
-    "@alirya/value": "^0.15.1",
+    "@alirya/array": "^0.26.3",
+    "@alirya/class": "^0.3.3",
+    "@alirya/code": "^0.3.3",
+    "@alirya/enum": "^0.12.4",
+    "@alirya/function": "^0.16.2",
+    "@alirya/message": "^0.12.2",
+    "@alirya/number": "^0.17.3",
+    "@alirya/object": "^0.37.4",
+    "@alirya/set": "^0.8.1",
+    "@alirya/string": "^0.16.8",
+    "@alirya/undefined": "^0.5.2",
+    "@alirya/validatable": "^0.20.2",
+    "@alirya/validator": "^0.19.4",
+    "@alirya/value": "^0.15.2",
     "ts-toolbelt": "^9.6.0",
     "typeorm": "^0.3.5"
   },
@@ -44,6 +51,7 @@
     "faker": "^4.1.0",
     "mysql": "^2.18.1"
   },
+  "private": true,
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
     "spec-run": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json --reporter=jasmine-ts-console-reporter",
@@ -76,11 +84,5 @@
     "_release-remove-compile-cache": "rimraf ./dist/compiler-cache.json",
     "_doc-generate": "typedoc --entryPointStrategy expand ./src --out docs",
     "_doc-clean": "rimraf docs"
-  },
-  "publishConfig": {
-    "directory": "dist"
-  },
-  "author": "",
-  "private": true,
-  "license": "MIT"
+  }
 }
