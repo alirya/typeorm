@@ -18,7 +18,7 @@
     "@alirya/function": "^0.16.2",
     "@alirya/message": "^0.12.2",
     "@alirya/number": "^0.17.3",
-    "@alirya/object": "^0.37.4",
+    "@alirya/object": "^0.37.8",
     "@alirya/set": "^0.8.1",
     "@alirya/string": "^0.16.8",
     "@alirya/undefined": "^0.5.2",
@@ -50,7 +50,7 @@
     "@types/faker": "^4.1.12",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
-    "cpx": "^1.5.0"
+    "cpx2": "^4.2.0"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
