@@ -1,5 +1,5 @@
 import {UpdateResult as OrmUpdateResult} from 'typeorm';
-import Callback from '@alirya/function/assert/callback-parameters';
+import {CallbackParameters} from '@alirya/function/assert/callback';
 import Guard from '../boolean/updated';
 import UndefinedError from './throwable/undefined';
 
@@ -9,5 +9,5 @@ export default function Updated(
     error : (entity:OrmUpdateResult, expectation : number)=>Error = UndefinedError
 ) {
 
-    Callback(result, Guard, error, expectation);
+    CallbackParameters(result, Guard, error, expectation);
 }

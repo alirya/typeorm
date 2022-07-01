@@ -1,7 +1,5 @@
-import GrandParentGenerate from "../../../grand-parent/generate";
 import {Connection as OrmConnection} from "typeorm/connection/Connection";
 import Connection from "../../../connection";
-import Inserts from "../../../../dist/entity/array/inserts";
 import GrandParent from "../../../grand-parent/grand-parent";
 import Parameter from "../../../../dist/table/column/parameter";
 import Standard from "../../../../dist/table/column/standard";

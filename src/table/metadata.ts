@@ -1,6 +1,6 @@
 import Table from './table';
 import EnsureClass from '@alirya/class/ensure/class';
-import ThrowableClass from '@alirya/class/assert/throwable/class-parameters';
+import {ClassParameters} from '@alirya/class/assert/throwable/class';
 import {Alias} from 'typeorm/query-builder/Alias';
 import Standard from './standard';
 import Class from '@alirya/class/class';
@@ -15,7 +15,7 @@ export default function Metadata<
     aliased : boolean
 ) : Table<Constructor> {
 
-    let constructor = <Constructor> EnsureClass(alias.target, (value)=>ThrowableClass(value, 'Alias.metadata'));
+    let constructor = <Constructor> EnsureClass(alias.target, (value)=>ClassParameters(value, 'Alias.metadata'));
 
     return Standard(constructor, alias.name, aliased);
 }

@@ -1,8 +1,7 @@
 import Class from '@alirya/class/class';
 import {QueryBuilder} from 'typeorm';
 import Name from '@alirya/object/string/name';
-// import Sentences from "@alirya/string/message/sentences";
-import TemplateParameter from '@alirya/string/function/template-parameter';
+import {TemplateParameter} from '@alirya/string/function/template';
 
 type Argument = Record<'entity'|'alias'|'predicate'|'builder', string>;
 
@@ -30,19 +29,4 @@ export default function AliasNotFound(
     }
 
     return template(argument);
-    //
-    // let sentence = new Sentences(valid);
-    // sentence.subject.push('alias', `"${alias}"`);
-    //
-    // if(entity) {
-    //
-    //     sentence.subject.push('for entity', `"${Name(entity)}"`);
-    // }
-    //
-    // sentence.accept = [];
-    // sentence.reject = ['not'];
-    //
-    // sentence.expect.push('found in', `"${Name(builder)}"`);
-    //
-    // return sentence.message;
 }

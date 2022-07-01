@@ -1,18 +1,18 @@
 import ValidatorInterface from '@alirya/validator/validator';
-import ObjectStandard from '@alirya/object/validator/object-parameters';
-import ValuePartial from '@alirya/array/validator/value-partial-parameters';
-import And from '@alirya/array/validatable/and-parameters';
+import {ObjectParameters} from '@alirya/object/validator/object';
+import {ValuePartialParameters} from '@alirya/array/validator/value-partial';
+import {AndParameters} from '@alirya/array/validatable/and';
 import InvalidMessageMap from '@alirya/array/message/message/list/invalid';
-import EnumStandard from '@alirya/enum/validator/enum-parameters';
+import {EnumParameters} from '@alirya/enum/validator/enum';
 import EnumOrder from '../mode';
 
 export default function Mode() : ValidatorInterface<any, number> {
 
     let validator : ValidatorInterface<any, number>[] = [
-        ObjectStandard()  as ValidatorInterface<any, number>,
-        EnumStandard(EnumOrder)  as ValidatorInterface<number, number>
+        ObjectParameters()  as ValidatorInterface<any, number>,
+        EnumParameters(EnumOrder)  as ValidatorInterface<number, number>
     ];
 
-    return ValuePartial(validator, And, InvalidMessageMap);
+    return ValuePartialParameters(validator, AndParameters, InvalidMessageMap);
 
 }

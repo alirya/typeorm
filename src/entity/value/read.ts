@@ -1,4 +1,4 @@
-import {Object, Union} from 'ts-toolbelt';
+import {Union} from 'ts-toolbelt';
 import {EntityManager, ObjectType} from 'typeorm';
 import {FindOneOptions} from 'typeorm/find-options/FindOneOptions';
 import ObjectNotEmpty from '@alirya/object/boolean/not-empty';
