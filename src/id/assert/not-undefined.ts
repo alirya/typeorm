@@ -1,5 +1,5 @@
 import Guard from '../boolean/not-undefined';
-import Callback from '@alirya/function/assert/callback-parameters';
+import {CallbackParameters} from '@alirya/function/assert/callback';
 import NotUndefinedError from './throwable/not-undefined';
 import {Required} from 'utility-types';
 import Id from '../id';
@@ -9,5 +9,5 @@ export default function NotUndefined(
     error : (entity:object)=>Error = NotUndefinedError
 ) : asserts entity is Required<Id, 'id'> {
 
-    Callback(entity, Guard, error);
+    CallbackParameters(entity, Guard, error);
 }

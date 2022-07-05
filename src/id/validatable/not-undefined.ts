@@ -1,7 +1,7 @@
 import Id from '../id';
 import NotUndefined from '@alirya/undefined/boolean/not-undefined';
 import IdRequired from './string/id-required';
-import Callback from '@alirya/validator/validatable/callback-function-parameters';
+import {CallbackParameters} from '@alirya/validator/validatable/callback';
 import Value from '@alirya/value/value';
 import Validatable from '@alirya/validatable/validatable';
 import Message from '@alirya/message/message';
@@ -13,5 +13,5 @@ type Return<Entity extends Id> =
 
 export default function NoId<Entity extends Id>(id : Entity) : Return<Entity> {
 
-    return <Return<Entity>> Callback<Entity, Entity>(id, (o)=>NotUndefined(o.id), IdRequired);
+    return <Return<Entity>> CallbackParameters<Entity, Entity>(id, (o)=>NotUndefined(o.id), IdRequired);
 }

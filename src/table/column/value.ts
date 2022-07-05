@@ -18,7 +18,7 @@ export default function Value<
         get argument () {
             return {
                 [column.parameter] : value
-            }
+            };
         },
         value
     };

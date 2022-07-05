@@ -1,5 +1,5 @@
 import Guard from '../boolean/undefined';
-import Callback from '@alirya/function/assert/callback-parameters';
+import {CallbackParameters} from '@alirya/function/assert/callback';
 import UndefinedError from './throwable/undefined';
 import {Optional} from 'utility-types';
 import Id from '../id';
@@ -9,5 +9,5 @@ export default function Undefined(
     error : (entity:object)=>Error = UndefinedError
 ) : asserts entity is Optional<Id, 'id'>  {
 
-    Callback(entity, Guard, error);
+    CallbackParameters(entity, Guard, error);
 }
