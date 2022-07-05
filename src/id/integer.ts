@@ -6,7 +6,7 @@ import Id from './id';
  */
 export default class Integer implements Id<number> {
 
-    @PrimaryColumn({nullable: false, type: 'int'})
+    @PrimaryColumn({nullable: false, type: 'unsigned big int'})
     id ?: number;
 
 }
