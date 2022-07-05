@@ -1,7 +1,7 @@
 import Value from '@alirya/value/value';
 import Table from '../table/table';
 import Padding from '@alirya/string/affix/affix';
-import {QueryBuilder, WhereExpression, WhereExpressionBuilder} from 'typeorm';
+import {QueryBuilder, WhereExpressionBuilder} from 'typeorm';
 import Column from '../table/column/column';
 import BaseParameter from '@alirya/function/parameter/parameter';
 import CircumfixParameters from '@alirya/string/circumfix-parameters';

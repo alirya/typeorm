@@ -29,20 +29,4 @@ export default function EntityNotFound(
     }
 
     return template(argument);
-
-    //
-    // let sentence = new Sentences(valid);
-    // sentence.subject.push('entity', `"${Name(entity)}"`);
-    //
-    // if(alias) {
-    //
-    //     sentence.subject.push('with alias', alias);
-    // }
-    //
-    // sentence.accept = [];
-    // sentence.reject = ['not'];
-    //
-    // sentence.expect.push('found in', `"${Name(builder)}"`);
-    //
-    // return sentence.message;
 }
