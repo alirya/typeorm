@@ -3,18 +3,18 @@ import Connection from '../connection';
 import GrandParentGenerate from '../grand-parent/generate';
 import ChildrenGenerate from '../children/generate';
 import ParentGenerate from '../parent/generate';
-import {Connection as OrmConnection} from 'typeorm';
+import {DataSource} from "typeorm/data-source/DataSource";
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 let grandParent : number;
 let prent : number;
 
-let connection : OrmConnection;
+let connection : DataSource;
 
 it('open connection', (done)=>{
 
-    Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
+    Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
 });
 
 

@@ -15,7 +15,7 @@ let connection : OrmConnection;
 
 it('open connection', (done)=>{
 
-    Connection.then((con)=>connection = con).then(done).catch(fail).then(done);
+    Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
 });
 
 it('grand-parent', (done)=>{
@@ -26,7 +26,7 @@ it('grand-parent', (done)=>{
 
 it('parent', (done)=>{
 
-    Connection.then(function (connection) {
+    Connection().connect().then(function (connection) {
 
         let query = connection.getRepository(GrandParent).createQueryBuilder();
         let table = Entity(query, GrandParent);

@@ -1,10 +1,10 @@
-import {ConnectionOptions, createConnection} from 'typeorm';
 import Children from './children/children';
 import Parent from './parent/parent';
-import Fs from 'fs';
+import * as Fs from 'fs';
 import GrandParent from './grand-parent/grand-parent';
-import {Required} from 'utility-types';
-
+import Standard from "../dist/database/standard";
+import Config from "../dist/config/config";
+import Database from "../dist/database/database";
 
 const configPath = __dirname + '/../database.json';
 
@@ -16,12 +16,19 @@ if(!Fs.existsSync(configPath)) {
     );
 }
 
-let config = <Required<ConnectionOptions, 'entities'>>JSON.parse(Fs.readFileSync(configPath).toString());
+export default function Connection(config : Partial<Config> = {}) : Database {
+
+    let configFile : Config = JSON.parse(Fs.readFileSync(configPath).toString());
+
+    const merged = Object.assign(configFile, config);
+
+    const con = new Standard(merged)
+    con.config.entities.set(Children, Children.migrationPath);
+    con.config.entities.set(Parent, Parent.migrationPath);
+    con.config.entities.set(GrandParent, GrandParent.migrationPath);
+
+    return con;
+}
 
 
-// TODO FIX ANY
-(config.entities as any[]).push(Children, Parent, GrandParent);
 
-const Connection = createConnection(<ConnectionOptions>config);
-
-export default Connection;

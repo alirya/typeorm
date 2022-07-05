@@ -6,6 +6,8 @@ import Parent from '../parent/parent';
 @Entity({name:'children'})
 export default class Children extends IdAuto {
 
+    static migrationPath : string = __dirname + '/migration';
+
     @Column(type => Timestamp)
     timestamp ?: Timestamp;
 

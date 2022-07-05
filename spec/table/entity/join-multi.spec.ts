@@ -9,7 +9,7 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('entity alias', (done)=>{
 
-    Connection.then(connection=>{
+    Connection().connect().then(connection=>{
 
         let builder = connection.getRepository(Parent).createQueryBuilder('P').select();
 
