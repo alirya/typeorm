@@ -1,5 +1,5 @@
-import AssertNotUndefined from '../assert/not-undefined';
-import NotUndefinedError from '../assert/throwable/not-undefined';
+import AssertNotUndefined from '../assert/not-undefined.js';
+import NotUndefinedError from '../assert/throwable/not-undefined.js';
 import {Optional} from 'utility-types';
 
 export default function NotUndefined<

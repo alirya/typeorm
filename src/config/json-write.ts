@@ -1,15 +1,15 @@
-import Config from "./config";
-import JsonAsyncParameters from "../../../filesystem/dist/write/json-async-parameters";
-import Const from "../../../function/dist/const";
-import Filter from "../../../object/dist/filter";
+import Config from './config.js';
+import {JsonAsyncParameters} from '@alirya/filesystem/write/json-async.js';
+import Const from '@alirya/function/const.js';
+import Filter from '@alirya/object/filter.js';
 
 export default function JsonWrite(file : string, config : Config) : Promise<Config> {
 
     config = Filter(config, (value, key) => {
 
         switch (true) {
-            case value === "" :
-            case key === "entities" :
+            case value === '' :
+            case key === 'entities' :
                 return false;
             default :
                 return true;
@@ -17,5 +17,5 @@ export default function JsonWrite(file : string, config : Config) : Promise<Conf
 
     }) as Config;
 
-    return JsonAsyncParameters(file, config, 2).then(Const(config))
+    return JsonAsyncParameters(file, config, 2).then(Const(config));
 }

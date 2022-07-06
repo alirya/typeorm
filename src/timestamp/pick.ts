@@ -1,5 +1,5 @@
-import Timestamp from './timestamp';
-import {PickParameters} from '@alirya/object/pick';
+import Timestamp from './timestamp.js';
+import {PickParameters} from '@alirya/object/pick.js';
 
 export default function Pick<TimestampType extends Timestamp>(object : TimestampType) : Pick<TimestampType, 'created'|'updated'> {
 

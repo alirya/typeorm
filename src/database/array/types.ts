@@ -1,4 +1,4 @@
-import {DatabaseType} from "typeorm/driver/types/DatabaseType";
+import {DatabaseType} from 'typeorm/driver/types/DatabaseType';
 
 const temp : Record<DatabaseType, null> = {
     mysql : null,
@@ -16,10 +16,10 @@ const temp : Record<DatabaseType, null> = {
     expo : null,
     capacitor : null,
     spanner : null,
-    "react-native" : null,
-    "aurora-mysql" : null,
-    "aurora-postgres" : null,
-    "better-sqlite3" : null,
+    'react-native' : null,
+    'aurora-mysql' : null,
+    'aurora-postgres' : null,
+    'better-sqlite3' : null,
 };
 
 const Types : ReadonlyArray<DatabaseType> = Object.keys(temp) as ReadonlyArray<DatabaseType>;

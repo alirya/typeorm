@@ -1,10 +1,10 @@
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
-import Replication from "./replication";
-import PostgresOption from "./postgres-option";
-import ReplicationSlave from "./replication-slave";
-import ReplicationMaster from "./replication-master";
-import {merge} from "lodash";
-import Filter from "@alirya/object/filter-recursive";
+import {PostgresConnectionOptions} from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import Replication from './replication.js';
+import PostgresOption from './postgres-option.js';
+import ReplicationSlave from './replication-slave.js';
+import ReplicationMaster from './replication-master.js';
+import {merge} from 'lodash';
+import Filter from '@alirya/object/filter-recursive.js';
 
 
 export default async function Postgres(config: PostgresConnectionOptions) : Promise<PostgresConnectionOptions> {
@@ -15,7 +15,7 @@ export default async function Postgres(config: PostgresConnectionOptions) : Prom
 
             await ReplicationMaster<PostgresConnectionOptions>(config as PostgresConnectionOptions, (config)=>PostgresOption(config));
 
-            await ReplicationSlave<PostgresConnectionOptions>(config as PostgresConnectionOptions, (config)=>PostgresOption(config))
+            await ReplicationSlave<PostgresConnectionOptions>(config as PostgresConnectionOptions, (config)=>PostgresOption(config));
 
         } else {
 
@@ -24,5 +24,5 @@ export default async function Postgres(config: PostgresConnectionOptions) : Prom
 
         return Filter<PostgresConnectionOptions>(config, (value)=>!!value) as PostgresConnectionOptions;
 
-    })
+    });
 }

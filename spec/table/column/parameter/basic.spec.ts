@@ -1,9 +1,9 @@
-import {Connection as OrmConnection} from 'typeorm/connection/Connection';
-import Connection from '../../../connection';
-import GrandParent from '../../../grand-parent/grand-parent';
-import Parameter from '../../../../dist/table/column/parameter';
-import Standard from '../../../../dist/table/column/standard';
-import Entity from '../../../../dist/table/entity';
+import {Connection as OrmConnection} from 'typeorm/connection/Connection.js';
+import Connection from '../../../connection.js';
+import GrandParent from '../../../grand-parent/grand-parent.js';
+import Parameter from '../../../../dist/table/column/parameter.js';
+import Standard from '../../../../dist/table/column/standard.js';
+import Entity from '../../../../dist/table/entity.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

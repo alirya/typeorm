@@ -1,7 +1,7 @@
-import Table from './table';
+import Table from './table.js';
 import {QueryBuilder} from 'typeorm';
-import Metadata from './metadata';
-import AliasNotFound from './string/alias-not-found';
+import Metadata from './metadata.js';
+import AliasNotFound from './string/alias-not-found.js';
 
 /**
  * find Entity with given {@param alias} and {@param entity} if provided inside {@param builder}

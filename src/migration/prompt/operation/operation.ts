@@ -1,4 +1,4 @@
-import Option from "./option/option";
+import Option from './option/option';
 
 export default interface Operation {
 

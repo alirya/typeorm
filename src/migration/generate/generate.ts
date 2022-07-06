@@ -1,5 +1,5 @@
-import {Query} from "typeorm/driver/Query";
-import {EntityMetadata} from "typeorm";
+import {Query} from 'typeorm/driver/Query';
+import {EntityMetadata} from 'typeorm';
 
 export interface GenerateQuery {
 

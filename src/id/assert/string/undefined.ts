@@ -1,4 +1,4 @@
-import BaseUndefined from '../../../entity/assert/string/undefined';
+import BaseUndefined from '../../../entity/assert/string/undefined.js';
 
 export default function Undefined(
     valid : boolean,

@@ -1,11 +1,11 @@
-import Connection from '../../../../connection';
-import Parent from '../../../../parent/parent';
-import Value from '../../../../../dist/table/column/value';
-import GrandParent from '../../../../grand-parent/grand-parent';
-import TableEntity from '../../../../../dist/table/entity';
+import Connection from '../../../../connection.js';
+import Parent from '../../../../parent/parent.js';
+import Value from '../../../../../dist/table/column/value.js';
+import GrandParent from '../../../../grand-parent/grand-parent.js';
+import TableEntity from '../../../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Parameter from '../../../../../dist/table/column/parameter';
-import Standard from '../../../../../dist/table/column/standard';
+import Parameter from '../../../../../dist/table/column/parameter.js';
+import Standard from '../../../../../dist/table/column/standard.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

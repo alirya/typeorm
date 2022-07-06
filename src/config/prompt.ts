@@ -1,15 +1,12 @@
-import Prompts from "prompts";
-import Config from "./config";
-import VendorQuestion, {VendorType} from "./prompt/questions/vendor";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing";
-import Vendor from "./prompt/vendor";
-import Standard from "../database/standard";
-import {DatabaseType} from "typeorm/driver/types/DatabaseType";
-import Drivers from "../database/array/types";
-import Create from "./create";
-import NoOp from "@alirya/function/no-op";
-import Callable from "@alirya/function/callable";
+import Prompts from 'prompts';
+import Config from './config.js';
+import VendorQuestion, {VendorType} from './prompt/questions/vendor.js';
+import FromQuestion from '@alirya/prompt/prompt-object/array/from-question.js';
+import FilterMissing from '@alirya/prompt/prompt-object/array/filter-missing';
+import Vendor from './prompt/vendor.js';
+import {DatabaseType} from 'typeorm/driver/types/DatabaseType';
+import Drivers from '../database/array/types.js';
+import Create from './create.js';
 
 export default function Prompt(
     initial : Partial<Config>|Promise<Partial<Config>> = {},
@@ -31,7 +28,7 @@ export default function Prompt(
 
         }).then((config : VendorType)=>{
 
-            return Vendor(config)
+            return Vendor(config);
 
         })/*.then(config=>{
 

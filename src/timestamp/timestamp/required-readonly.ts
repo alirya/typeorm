@@ -1,5 +1,5 @@
-import Required from './required';
-import TimestampEntity from '../required-readonly';
+import Required from './required.js';
+import TimestampEntity from '../required-readonly.js';
 
 export default interface RequiredReadonly extends Readonly<Required> {
 

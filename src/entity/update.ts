@@ -1,13 +1,13 @@
 import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
-import Updated from './boolean/updated';
-import Unique from '@alirya/array/unique-parameters';
-import OmitUndefined from '@alirya/object/omit-undefined';
-import Extract from '@alirya/object/extract';
-import NotEmpty from '@alirya/object/boolean/not-empty';
-import NotFound from '../throwable/not-found';
-import Name from '@alirya/object/string/name';
-import PrimaryKeyRequired from './assert/not-undefined';
-import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';
+import Updated from './boolean/updated.js';
+import Unique from '@alirya/array/unique-parameters.js';
+import OmitUndefined from '@alirya/object/omit-undefined.js';
+import Extract from '@alirya/object/extract.js';
+import NotEmpty from '@alirya/object/boolean/not-empty.js';
+import NotFound from '../throwable/not-found.js';
+import Name from '@alirya/object/string/name.js';
+import PrimaryKeyRequired from './assert/not-undefined.js';
+import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity.js';
 
 export default function Update<Entity extends object>(
     manager : EntityManager,

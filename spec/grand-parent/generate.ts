@@ -1,5 +1,5 @@
 import * as Faker from 'faker';
-import GrandParent from './grand-parent';
+import GrandParent from './grand-parent.js';
 import {Required} from 'utility-types';
 
 export default function Generate() : Required<GrandParent, 'name'> {

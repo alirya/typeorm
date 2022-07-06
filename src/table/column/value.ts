@@ -1,9 +1,9 @@
-import Table from '../table';
-import Infer from '../entity/infer';
-import ValueInterface from '@alirya/value/value';
-import ArgumentContainer from '@alirya/function/argument/argument';
-import Column from './column';
-import BaseParameter from '@alirya/function/parameter/parameter';
+import Table from '../table.js';
+import Infer from '../entity/infer.js';
+import ValueInterface from '@alirya/value/value.js';
+import ArgumentContainer from '@alirya/function/argument/argument.js';
+import Column from './column.js';
+import BaseParameter from '@alirya/function/parameter/parameter.js';
 
 export default function Value<
     ValueType,

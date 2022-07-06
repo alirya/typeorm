@@ -1,6 +1,6 @@
-import Timestamp from './timestamp';
-import RequiredReadonly from './required-readonly';
-import SetGetterCallbackParameters from "@alirya/object/set-getter-callback-parameters";
+import Timestamp from './timestamp.js';
+import RequiredReadonly from './required-readonly.js';
+import SetGetterCallbackParameters from '@alirya/object/set-getter-callback-parameters';
 
 
 

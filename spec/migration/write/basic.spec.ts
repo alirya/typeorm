@@ -1,9 +1,9 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../../connection";
-import Write from "../../../dist/migration/generate/write";
-import Generator from "../../../dist/migration/generate/data-source-generator";
-import Class from "../../../../class/dist/class";
-import FsExtra from "fs-extra";
+import {DataSource} from 'typeorm/data-source/DataSource';
+import Connection from '../../connection';
+import Write from '../../../dist/migration/generate/write';
+import Generator from '../../../dist/migration/generate/data-source-generator';
+import Class from '../../../../class/dist/class';
+import FsExtra from 'fs-extra';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 2147483647;
 
@@ -11,7 +11,7 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 function PathReplace(path) : string {
 
-    return path.replace('dist-spec', 'spec')
+    return path.replace('dist-spec', 'spec');
 }
 
 let connection : DataSource;
@@ -41,7 +41,7 @@ it('clean migrations directories', async ()=>{
 
 it('delete existing', async ()=>{
 
-    const metadatas = new Set(connection.entityMetadatas)
+    const metadatas = new Set(connection.entityMetadatas);
 
     while (metadatas.size) {
 
@@ -53,16 +53,16 @@ it('delete existing', async ()=>{
 
                 metadatas.delete(metadata);
 
-                console.log(`deleting ${metadata.tableName} success`)
+                console.log(`deleting ${metadata.tableName} success`);
 
             } catch (error) {
 
-                console.log(`deleting ${metadata.tableName} error, skipping`)
+                console.log(`deleting ${metadata.tableName} error, skipping`);
             }
 
         }
     }
-})
+});
 
 it('write', async ()=>{
 
@@ -73,7 +73,7 @@ it('write', async ()=>{
         (entity)=>entity.migrationPath,
         path => path.replace('dist-spec', 'spec'),
         console.log
-    )
+    );
 });
 
 it('wait compiler',  (done)=>{

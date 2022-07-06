@@ -1,6 +1,6 @@
 import {SelectQueryBuilder} from 'typeorm';
-import Pagination from '../pagination/pagination';
-import SkipTake from '../pagination/query/argument/skip-take';
+import Pagination from '../pagination/pagination.js';
+import SkipTake from '../pagination/query/argument/skip-take.js';
 
 /**
  * @link https://github.com/typeorm/typeorm/issues/3354

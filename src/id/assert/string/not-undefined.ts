@@ -1,5 +1,5 @@
-import Id from '../../id';
-import BaseNotUndefined from '../../../entity/assert/string/not-undefined';
+import Id from '../../id.js';
+import BaseNotUndefined from '../../../entity/assert/string/not-undefined.js';
 
 export default function NotUndefined<
     Entity extends Id

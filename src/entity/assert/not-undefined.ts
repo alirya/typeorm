@@ -1,6 +1,6 @@
-import Guard from '../boolean/not-undefined';
-import {CallbackParameters} from '@alirya/function/assert/callback';
-import NotUndefinedError from './throwable/not-undefined';
+import Guard from '../boolean/not-undefined.js';
+import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import NotUndefinedError from './throwable/not-undefined.js';
 import {Optional, Required} from 'utility-types';
 
 export default function NotUndefined<

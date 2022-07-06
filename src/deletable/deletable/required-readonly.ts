@@ -1,5 +1,5 @@
-import Required from './required';
-import DeletableEntity from '../required-readonly';
+import Required from './required.js';
+import DeletableEntity from '../required-readonly.js';
 
 export default interface RequiredReadonly extends Readonly<Required> {
 

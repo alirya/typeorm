@@ -1,5 +1,5 @@
-import Column from '../table/column/column';
-import Table from '../table/table';
+import Column from '../table/column/column.js';
+import Table from '../table/table.js';
 import {SelectQueryBuilder} from 'typeorm';
 import {List} from 'ts-toolbelt';
 

@@ -1,15 +1,15 @@
-import {EntitySchema} from "typeorm/entity-schema/EntitySchema";
-import Prompts from "prompts";
-import Name from "../../generate/questions/name";
-import {DataSource} from "typeorm/data-source/DataSource";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import Class from "@alirya/class/class";
-import GenerateWrite from "../../generate/write";
-import DataSourceGenerator from "../../generate/data-source-generator";
-import Callable from "@alirya/function/callable";
-import Generate from "../../generate/generate";
-import NoOp from "@alirya/function/no-op";
-import Identity from "@alirya/function/identity";
+import {EntitySchema} from 'typeorm/entity-schema/EntitySchema';
+import Prompts from 'prompts';
+import Name from '../../generate/questions/name';
+import {DataSource} from 'typeorm/data-source/DataSource';
+import FromQuestion from '@alirya/prompt/prompt-object/array/from-question';
+import Class from '@alirya/class/class';
+import GenerateWrite from '../../generate/write';
+import DataSourceGenerator from '../../generate/data-source-generator';
+import Callable from '@alirya/function/callable';
+import Generate from '../../generate/generate';
+import NoOp from '@alirya/function/no-op';
+import Identity from '@alirya/function/identity';
 
 export default function Write(
     connection : DataSource,

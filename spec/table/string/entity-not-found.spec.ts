@@ -1,7 +1,7 @@
-import EntityNotFound from '../../../dist/table/string/entity-not-found';
-import Parent from '../../parent/parent';
+import EntityNotFound from '../../../dist/table/string/entity-not-found.js';
+import Parent from '../../parent/parent.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Connection from '../../connection';
+import Connection from '../../connection.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,12 +1,12 @@
-import {DataSource, EntityMetadata} from "typeorm";
-import EntityQueryMatch from "./boolean/entity-query-match";
-import {GenerateQuery} from "./generate";
-import ClassFromQueries from "./string/class-from-queries";
-import Callable from "@alirya/function/callable";
-import Generate from "./generate";
-import PublicMigrationGenerateCommand from "../migration-generate-command/public-migration-generate-command";
-import NoOp from "@alirya/function/no-op";
-import TrimPrefixParameters from "@alirya/string/trim-prefix-parameters";
+import {DataSource, EntityMetadata} from 'typeorm';
+import EntityQueryMatch from './boolean/entity-query-match';
+import {GenerateQuery} from './generate';
+import ClassFromQueries from './string/class-from-queries';
+import Callable from '@alirya/function/callable';
+import Generate from './generate';
+import PublicMigrationGenerateCommand from '../migration-generate-command/public-migration-generate-command';
+import NoOp from '@alirya/function/no-op';
+import TrimPrefixParameters from '@alirya/string/trim-prefix-parameters';
 
 export default async function DataSourceGenerator(
     name: string,
@@ -15,7 +15,7 @@ export default async function DataSourceGenerator(
     extension : string = 'ts',
 ) : Promise<Generate> {
 
-    extension = TrimPrefixParameters(extension, '.')
+    extension = TrimPrefixParameters(extension, '.');
 
     const sqlInMemory = await connection.driver.createSchemaBuilder().log();
 
@@ -36,7 +36,7 @@ export default async function DataSourceGenerator(
 
 
     // generate data
-    const queries = new Map<EntityMetadata, GenerateQuery[]>()
+    const queries = new Map<EntityMetadata, GenerateQuery[]>();
     const tables : string[] = [];
     for (const entityMetadata of connection.entityMetadatas) {
 
@@ -76,7 +76,7 @@ export default async function DataSourceGenerator(
 
     if(upQueries.size) {
 
-        const query = [...upQueries.values()].map(query=>query.query).join("\r\n\r\n");
+        const query = [...upQueries.values()].map(query=>query.query).join('\r\n\r\n');
 
         throw new Error(`Unhandled ${upQueries.size} query, ${query}`);
     }

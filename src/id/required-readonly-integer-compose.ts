@@ -1,6 +1,6 @@
-import SetGetterCallbackParameters from "@alirya/object/set-getter-callback-parameters";
-import Id from "./id";
-import EnsureNumber from "@alirya/number/ensure/number";
+import SetGetterCallbackParameters from '@alirya/object/set-getter-callback-parameters';
+import Id from './id';
+import EnsureNumber from '@alirya/number/ensure/number';
 
 
 

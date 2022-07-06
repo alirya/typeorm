@@ -1,7 +1,7 @@
-import Class from '@alirya/class/class';
+import Class from '@alirya/class/class.js';
 import {QueryBuilder} from 'typeorm';
-import Name from '@alirya/object/string/name';
-import {TemplateParameter} from '@alirya/string/function/template';
+import Name from '@alirya/object/string/name.js';
+import {TemplateParameter} from '@alirya/string/function/template.js';
 
 type Argument = Record<'entity'|'alias'|'predicate'|'builder', string>;
 

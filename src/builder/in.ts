@@ -1,8 +1,8 @@
-import Table from '../table/table';
+import Table from '../table/table.js';
 import {QueryBuilder, WhereExpressionBuilder} from 'typeorm';
-import Column from '../table/column/column';
-import BaseParameter from '@alirya/function/parameter/parameter';
-import ArgumentContainer from '@alirya/function/argument/argument';
+import Column from '../table/column/column.js';
+import BaseParameter from '@alirya/function/parameter/parameter.js';
+import ArgumentContainer from '@alirya/function/argument/argument.js';
 
 export default function In<ValueType extends unknown[],
     ColumnType extends Column<Table<any>> & BaseParameter & ArgumentContainer<Record<string, ValueType>>,

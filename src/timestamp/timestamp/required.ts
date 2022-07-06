@@ -1,5 +1,5 @@
-import Timestamp from './timestamp';
-import TimestampEntity from '../required';
+import Timestamp from './timestamp.js';
+import TimestampEntity from '../required.js';
 
 export default interface Required extends globalThis.Required<Timestamp> {
 

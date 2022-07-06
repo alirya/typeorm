@@ -1,4 +1,4 @@
-import Builder from "../../../dist/config/prompt";
+import Builder from '../../../dist/config/prompt';
 
 // console.log('aw')
 // process.exit(0)

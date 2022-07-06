@@ -1,5 +1,5 @@
-import SqlError from '../mysql';
-import Mysql from './mysql';
+import SqlError from '../mysql.js';
+import Mysql from './mysql.js';
 
 export default function InvalidRelation(value : any) : value is SqlError {
 

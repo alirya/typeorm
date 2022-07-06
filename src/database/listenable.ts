@@ -1,9 +1,8 @@
-import Config from "../config/config";
-import {DataSource} from "typeorm/data-source/DataSource";
-import Standard from "./standard";
-import Callable from "@alirya/function/callable";
-import Event from "./event/event";
-import Null from "./event/null";
+import Config from '../config/config.js';
+import {DataSource} from 'typeorm/data-source/DataSource';
+import Standard from './standard';
+import Event from './event/event';
+import Null from './event/null';
 
 export default class Listenable extends Standard {
 

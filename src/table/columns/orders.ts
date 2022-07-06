@@ -1,7 +1,7 @@
-import Columns from './columns';
+import Columns from './columns.js';
 import {Object} from 'ts-toolbelt';
-import {OrderByCondition} from 'typeorm/find-options/OrderByCondition';
-import ArgumentContainer from '@alirya/function/argument/argument';
+import {OrderByCondition} from 'typeorm/find-options/OrderByCondition.js';
+import ArgumentContainer from '@alirya/function/argument/argument.js';
 import {SelectQueryBuilder} from 'typeorm';
 
 export default function Orders<

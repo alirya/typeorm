@@ -1,5 +1,5 @@
-import Table from '../table';
-import Infer from '../entity/infer';
+import Table from '../table.js';
+import Infer from '../entity/infer.js';
 
 /**
  * Describe column data

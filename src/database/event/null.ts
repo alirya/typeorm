@@ -1,5 +1,5 @@
-import Event from "./event";
-import Database from "../database";
+import Event from './event';
+import Database from '../database';
 
 export default class Null implements Event {
 

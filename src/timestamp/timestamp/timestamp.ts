@@ -1,4 +1,4 @@
-import TimestampEntity from '../timestamp';
+import TimestampEntity from '../timestamp.js';
 import {Column} from 'typeorm';
 
 export default class Timestamp {

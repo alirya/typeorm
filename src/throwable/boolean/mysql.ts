@@ -1,8 +1,8 @@
-import TypeObject from '@alirya/object/boolean/object';
-import TypeString from '@alirya/string/boolean/string';
-import TypeNumber from '@alirya/number/boolean/number';
-import SqlError from '../mysql';
-import TypeArray from '@alirya/array/boolean/array';
+import TypeObject from '@alirya/object/boolean/object.js';
+import TypeString from '@alirya/string/boolean/string.js';
+import TypeNumber from '@alirya/number/boolean/number.js';
+import SqlError from '../mysql.js';
+import TypeArray from '@alirya/array/boolean/array.js';
 
 export default function Mysql(value : any) : value is SqlError;
 export default function Mysql(value : SqlError) : value is SqlError;

@@ -1,13 +1,13 @@
-import Connection from '../../../../connection';
-import Value from '../../../../../dist/table/column/value';
-import Equal from '../../../../../dist/builder/equal';
-import GrandParent from '../../../../grand-parent/grand-parent';
-import GrandParentGenerate from '../../../../grand-parent/generate';
-import Inserts from '../../../../../dist/entity/array/inserts';
-import Entity from '../../../../../dist/table/entity';
+import Connection from '../../../../connection.js';
+import Value from '../../../../../dist/table/column/value.js';
+import Equal from '../../../../../dist/builder/equal.js';
+import GrandParent from '../../../../grand-parent/grand-parent.js';
+import GrandParentGenerate from '../../../../grand-parent/generate.js';
+import Inserts from '../../../../../dist/entity/array/inserts.js';
+import Entity from '../../../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Parameter from '../../../../../dist/table/column/parameter';
-import Standard from '../../../../../dist/table/column/standard';
+import Parameter from '../../../../../dist/table/column/parameter.js';
+import Standard from '../../../../../dist/table/column/standard.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

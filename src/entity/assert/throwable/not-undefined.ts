@@ -1,5 +1,5 @@
-import New from '@alirya/function/new';
-import NotUndefinedMessage from '../string/not-undefined';
+import New from '@alirya/function/new.js';
+import NotUndefinedMessage from '../string/not-undefined.js';
 
 export default function NotUndefined(
     entity : object,

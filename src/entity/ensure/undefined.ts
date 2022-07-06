@@ -1,5 +1,5 @@
-import AssertUndefined from '../assert/undefined';
-import UndefinedError from '../assert/throwable/undefined';
+import AssertUndefined from '../assert/undefined.js';
+import UndefinedError from '../assert/throwable/undefined.js';
 import {Optional} from 'utility-types';
 
 export default function Undefined<

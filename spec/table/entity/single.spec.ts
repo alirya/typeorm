@@ -1,6 +1,6 @@
-import Connection from '../../connection';
-import Parent from '../../parent/parent';
-import Entity from '../../../dist/table/entity';
+import Connection from '../../connection.js';
+import Parent from '../../parent/parent.js';
+import Entity from '../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

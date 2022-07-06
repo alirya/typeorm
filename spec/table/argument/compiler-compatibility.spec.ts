@@ -1,5 +1,5 @@
-import Standard from '../../../dist/table/standard';
-import GrandParent from '../../grand-parent/grand-parent';
+import Standard from '../../../dist/table/standard.js';
+import GrandParent from '../../grand-parent/grand-parent.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

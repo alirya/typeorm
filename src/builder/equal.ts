@@ -1,11 +1,11 @@
-import Table from '../table/table';
+import Table from '../table/table.js';
 import {QueryBuilder, WhereExpressionBuilder} from 'typeorm';
-import ArgumentContainer from '@alirya/function/argument/argument';
-import Column from '../table/column/column';
-import BaseParameter from '@alirya/function/parameter/parameter';
-import Value from '../table/column/value';
-import Standard from '../table/column/standard';
-import Parameter from '../table/column/parameter';
+import ArgumentContainer from '@alirya/function/argument/argument.js';
+import Column from '../table/column/column.js';
+import BaseParameter from '@alirya/function/parameter/parameter.js';
+import Value from '../table/column/value.js';
+import Standard from '../table/column/standard.js';
+import Parameter from '../table/column/parameter.js';
 
 
 export default function Equal<

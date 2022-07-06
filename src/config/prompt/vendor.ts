@@ -1,9 +1,9 @@
-import {VendorType} from "./questions/vendor";
-import Postgres from "./postgres";
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
-import Config from "../config";
-import Create from "../create";
-import {merge} from "lodash";
+import {VendorType} from './questions/vendor.js';
+import Postgres from './postgres.js';
+import {PostgresConnectionOptions} from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import Config from '../config.js';
+import Create from '../create.js';
+import {merge} from 'lodash';
 
 export default function Vendor(
     config : VendorType|Promise<VendorType>,
@@ -13,12 +13,12 @@ export default function Vendor(
         .then(config=>{
 
             switch (config.type) {
-                case "postgres":
-                    return Postgres(config as PostgresConnectionOptions)
+                case 'postgres':
+                    return Postgres(config as PostgresConnectionOptions);
 
 
                 default :
-                    throw new Error(`${config.type} builder is not supported`)
+                    throw new Error(`${config.type} builder is not supported`);
             }
         })
         .then(result=>merge(config, result))

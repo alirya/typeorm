@@ -1,16 +1,16 @@
-import GrandParent from '../../../grand-parent/grand-parent';
-import Connection from '../../../connection';
-import GrandParentGenerate from '../../../grand-parent/generate';
-import Insert from '../../../../dist/entity/insert';
-import Join from '../../../../dist/builder/left-join';
-import Parameter from '../../../../dist/table/column/parameter';
-import Entity from '../../../../dist/table/entity';
+import GrandParent from '../../../grand-parent/grand-parent.js';
+import Connection from '../../../connection.js';
+import GrandParentGenerate from '../../../grand-parent/generate.js';
+import Insert from '../../../../dist/entity/insert.js';
+import Join from '../../../../dist/builder/left-join.js';
+import Parameter from '../../../../dist/table/column/parameter.js';
+import Entity from '../../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Parent from '../../../parent/parent';
-import ParentGenerate from '../../../parent/generate';
-import Equal from '../../../../dist/builder/equal';
-import Standard from '../../../../dist/table/column/standard';
-import FindAlias from '../../../../dist/table/alias';
+import Parent from '../../../parent/parent.js';
+import ParentGenerate from '../../../parent/generate.js';
+import Equal from '../../../../dist/builder/equal.js';
+import Standard from '../../../../dist/table/column/standard.js';
+import FindAlias from '../../../../dist/table/alias.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,11 +1,11 @@
-import GrandParent from '../../../grand-parent/grand-parent';
-import Connection from '../../../connection';
-import GrandParentGenerate from '../../../grand-parent/generate';
-import OrderEnum from '../../../../dist/builder/order/mode/mode';
-import Inserts from '../../../../dist/entity/array/inserts';
-import Order from '../../../../dist/table/column/order';
-import Value from '../../../../dist/table/column/standard';
-import Entity from '../../../../dist/table/entity';
+import GrandParent from '../../../grand-parent/grand-parent.js';
+import Connection from '../../../connection.js';
+import GrandParentGenerate from '../../../grand-parent/generate.js';
+import OrderEnum from '../../../../dist/builder/order/mode/mode.js';
+import Inserts from '../../../../dist/entity/array/inserts.js';
+import Order from '../../../../dist/table/column/order.js';
+import Value from '../../../../dist/table/column/standard.js';
+import Entity from '../../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
 
 

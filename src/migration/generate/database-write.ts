@@ -1,9 +1,9 @@
-import Generate from "./generate";
-import Callable from "@alirya/function/callable";
-import Database from "../../database/database";
-import MappedWrite from "./mapped-write";
-import DataSourceGenerator from "./data-source-generator";
-import NoOp from "@alirya/function/no-op";
+import Generate from './generate';
+import Callable from '@alirya/function/callable';
+import Database from '../../database/database';
+import MappedWrite from './mapped-write';
+import DataSourceGenerator from './data-source-generator';
+import NoOp from '@alirya/function/no-op';
 
 export default async function DatabaseWrite(
     name : string,
@@ -15,7 +15,7 @@ export default async function DatabaseWrite(
 
     const generate = await DataSourceGenerator(name, database.connection, log, extension);
 
-    return MappedWrite(generate, database.config.entities, path, log)
+    return MappedWrite(generate, database.config.entities, path, log);
 }
 
 

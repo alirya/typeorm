@@ -1,9 +1,9 @@
-import Prompts from "prompts";
-import RegisterSlave from "./questions/register-slave";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import {merge} from "lodash";
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
-import {O} from "ts-toolbelt";
+import Prompts from 'prompts';
+import RegisterSlave from './questions/register-slave.js';
+import FromQuestion from '@alirya/prompt/prompt-object/array/from-question.js';
+import {merge} from 'lodash';
+import {PostgresConnectionOptions} from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import {O} from 'ts-toolbelt';
 
 export default async function ReplicationSlave<Type extends PostgresConnectionOptions>(
     config: Type,
@@ -17,7 +17,7 @@ export default async function ReplicationSlave<Type extends PostgresConnectionOp
         (config as O.Writable<Type>).replication = {
             master : {},
             slaves : slaves
-        }
+        };
 
     } else {
 

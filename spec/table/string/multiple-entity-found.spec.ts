@@ -1,7 +1,7 @@
-import MultipleEntityFound from '../../../dist/table/string/multiple-entity-found';
+import MultipleEntityFound from '../../../dist/table/string/multiple-entity-found.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Connection from '../../connection';
-import Parent from '../../parent/parent';
+import Connection from '../../connection.js';
+import Parent from '../../parent/parent.js';
 
 it('enable console log', () => { spyOn(console, 'log').and.callThrough();});
 

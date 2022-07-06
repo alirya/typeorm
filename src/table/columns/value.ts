@@ -1,11 +1,11 @@
-import Columns from './columns';
-import Table from '../table';
-import Infer from '../entity/infer';
+import Columns from './columns.js';
+import Table from '../table.js';
+import Infer from '../entity/infer.js';
 import {Object} from 'ts-toolbelt';
-import MapKeyCallback from '@alirya/object/map-key-callback';
-import Standard from '../column/standard';
-import ArgumentContainer from '@alirya/function/argument/argument';
-import ValueInterface from '@alirya/value/value';
+import MapKeyCallback from '@alirya/object/map-key-callback.js';
+import Standard from '../column/standard.js';
+import ArgumentContainer from '@alirya/function/argument/argument.js';
+import ValueInterface from '@alirya/value/value.js';
 
 export default class Value<
     Entity extends Table<any> = Table<any>,

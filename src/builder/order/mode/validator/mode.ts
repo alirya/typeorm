@@ -1,10 +1,10 @@
-import ValidatorInterface from '@alirya/validator/validator';
-import {ObjectParameters} from '@alirya/object/validator/object';
-import {ValuePartialParameters} from '@alirya/array/validator/value-partial';
-import {AndParameters} from '@alirya/array/validatable/and';
-import InvalidMessageMap from '@alirya/array/message/message/list/invalid';
-import {EnumParameters} from '@alirya/enum/validator/enum';
-import EnumOrder from '../mode';
+import ValidatorInterface from '@alirya/validator/validator.js';
+import {ObjectParameters} from '@alirya/object/validator/object.js';
+import {ValuePartialParameters} from '@alirya/array/validator/value-partial.js';
+import {AndParameters} from '@alirya/array/validatable/and.js';
+import InvalidMessageMap from '@alirya/array/message/message/list/invalid.js';
+import {EnumParameters} from '@alirya/enum/validator/enum.js';
+import EnumOrder from '../mode.js';
 
 export default function Mode() : ValidatorInterface<any, number> {
 

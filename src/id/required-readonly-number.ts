@@ -1,6 +1,6 @@
-import Id from './id';
-import RequiredReadonly from './required-readonly';
-import EnsureNumber from '@alirya/number/ensure/number';
+import Id from './id.js';
+import RequiredReadonly from './required-readonly.js';
+import EnsureNumber from '@alirya/number/ensure/number.js';
 
 export default class RequiredReadonlyNumber implements RequiredReadonly<number> {
 

@@ -1,4 +1,4 @@
-import Escape from "@alirya/string/pattern/escape";
+import Escape from '@alirya/string/pattern/escape';
 
 export default function EntityQueryMatch(
     query: string,

@@ -1,5 +1,5 @@
 import {SelectQueryBuilder} from 'typeorm';
-import NotFound from '../../throwable/not-found';
+import NotFound from '../../throwable/not-found.js';
 
 export default function Read<Entity>(query : SelectQueryBuilder<Entity>) : Promise<Entity> {
 

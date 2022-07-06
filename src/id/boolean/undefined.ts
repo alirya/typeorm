@@ -1,5 +1,5 @@
-import Id from '../id';
-import IsUndefined from '@alirya/undefined/boolean/undefined';
+import Id from '../id.js';
+import IsUndefined from '@alirya/undefined/boolean/undefined.js';
 
 /**
  * check if id is undefined

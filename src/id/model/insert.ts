@@ -1,8 +1,8 @@
 import {EntityManager, ObjectType} from 'typeorm';
-import Id from '../id';
-import Undefined from '../validatable/undefined';
+import Id from '../id.js';
+import Undefined from '../validatable/undefined.js';
 import {Required} from 'utility-types';
-import StandardInsert from '../../entity/insert';
+import StandardInsert from '../../entity/insert.js';
 
 /**
  * basic id insert operation

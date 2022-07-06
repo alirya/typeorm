@@ -1,5 +1,5 @@
 import {PrimaryGeneratedColumn} from 'typeorm';
-import Id from './id';
+import Id from './id.js';
 
 /**
  * automatic primary generated

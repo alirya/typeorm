@@ -1,8 +1,8 @@
 import {EntityManager, ObjectType} from 'typeorm';
-import Undefined from '../assert/undefined';
-import Id from '../required';
-import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';
-import First from '@alirya/array/value/value/first';
+import Undefined from '../assert/undefined.js';
+import Id from '../required.js';
+import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity.js';
+import First from '@alirya/array/value/value/first.js';
 /**
  * basic insert operation
  *

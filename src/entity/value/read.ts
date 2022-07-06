@@ -1,11 +1,11 @@
 import {Union} from 'ts-toolbelt';
 import {EntityManager, ObjectType} from 'typeorm';
-import {FindOneOptions} from 'typeorm/find-options/FindOneOptions';
-import ObjectNotEmpty from '@alirya/object/boolean/not-empty';
-import ArrayNotEmpty from '@alirya/array/boolean/not-empty';
-import Value from '@alirya/value/value';
-import {JoinOptions} from 'typeorm/find-options/JoinOptions';
-import Segment from '@alirya/set/segment';
+import {FindOneOptions} from 'typeorm/find-options/FindOneOptions.js';
+import ObjectNotEmpty from '@alirya/object/boolean/not-empty.js';
+import ArrayNotEmpty from '@alirya/array/boolean/not-empty.js';
+import Value from '@alirya/value/value.js';
+import {JoinOptions} from 'typeorm/find-options/JoinOptions.js';
+import Segment from '@alirya/set/segment.js';
 
 /**
  * @deprecated

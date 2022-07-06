@@ -1,5 +1,5 @@
-import Table from './table';
-import Class from '@alirya/class/class';
+import Table from './table.js';
+import Class from '@alirya/class/class.js';
 
 /**
  * basic {@see Table} implementation

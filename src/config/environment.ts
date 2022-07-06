@@ -1,7 +1,7 @@
-import Config from "./config";
-import EnvironmentParameters from "@alirya/object/environment-parameters";
-import Last from "@alirya/array/value/value/last";
-import Create from "./create";
+import Config from './config.js';
+import {EnvironmentParameters} from '@alirya/object/environment.js';
+import Last from '@alirya/array/value/value/last.js';
+import Create from './create.js';
 
 export type EnvironmentPrefix = 'DATABASE'|'database'|'DB'|'db';
 /**
@@ -23,5 +23,5 @@ export default function Environment(process: Record<string, any>, prefix: Enviro
        }
 
        return Create(value);
-   })
+   });
 }

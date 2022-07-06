@@ -1,9 +1,9 @@
-import Database from "./database";
-import Config from "../config/config";
-import {DataSource} from "typeorm/data-source/DataSource";
-import {DataSourceOptions} from "typeorm/data-source/DataSourceOptions";
-import FromConfig from "../config/data-source-options/from-config";
-import Create from "../config/create";
+import Database from './database.js';
+import Config from '../config/config.js';
+import {DataSource} from 'typeorm/data-source/DataSource';
+import {DataSourceOptions} from 'typeorm/data-source/DataSourceOptions';
+import FromConfig from '../config/data-source-options/from-config';
+import Create from '../config/create.js';
 
 export default class Standard implements Database {
 
@@ -42,7 +42,7 @@ export default class Standard implements Database {
             return this.#connection;
         }
 
-        throw new Error('database is not connected')
+        throw new Error('database is not connected');
 
     }
 

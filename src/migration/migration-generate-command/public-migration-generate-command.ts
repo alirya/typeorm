@@ -1,4 +1,4 @@
-import {MigrationGenerateCommand} from "typeorm/commands/MigrationGenerateCommand";
+import {MigrationGenerateCommand} from 'typeorm/commands/MigrationGenerateCommand';
 
 
 export default class PublicMigrationGenerateCommand extends MigrationGenerateCommand {

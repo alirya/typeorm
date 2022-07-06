@@ -1,9 +1,9 @@
-import Callable from "@alirya/function/callable";
-import GenerateType from "../../generate/generate";
-import NoOp from "@alirya/function/no-op";
-import Identity from "@alirya/function/identity";
-import Database from "../../../database/database";
-import Write from "./write";
+import Callable from '@alirya/function/callable';
+import GenerateType from '../../generate/generate';
+import NoOp from '@alirya/function/no-op';
+import Identity from '@alirya/function/identity';
+import Database from '../../../database/database';
+import Write from './write';
 
 export default function DatabaseWrite(
     database : Database,
@@ -12,5 +12,5 @@ export default function DatabaseWrite(
     extension : string = 'ts',
 ) : Promise<GenerateType> {
 
-    return Write(database.connection, database.config.entities, path, log, extension)
+    return Write(database.connection, database.config.entities, path, log, extension);
 }

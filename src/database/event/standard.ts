@@ -1,8 +1,8 @@
-import Event from "./event";
-import Database from "../database";
-import Callable from "../../../../function/dist/callable";
-import {MysqlConnectionOptions} from "typeorm/driver/mysql/MysqlConnectionOptions";
-import Config from "../../config/config";
+import Event from './event';
+import Database from '../database';
+import Callable from '../../../../function/dist/callable';
+import {MysqlConnectionOptions} from 'typeorm/driver/mysql/MysqlConnectionOptions';
+import Config from '../../config/config.js';
 
 export default class Standard implements Event {
 
@@ -24,7 +24,7 @@ export default class Standard implements Event {
 
             info.push('master:' + replication.master.database);
 
-            info.push('slaves:' + replication.slaves.map(config=>config.database).join(', '))
+            info.push('slaves:' + replication.slaves.map(config=>config.database).join(', '));
 
         } else {
 

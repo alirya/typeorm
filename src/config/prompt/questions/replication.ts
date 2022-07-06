@@ -1,9 +1,9 @@
-import {PromptObject} from "prompts";
-import StrictOmit from "@alirya/object/strict-omit";
-import Questions from "@alirya/prompt/questions/questions";
+import {PromptObject} from 'prompts';
+import StrictOmit from '@alirya/object/strict-omit';
+import Questions from '@alirya/prompt/questions/questions';
 
 export interface ReplicationResult {
-    replication : boolean
+    replication : boolean;
 }
 
 export default class Replication implements Questions<ReplicationResult> {

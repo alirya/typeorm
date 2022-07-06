@@ -1,9 +1,9 @@
-import Connection from '../../../../connection';
-import Parent from '../../../../parent/parent';
-import Parameter from '../../../../../dist/table/column/parameter';
-import Entity from '../../../../../dist/table/entity';
+import Connection from '../../../../connection.js';
+import Parent from '../../../../parent/parent.js';
+import Parameter from '../../../../../dist/table/column/parameter.js';
+import Entity from '../../../../../dist/table/entity.js';
 import {Connection as OrmConnection} from 'typeorm';
-import Standard from '../../../../../dist/table/column/standard';
+import Standard from '../../../../../dist/table/column/standard.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

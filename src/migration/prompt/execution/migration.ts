@@ -1,14 +1,11 @@
-import {EntitySchema} from "typeorm/entity-schema/EntitySchema";
-import Operation from "../questions/operation";
-import Prompts from "prompts";
-import OperationType from "../operation/operation";
-import Option from "../operation/option/option";
-import Write from "./write";
-import {DataSource} from "typeorm/data-source/DataSource";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import Callable from "@alirya/function/callable";
-import Identity from "@alirya/function/identity";
-import NoOp from "@alirya/function/no-op";
+import {EntitySchema} from 'typeorm/entity-schema/EntitySchema';
+import OperationType from '../operation/operation';
+import Option from '../operation/option/option';
+import Write from './write';
+import {DataSource} from 'typeorm/data-source/DataSource';
+import Callable from '@alirya/function/callable';
+import Identity from '@alirya/function/identity';
+import NoOp from '@alirya/function/no-op';
 
 export default async function Migration(
     operation : OperationType,

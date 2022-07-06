@@ -1,7 +1,7 @@
-import Table from '../table';
-import Column from './column';
-import Infer from '../entity/infer';
-import Class from '@alirya/class/class';
+import Table from '../table.js';
+import Column from './column.js';
+import Infer from '../entity/infer.js';
+import Class from '@alirya/class/class.js';
 
 export default function Standard<
     TableType extends Table<Class<object, unknown[]>> = Table<Class<object, unknown[]>>,

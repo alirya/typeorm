@@ -1,9 +1,9 @@
-import Insert from '../../dist/entity/insert';
-import Connection from '../connection';
-import GrandParentGenerate from '../grand-parent/generate';
-import ChildrenGenerate from '../children/generate';
-import ParentGenerate from '../parent/generate';
-import {DataSource} from "typeorm/data-source/DataSource";
+import Insert from '../../dist/entity/insert.js';
+import Connection from '../connection.js';
+import GrandParentGenerate from '../grand-parent/generate.js';
+import ChildrenGenerate from '../children/generate.js';
+import ParentGenerate from '../parent/generate.js';
+import {DataSource} from 'typeorm/data-source/DataSource';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
