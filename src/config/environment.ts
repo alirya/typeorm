@@ -1,5 +1,5 @@
 import Config from "./config";
-import EnvironmentParameters from "@alirya/object/environment-parameters";
+import {EnvironmentParameters} from "@alirya/object/environment";
 import Last from "@alirya/array/value/value/last";
 import Create from "./create";
 

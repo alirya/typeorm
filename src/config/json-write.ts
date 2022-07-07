@@ -1,5 +1,5 @@
 import Config from "./config";
-import JsonAsyncParameters from "../../../filesystem/dist/write/json-async-parameters";
+import {JsonAsyncParameters} from "../../../filesystem/dist/write/json-async";
 import Const from "../../../function/dist/const";
 import Filter from "../../../object/dist/filter";
 

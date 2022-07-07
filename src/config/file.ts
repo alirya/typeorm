@@ -1,7 +1,7 @@
 import Config from "./config";
 import {promises} from "fs";
 import Create from "./create";
-import ParseAsyncParameters from "../../../filesystem/dist/read/parse-async-parameters";
+import {ParseAsyncParameters} from "../../../filesystem/dist/read/parse-async";
 
 export default function File(
     path : string,
