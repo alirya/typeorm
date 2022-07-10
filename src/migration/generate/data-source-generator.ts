@@ -6,7 +6,7 @@ import Callable from "@alirya/function/callable";
 import Generate from "./generate";
 import PublicMigrationGenerateCommand from "../migration-generate-command/public-migration-generate-command";
 import NoOp from "@alirya/function/no-op";
-import TrimPrefixParameters from "@alirya/string/trim-prefix-parameters";
+import { TrimPrefixParameters } from "@alirya/string/trim-prefix";
 
 export default async function DataSourceGenerator(
     name: string,

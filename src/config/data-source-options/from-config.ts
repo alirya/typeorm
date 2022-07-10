@@ -1,6 +1,6 @@
 import Config from "../config";
 import {DataSourceOptions} from "typeorm/data-source/DataSourceOptions";
-import Omit from "@alirya/object/omit-parameters";
+import { OmitParameters } from "@alirya/object/omit";
 
 export default function FromConfig(config: Config) : DataSourceOptions {
 
@@ -9,5 +9,5 @@ export default function FromConfig(config: Config) : DataSourceOptions {
         migrations : [...config.entities.values()].map(path=>`${path}/*.js`),
     }
 
-    return Object.assign({}, Omit(config, 'entities'), entities) as DataSourceOptions;
+    return Object.assign({}, OmitParameters(config, 'entities'), entities) as DataSourceOptions;
 }

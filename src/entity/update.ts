@@ -1,6 +1,6 @@
 import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
 import Updated from './boolean/updated';
-import Unique from '@alirya/array/unique-parameters';
+import { UniqueParameters } from '@alirya/array/unique';
 import OmitUndefined from '@alirya/object/omit-undefined';
 import Extract from '@alirya/object/extract';
 import NotEmpty from '@alirya/object/boolean/not-empty';
@@ -30,7 +30,7 @@ export default function Update<Entity extends object>(
     if(detach) {
 
         detaches.push(key);
-        detaches = Unique(detaches);
+        detaches = UniqueParameters(detaches);
 
         extract = new Extract(data, detaches);
     }

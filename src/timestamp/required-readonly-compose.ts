@@ -1,6 +1,5 @@
 import Timestamp from './timestamp';
 import RequiredReadonly from './required-readonly';
-import SetGetterCallbackParameters from "@alirya/object/set-getter-callback-parameters";
 import {PropertyLazyStaticParameters} from "@alirya/object/property-lazy-static";
 
 

@@ -1,7 +1,6 @@
 import Config from "../config/config";
 import {DataSource} from "typeorm/data-source/DataSource";
 import Standard from "./standard";
-import Callable from "@alirya/function/callable";
 import Event from "./event/event";
 import Null from "./event/null";
 
