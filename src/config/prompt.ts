@@ -4,12 +4,9 @@ import VendorQuestion, {VendorType} from "./prompt/questions/vendor";
 import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
 import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing";
 import Vendor from "./prompt/vendor";
-import Standard from "../database/standard";
 import {DatabaseType} from "typeorm/driver/types/DatabaseType";
 import Drivers from "../database/array/types";
 import Create from "./create";
-import NoOp from "@alirya/function/no-op";
-import Callable from "@alirya/function/callable";
 
 export default function Prompt(
     initial : Partial<Config>|Promise<Partial<Config>> = {},

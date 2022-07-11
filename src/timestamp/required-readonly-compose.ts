@@ -1,12 +1,11 @@
 import Timestamp from './timestamp';
 import RequiredReadonly from './required-readonly';
-import SetGetterCallbackParameters from "@alirya/object/set-getter-callback-parameters";
-
+import {PropertyLazyStaticParameters} from "@alirya/object/property-lazy-static";
 
 
 export default function RequiredReadonlyCompose<Destination extends Timestamp>(destination : Destination, target : Timestamp) : RequiredReadonly {
 
-    SetGetterCallbackParameters(destination, 'created', function () {
+    PropertyLazyStaticParameters(destination, 'created', function () {
 
         if(!target.created) {
             // TODO IMPROVE MESSAGE
@@ -14,9 +13,9 @@ export default function RequiredReadonlyCompose<Destination extends Timestamp>(d
         }
 
         return target.created;
-    });
+    }, false);
 
-    SetGetterCallbackParameters(destination, 'updated', function () {
+    PropertyLazyStaticParameters(destination, 'updated', function () {
 
         if(!target.updated) {
             // TODO IMPROVE MESSAGE
@@ -24,7 +23,7 @@ export default function RequiredReadonlyCompose<Destination extends Timestamp>(d
         }
 
         return target.updated;
-    });
+    }, false);
 
     return target as RequiredReadonly;
 }

@@ -1,18 +1,17 @@
-import ListAll from '@alirya/array/validator/list-all-parameters';
-import AndList from '@alirya/array/validatable/and-parameters';
+import { ListAllParameters } from '@alirya/array/validator/list-all';
+import { AndParameters } from '@alirya/array/validatable/and';
 import InvalidMessageList from '@alirya/array/message/message/list/invalid';
 import Integer from '../../validator/integer';
-import ValuePartial from '@alirya/array/validator/value-partial-parameters';
-import ArrayStandard from '@alirya/array/validator/array-parameters';
-import And from '@alirya/array/validatable/and-parameters';
+import { ValuePartialParameters } from '@alirya/array/validator/value-partial';
+import { ArrayParameters } from '@alirya/array/validator/array';
 
 export default function IntegerIds() {
 
-    return ValuePartial([
-            ArrayStandard(),
-            ListAll(Integer(), AndList, InvalidMessageList)
+    return ValuePartialParameters([
+            ArrayParameters(),
+            ListAllParameters(Integer(), AndParameters, InvalidMessageList)
         ],
-        And,
+        AndParameters,
         InvalidMessageList
     );
 }
