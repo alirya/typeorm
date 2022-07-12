@@ -2,6 +2,7 @@ import Environment from "../../../../dist/config/environment";
 import ProcessEnv = NodeJS.ProcessEnv;
 import Config from "../../../../dist/config/config";
 import Create from "../../../../dist/config/create";
+import {OmitParameters} from '@alirya/object/omit';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -67,6 +68,10 @@ const environment = {
 
 it('test', ()=>{
 
-    expect(Environment(environment as ProcessEnv)).toEqual(expectation)
+    expect(
+        Environment(environment as ProcessEnv)
+    ).toEqual(
+        OmitParameters(expectation, 'entities')
+    )
 })
 
