@@ -21,7 +21,7 @@
     "@alirya/object": "^0.38.1",
     "@alirya/set": "^0.9.1",
     "@alirya/map": "^0.13.1",
-    "@alirya/prompt": "^0.1.1",
+    "@alirya/prompt": "^0.1.2",
     "@alirya/string": "^0.17.1",
     "@alirya/undefined": "^0.6.1",
     "@alirya/validatable": "^0.21.1",
