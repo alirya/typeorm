@@ -4,9 +4,9 @@ import Id from './id';
 /**
  * automatic primary generated
  */
-export default class Automatic implements Id<number> {
+export default class Automatic implements Id<number|string> {
 
-    @PrimaryGeneratedColumn()
-    id ?: number;
+    @PrimaryGeneratedColumn("increment", {type:'bigint', unsigned:true})
+    id ?: number|string;
 
 }

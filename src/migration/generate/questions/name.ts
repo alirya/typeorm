@@ -1,6 +1,6 @@
 import {PromptObject} from "prompts";
 import StrictOmit from "@alirya/object/strict-omit";
-import Questions from "../../../../../prompt/dist/questions/questions";
+import Questions from "@alirya/prompt/questions/questions";
 
 export default class Name implements Questions<{name:string}> {
 
