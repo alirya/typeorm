@@ -16,10 +16,6 @@ export default async function Migration(
     extension : string = 'ts',
 ) : Promise<any> {
 
-    // const prompts = FromQuestion(new Operation());
-
-    // const operation : OperationType = await Prompts(prompts) as OperationType
-
     switch (operation.operation) {
 
         case Option.GENERATE:

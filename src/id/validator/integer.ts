@@ -4,10 +4,8 @@ import {PositiveParameters} from '@alirya/number/validator/positive';
 import {ValuePartialParameters} from '@alirya/array/validator/value-partial';
 import {AndParameters} from '@alirya/array/validatable/and';
 import InvalidMessageMap from '@alirya/array/message/message/list/map';
-import MessageAnd from '@alirya/array/message/and';
 import Validatable from '@alirya/validatable/validatable';
 import Message from '@alirya/message/message';
-import Pipe from '@alirya/function/pipe';
 
 export default function Integer(messages : (results : (Message & Validatable)[])=>any = InvalidMessageMap) : ValidatorInterface<any, number> {
 

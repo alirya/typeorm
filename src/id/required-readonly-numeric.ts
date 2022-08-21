@@ -1,7 +1,7 @@
 import Id from './id';
 import RequiredReadonly from './required-readonly';
 import Numeric from "@alirya/string/ensure/numeric";
-import NotUndefined, {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined';
+import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined';
 
 export default class RequiredReadonlyNumeric implements RequiredReadonly<number|string> {
 

@@ -10,7 +10,6 @@ import Create from "./create";
 
 export default function Prompt(
     initial : Partial<Config>|Promise<Partial<Config>> = {},
-    // log : Callable<[string], void> = NoOp,
     drivers: ReadonlyArray<DatabaseType> = Drivers
 ) : Promise<Config> {
 
@@ -20,8 +19,6 @@ export default function Prompt(
 
             const missings = FilterMissing(FromQuestion(new VendorQuestion(drivers)), config);
 
-            // log("Database Configuration");
-
             const data = await Prompts(missings);
 
             return Object.assign(data, config);
@@ -30,11 +27,5 @@ export default function Prompt(
 
             return Vendor(config)
 
-        })/*.then(config=>{
-
-           const standard = new Standard(config);
-
-           return standard.connect().then(()=>config)
-
-        }) as Promise<Config>*/;
+        });
 }
