@@ -1,5 +1,5 @@
 import Config from "../config";
-import {DataSourceOptions} from "typeorm/data-source/DataSourceOptions";
+import {DataSourceOptions} from "typeorm";
 import { OmitParameters } from "@alirya/object/omit";
 
 export default function FromConfig(config: Config) : DataSourceOptions {

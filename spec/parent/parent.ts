@@ -3,14 +3,12 @@ import IdAuto from '../../dist/id/automatic';
 import Timestamp from '../../dist/timestamp/timestamp';
 import GrandParent from '../grand-parent/grand-parent';
 import Children from '../children/children';
+import Compose from "../../dist/timestamp/compose";
 
 @Entity({name:'parent'})
-export default class Parent extends IdAuto {
+export default class Parent extends Compose(IdAuto('int')) {
 
     static migrationPath : string = __dirname + '/migration';
-
-    @Column(type => Timestamp)
-    timestamp ?: Timestamp;
 
     @Index({ unique: true })
     @Column({nullable : false, type:'varchar'})

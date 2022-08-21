@@ -1,10 +1,9 @@
 import Config from "./config";
 import File from "./file";
 import Environment from "./environment";
-
 import {merge} from "lodash";
 import Create from "./create";
-import Constant from "../../../function/dist/constant";
+import Constant from "@alirya/function/constant";
 
 /**
  *
@@ -19,10 +18,7 @@ export default function Auto(
     process: Record<string, any> = {},
     initial: Partial<Config> = {},
     parser: (content: string) => Config | Promise<Config> = JSON.parse,
-/*    immutable: Partial<Config> = {},*/
 ) : Promise<Config> {
-
-    // initial = Create(initial);
 
     return Promise.resolve(file ? File(file, parser, Constant({})) : {})
         .then(config=>{
@@ -34,9 +30,5 @@ export default function Auto(
 
             return merge(config, Environment(process)) as Config;
 
-        }).then(Create)
-        /*.then(config=>{
-
-            return merge(config, immutable);
-        })*/;
+        }).then(Create);
 }

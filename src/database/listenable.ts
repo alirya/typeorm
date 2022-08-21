@@ -1,5 +1,5 @@
 import Config from "../config/config";
-import {DataSource} from "typeorm/data-source/DataSource";
+import {DataSource} from "typeorm";
 import Standard from "./standard";
 import Event from "./event/event";
 import Null from "./event/null";

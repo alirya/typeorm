@@ -1,4 +1,4 @@
-import {DataSource} from "typeorm/data-source/DataSource";
+import {DataSource} from "typeorm";
 
 export default function RollbackLast(connection : DataSource) : Promise<any> {
 

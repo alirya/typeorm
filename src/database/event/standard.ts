@@ -1,6 +1,6 @@
 import Event from "./event";
 import Database from "../database";
-import Callable from "../../../../function/dist/callable";
+import Callable from "@alirya/function/callable";
 import {MysqlConnectionOptions} from "typeorm/driver/mysql/MysqlConnectionOptions";
 import Config from "../../config/config";
 

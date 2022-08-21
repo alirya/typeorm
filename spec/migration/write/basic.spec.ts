@@ -2,7 +2,7 @@ import {DataSource} from "typeorm/data-source/DataSource";
 import Connection from "../../connection";
 import Write from "../../../dist/migration/generate/write";
 import Generator from "../../../dist/migration/generate/data-source-generator";
-import Class from "../../../../class/dist/class";
+import Class from '@alirya/class/class';
 import FsExtra from "fs-extra";
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 2147483647;

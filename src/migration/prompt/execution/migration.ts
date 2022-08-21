@@ -1,8 +1,8 @@
-import {EntitySchema} from "typeorm/entity-schema/EntitySchema";
+import {EntitySchema} from "typeorm";
 import OperationType from "../operation/operation";
 import Option from "../operation/option/option";
 import Write from "./write";
-import {DataSource} from "typeorm/data-source/DataSource";
+import {DataSource} from "typeorm";
 import Callable from "@alirya/function/callable";
 import Identity from "@alirya/function/identity";
 import NoOp from "@alirya/function/no-op";
@@ -15,10 +15,6 @@ export default async function Migration(
     log : Callable<[string], void> = NoOp,
     extension : string = 'ts',
 ) : Promise<any> {
-
-    // const prompts = FromQuestion(new Operation());
-
-    // const operation : OperationType = await Prompts(prompts) as OperationType
 
     switch (operation.operation) {
 
