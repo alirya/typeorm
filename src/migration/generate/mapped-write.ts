@@ -2,7 +2,7 @@ import Generate from "./generate";
 import Callable from "@alirya/function/callable";
 import Class from "@alirya/class/class";
 import Write from "./write";
-import {EntitySchema} from "typeorm/entity-schema/EntitySchema";
+import {EntitySchema} from "typeorm";
 import NoOp from "@alirya/function/no-op";
 
 

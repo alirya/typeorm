@@ -2,7 +2,7 @@ import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
 import Updated from './boolean/updated';
 import { UniqueParameters } from '@alirya/array/unique';
 import OmitUndefined from '@alirya/object/omit-undefined';
-import Extract from '@alirya/object/extract';
+import {ExtractParameters, ExtractReturn} from '@alirya/object/extract';
 import NotEmpty from '@alirya/object/boolean/not-empty';
 import NotFound from '../throwable/not-found';
 import Name from '@alirya/object/string/name';
@@ -25,14 +25,14 @@ export default function Update<Entity extends object>(
 
     const detach : boolean = detaches.length !== 0;
 
-    let extract : Extract<Entity, (keyof Entity)[]>|undefined;
+    let extract : ExtractReturn<Entity, (keyof Entity)[]>|undefined;
 
     if(detach) {
 
         detaches.push(key);
         detaches = UniqueParameters(detaches);
 
-        extract = new Extract(data, detaches);
+        extract = ExtractParameters(data, detaches);
     }
 
     let promise : Promise<Entity>;
@@ -61,7 +61,7 @@ export default function Update<Entity extends object>(
 
         return promise.finally(()=>{
 
-            Object.assign(data, (extract as Extract<Entity, (keyof Entity)[]>).return);
+            Object.assign(data, (extract as ExtractReturn<Entity, (keyof Entity)[]>).result);
         });
 
     } else {

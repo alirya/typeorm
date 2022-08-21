@@ -1,4 +1,4 @@
-import Pagination from '../../pagination';
+import Pagination from '../pagination';
 import Positive from '@alirya/number/ensure/positive';
 
 export default function SkipTake(pagination: Pagination) : {take:number, skip:number} {
