@@ -1,17 +1,16 @@
 import {__decorate, __metadata} from "tslib";
-import {Column} from "typeorm";
-import Class from "@alirya/class/class";
 import Timestamp from "./timestamp";
+import {CreateDateColumn, UpdateDateColumn} from 'typeorm';
 
-export default function Compose<Type extends Class>(entity : Type) : Type & typeof Timestamp {
+export default function Compose<Type>(entity : { new (...args: any[]):  Type }) : { new (...args: any[]):  Type } & typeof Timestamp {
 
     __decorate([
-        Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
+        CreateDateColumn(),
         __metadata("design:type", Date)
     ], entity.prototype, "created", void 0);
 
     __decorate([
-        Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()' }),
+        UpdateDateColumn(),
         __metadata("design:type", Date)
     ], entity.prototype, "updated", void 0);
 

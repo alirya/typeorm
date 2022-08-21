@@ -1,11 +1,11 @@
-import {Column} from 'typeorm';
+import {CreateDateColumn, UpdateDateColumn} from 'typeorm';
 
 export default class Timestamp {
 
-    @Column({type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+    @CreateDateColumn()
     created ?: Date;
 
-    @Column({type: 'timestamp', default: () => 'CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()'})
+    @UpdateDateColumn()
     updated ?: Date;
 
 }
