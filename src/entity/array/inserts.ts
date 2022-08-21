@@ -1,7 +1,7 @@
 import {EntityManager, ObjectType} from 'typeorm';
 import {Required} from 'utility-types';
 import Undefined from '@alirya/undefined/assert/undefined';
-import {DataSource} from "typeorm/data-source/DataSource";
+import {DataSource} from "typeorm";
 /**
  * basic bulk insert operation
  *

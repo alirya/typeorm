@@ -1,6 +1,6 @@
 import Config from "./config";
 import Create from "./create";
-import {ParseAsyncParameters} from "../../../filesystem/dist/read/parse-async";
+import {ParseAsyncParameters} from "@alirya/filesystem/read/parse-async";
 
 export default function File(
     path : string,

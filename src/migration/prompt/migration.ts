@@ -1,12 +1,12 @@
 import OperationType from "./operation/operation";
 import ExecutionMigration from "./execution/migration";
-import {DataSource} from "typeorm/data-source/DataSource";
-import {EntitySchema} from "typeorm/entity-schema/EntitySchema";
-import Callable from "../../../../function/dist/callable";
-import Identity from "../../../../function/dist/identity";
-import NoOp from "../../../../function/dist/no-op";
+import {DataSource} from "typeorm";
+import {EntitySchema} from "typeorm";
+import Callable from "@alirya/function/callable";
+import Identity from "@alirya/function/identity";
+import NoOp from "@alirya/function/no-op";
 import Prompt from "./prompt";
-import Const from "../../../../function/dist/const";
+import Const from "@alirya/function/const";
 
 export default function Migration(
     connection : DataSource,

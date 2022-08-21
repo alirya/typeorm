@@ -1,8 +1,8 @@
 import Question from "@alirya/prompt/question/question";
 import Drivers from "../../../database/array/types";
-import {DatabaseType} from "typeorm/driver/types/DatabaseType";
+import {DatabaseType} from "typeorm";
 import Questions from "@alirya/prompt/questions/questions";
-import {DataSourceOptions} from "typeorm/data-source/DataSourceOptions";
+import {DataSourceOptions} from "typeorm";
 
 export type VendorType = Pick<DataSourceOptions, 'type'>;
 

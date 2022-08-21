@@ -1,4 +1,4 @@
-import {DatabaseType} from "typeorm/driver/types/DatabaseType";
+import {DatabaseType} from "typeorm";
 
 const temp : Record<DatabaseType, null> = {
     mysql : null,

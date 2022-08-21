@@ -1,9 +1,9 @@
 import Database from "./database";
 import Config from "../config/config";
-import {DataSource} from "typeorm/data-source/DataSource";
-import {DataSourceOptions} from "typeorm/data-source/DataSourceOptions";
+import {DataSourceOptions} from "typeorm";
 import FromConfig from "../config/data-source-options/from-config";
 import Create from "../config/create";
+import {DataSource} from "typeorm";
 
 export default class Standard implements Database {
 

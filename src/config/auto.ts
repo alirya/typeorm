@@ -1,10 +1,9 @@
 import Config from "./config";
 import File from "./file";
 import Environment from "./environment";
-
 import {merge} from "lodash";
 import Create from "./create";
-import Constant from "../../../function/dist/constant";
+import Constant from "@alirya/function/constant";
 
 /**
  *
