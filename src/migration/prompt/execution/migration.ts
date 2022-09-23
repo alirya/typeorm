@@ -2,6 +2,7 @@ import {EntitySchema} from "typeorm";
 import OperationType from "../operation/operation";
 import Option from "../operation/option/option";
 import Write from "./write";
+import Create from "./create";
 import {DataSource} from "typeorm";
 import Callable from "@alirya/function/callable";
 import Identity from "@alirya/function/identity";
@@ -27,6 +28,8 @@ export default async function Migration(
         case Option.ROLLBACK:
             return connection.undoLastMigration();
 
+        case Option.CREATE:
+            return Create(connection, entities, path, log, extension);
     }
 
 }

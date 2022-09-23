@@ -1,5 +1,5 @@
 import {Entity, Column, Index, ManyToOne, OneToMany} from 'typeorm';
-import IdAuto from '../../dist/id/automatic';
+import IdAuto from '../../dist/id/increment';
 import Timestamp from '../../dist/timestamp/timestamp';
 import GrandParent from '../grand-parent/grand-parent';
 import Children from '../children/children';

@@ -1,5 +1,5 @@
 import {Entity, Column, Index, OneToMany} from 'typeorm';
-import IdAuto from '../../dist/id/automatic';
+import IdAuto from '../../dist/id/increment';
 import Timestamp from '../../dist/timestamp/timestamp';
 import Parent from '../parent/parent';
 import Compose from "../../dist/timestamp/compose";
