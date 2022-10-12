@@ -1,6 +1,6 @@
 import {EntityManager, ObjectType} from 'typeorm';
 import Undefined from '../assert/undefined';
-import Id from '../required';
+import Id from '../id';
 import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';
 import First from '@alirya/array/value/value/first';
 /**
