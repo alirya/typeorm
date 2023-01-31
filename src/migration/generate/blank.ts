@@ -2,7 +2,7 @@ import Generate, {GenerateQuery} from "./generate";
 import {EntityMetadata} from "typeorm";
 import {Query} from "typeorm/driver/Query";
 import ClassFromQueries from "./string/class-from-queries";
-import {TrimPrefixParameters} from "../../../../string/dist/trim-prefix";
+import {TrimPrefixParameters} from '@alirya/string/trim-prefix';
 
 export default function Blank(entity: EntityMetadata, name: string, extension: string = 'ts') : Generate {
 

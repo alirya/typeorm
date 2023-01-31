@@ -1,8 +1,8 @@
 import RangeType from "../range";
 import {LessThan, SelectQueryBuilder, MoreThan, Like, Between, In} from "typeorm";
 import {FindOperator} from "typeorm/find-options/FindOperator";
-import Callable from "../../../../function/dist/callable";
-import Identity from "../../../../function/dist/identity";
+import Callable from '@alirya/function/callable';
+import Identity from '@alirya/function/identity';
 
 export default function Range<Type extends unknown>(
     range : RangeType<Type>,

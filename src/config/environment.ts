@@ -2,7 +2,7 @@ import Config from "./config";
 import {EnvironmentParameters} from "@alirya/object/environment";
 import Last from "@alirya/array/value/value/last";
 import Create from "./create";
-import {InflateParameter} from "../../../object/dist/inflate";
+import {InflateParameter} from '@alirya/object/inflate';
 
 export type EnvironmentPrefix = 'DATABASE'|'database'|'DB'|'db';
 /**

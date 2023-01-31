@@ -2,8 +2,8 @@ import Id from './id';
 import RequiredReadonly from './required-readonly';
 import Numeric from "@alirya/string/ensure/numeric";
 import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined';
-import Name from "../../../object/dist/string/name";
-import SafeCast from "../../../string/dist/safe-cast";
+import Name from '@alirya/object/string/name';
+import SafeCast from '@alirya/string/safe-cast';
 
 export default class RequiredReadonlyNumeric implements RequiredReadonly<number|string> {
 

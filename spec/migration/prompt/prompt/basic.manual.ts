@@ -1,7 +1,7 @@
 import {DataSource} from "typeorm/data-source/DataSource";
 import Connection from "../../../connection";
 import Migration from "../../../../dist/migration/prompt/migration";
-import {MethodParameters} from "../../../../../function/dist/method";
+import {MethodParameters} from '@alirya/function/method';
 import Database from "../../../../dist/database/database";
 
 

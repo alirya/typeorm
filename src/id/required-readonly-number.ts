@@ -1,8 +1,8 @@
 import Id from './id';
 import RequiredReadonly from './required-readonly';
 import EnsureNumber from '@alirya/number/ensure/number';
-import Name from "../../../object/dist/string/name";
-import SafeCast from "../../../string/dist/safe-cast";
+import Name from '@alirya/object/string/name';
+import SafeCast from '@alirya/string/safe-cast';
 
 export default class RequiredReadonlyNumber implements RequiredReadonly<number> {
 
