@@ -9,7 +9,7 @@ import ArrayValuePartialParameters from "@alirya/array/validator/value-partial";
 import {ObjectParameters} from "@alirya/object/validator/object";
 import {RecordKeyPartialParameters} from "@alirya/object/validator/record-key-partial";
 import {RecordValuePartialParameters} from "@alirya/object/validator/record-value-partial";
-import Mode from "@alirya/typeorm/builder/order/mode/mode";
+import Mode from "../mode/mode";
 import Validator from "@alirya/validator/simple";
 import {EqualParameters} from "@alirya/boolean/validator/equal";
 import {L} from "ts-toolbelt";

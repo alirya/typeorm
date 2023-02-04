@@ -13,6 +13,7 @@
     "tslib": "^2.3.1",
     "@alirya/array": "^0.27.1",
     "@alirya/class": "^0.4.1",
+    "@alirya/date": "^0.11.1",
     "@alirya/code": "^0.4.1",
     "@alirya/enum": "^0.13.1",
     "@alirya/function": "^0.17.1",
