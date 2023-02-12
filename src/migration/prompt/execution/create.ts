@@ -1,24 +1,24 @@
 import {EntitySchema} from "typeorm";
 import Prompts from "prompts";
-import Name from "../../generate/questions/name";
-import Entities from "../../generate/questions/entities";
+import Name from '../../generate/questions/name.js';
+import Entities from '../../generate/questions/entities.js';
 import {DataSource} from "typeorm";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import Class from "@alirya/class/class";
-import GenerateWrite from "../../generate/write";
-import DataSourceGenerator from "../../generate/data-source-generator";
-import Callable from "@alirya/function/callable";
-import Generate from "../../generate/generate";
-import NoOp from "@alirya/function/no-op";
-import Identity from "@alirya/function/identity";
-import Blank from "../../generate/blank";
+import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
+import Class from "@alirya/class/class.js";
+import GenerateWrite from '../../generate/write.js';
+import DataSourceGenerator from '../../generate/data-source-generator.js';
+import Callable from "@alirya/function/callable.js";
+import Generate from '../../generate/generate.js';
+import NoOp from "@alirya/function/no-op.js";
+import Identity from "@alirya/function/identity.js";
+import Blank from '../../generate/blank.js';
 
 export default function Create(
     connection : DataSource,
     entities : Map<Function | string | EntitySchema | Class, string>,
     path : Callable<[string], string> = Identity,
     log : Callable<[string], void> = NoOp,
-    extension : string = 'ts',
+    extension  = 'ts',
 ) : Promise<Generate> {
 
     const prompts = FromQuestion(new Name());

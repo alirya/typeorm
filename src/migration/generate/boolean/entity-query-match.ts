@@ -1,4 +1,4 @@
-import Escape from "@alirya/string/pattern/escape";
+import Escape from "@alirya/string/pattern/escape.js";
 
 export default function EntityQueryMatch(
     query: string,
@@ -20,7 +20,7 @@ export default function EntityQueryMatch(
         .filter(match=>!!match)
         .sort((val1 : RegExpMatchArray, val2 : RegExpMatchArray) => {
 
-            let compare = (val1.index ?? 0) - (val2.index ?? 0);
+            const compare = (val1.index ?? 0) - (val2.index ?? 0);
 
             // same index match, compare for length
             if(compare === 0) {

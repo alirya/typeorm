@@ -1,10 +1,16 @@
-import Children from './children/children';
-import Parent from './parent/parent';
+import Children from './children/children.js';
+import Parent from './parent/parent.js';
 import * as Fs from 'fs';
-import GrandParent from './grand-parent/grand-parent';
-import Standard from "../dist/database/standard";
-import Config from "../dist/config/config";
-import Database from "../dist/database/database";
+import GrandParent from './grand-parent/grand-parent.js';
+import Standard from '../dist/database/standard.js';
+import Config from '../dist/config/config.js';
+import Database from '../dist/database/database.js';
+
+import {fileURLToPath} from 'url';
+import {dirname} from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const configPath = __dirname + '/../database.json';
 
@@ -18,7 +24,7 @@ if(!Fs.existsSync(configPath)) {
 
 export default function Connection(config : Partial<Config> = {}) : Database {
 
-    let configFile : Config = JSON.parse(Fs.readFileSync(configPath).toString());
+    const configFile : Config = JSON.parse(Fs.readFileSync(configPath).toString());
 
     const merged = Object.assign(configFile, config);
 

@@ -1,6 +1,6 @@
 import {__decorate, __metadata} from "tslib";
 import {PrimaryGeneratedColumn} from "typeorm";
-import Id from "./id";
+import Id from './id.js';
 
 
 export default function ComposeIncrement<Type>(entity : { new (...args: any[]):  Type }) : { new (...args: any[]):  Type } & { new () : Id<number|string> }
@@ -29,5 +29,5 @@ export default function ComposeIncrement<Type>(
             break;
     }
 
-    return entity;
+    return entity as { new (...args: any[]):  Type } & { new () : Id<number|string> };
 }

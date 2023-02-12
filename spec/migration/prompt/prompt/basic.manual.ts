@@ -1,15 +1,15 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../../../connection";
-import Migration from "../../../../dist/migration/prompt/migration";
-import {MethodParameters} from '@alirya/function/method';
-import Database from "../../../../dist/database/database";
+import {DataSource} from "typeorm";
+import Connection from '../../../connection.js';
+import Migration from '../../../../dist/migration/prompt/migration.js';
+import {MethodParameters} from '@alirya/function/method.js';
+import Database from '../../../../dist/database/database.js';
 
 
 
 (async () => {
 
-    let db : Database = Connection();
-    let connection : DataSource = await db.connect();
+    const db : Database = Connection();
+    const connection : DataSource = await db.connect();
 
     return  Migration(
         connection,

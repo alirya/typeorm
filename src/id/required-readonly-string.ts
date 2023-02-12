@@ -1,8 +1,8 @@
-import Id from './id';
-import RequiredReadonly from './required-readonly';
-import EnsureString from '@alirya/string/ensure/string';
-import Name from '@alirya/object/string/name';
-import SafeCast from '@alirya/string/safe-cast';
+import Id from './id.js';
+import RequiredReadonly from './required-readonly.js';
+import EnsureString from '@alirya/string/ensure/string.js';
+import Name from '@alirya/object/string/name.js';
+import SafeCast from '@alirya/string/safe-cast.js';
 
 export default class RequiredReadonlyString implements RequiredReadonly<string> {
 

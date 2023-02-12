@@ -1,4 +1,4 @@
-import DeletableEntity from '../deletable';
+import DeletableEntity from '../deletable.js';
 
 export default interface Deletable {
 

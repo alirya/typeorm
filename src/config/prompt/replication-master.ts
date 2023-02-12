@@ -1,4 +1,4 @@
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
+import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
 import {O} from "ts-toolbelt";
 import {merge} from "lodash";
 

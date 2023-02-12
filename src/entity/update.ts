@@ -1,13 +1,13 @@
 import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
-import Updated from './boolean/updated';
-import { UniqueParameters } from '@alirya/array/unique';
-import OmitUndefined from '@alirya/object/omit-undefined';
-import {ExtractParameters, ExtractReturn} from '@alirya/object/extract';
-import NotEmpty from '@alirya/object/boolean/not-empty';
-import NotFound from '../throwable/not-found';
-import Name from '@alirya/object/string/name';
-import PrimaryKeyRequired from './assert/not-undefined';
-import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity';
+import Updated from './boolean/updated.js';
+import { UniqueParameters } from '@alirya/array/unique.js';
+import OmitUndefined from '@alirya/object/omit-undefined.js';
+import {ExtractParameters, ExtractReturn} from '@alirya/object/extract.js';
+import NotEmpty from '@alirya/object/boolean/not-empty.js';
+import NotFound from '../throwable/not-found.js';
+import Name from '@alirya/object/string/name.js';
+import PrimaryKeyRequired from './assert/not-undefined.js';
+import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity.js';
 
 export default function Update<Entity extends object>(
     manager : EntityManager,
@@ -45,7 +45,8 @@ export default function Update<Entity extends object>(
 
     } else {
 
-        promise = manager.getRepository(entity || data.constructor).update(primary, data as QueryDeepPartialEntity<Entity>).then((result : UpdateResult)=>{
+        // TODO FIX ANY TYPE
+        promise = manager.getRepository(entity || data.constructor).update(primary as any, data as QueryDeepPartialEntity<Entity>).then((result : UpdateResult)=>{
 
             if(!Updated(result, 1)) {
 

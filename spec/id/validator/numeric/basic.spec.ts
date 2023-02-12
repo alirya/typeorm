@@ -1,6 +1,6 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../../../connection";
-import Numeric from "../../../../dist/id/validator/numeric";
+import {DataSource} from "typeorm";
+import Connection from '../../../connection.js';
+import Numeric from '../../../../dist/id/validator/numeric.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -11,7 +11,7 @@ it('number', ()=>{
     const vaidatable = Numeric()(1);
 
     expect(vaidatable.valid).toBeTrue();
-    expect(vaidatable.message).toEqual([ 'type must string, actual number.' ]);
+    expect(vaidatable.message).toEqual([]/*[ 'type must string, actual number.' ]*/);
 });
 
 
@@ -29,7 +29,7 @@ it('string', ()=>{
 
     expect(vaidatable.valid).toBeFalse();
     expect(vaidatable.message).toEqual([
-        'type must string, actual object.',
-        [ 'type must number, actual object.' ]
+        'must in type of string, number, actual type object.',
+        ['type must number, actual object.'],
     ]);
 });

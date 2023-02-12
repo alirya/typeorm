@@ -1,7 +1,7 @@
-import Config from "./config";
-import {JsonAsyncParameters} from "@alirya/filesystem/write/json-async";
-import Const from "@alirya/function/const";
-import Filter from "@alirya/object/filter";
+import Config from './config.js';
+import {JsonAsyncParameters} from "@alirya/filesystem/write/json-async.js";
+import Const from "@alirya/function/const.js";
+import Filter from "@alirya/object/filter.js";
 
 export default function JsonWrite(file : string, config : Config) : Promise<Config> {
 

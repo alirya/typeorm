@@ -1,6 +1,6 @@
-import NotUndefinedMessage from '../string/not-undefined';
-import Id from '../../id';
-import New from '@alirya/function/new';
+import NotUndefinedMessage from '../string/not-undefined.js';
+import Id from '../../id.js';
+import New from '@alirya/function/new.js';
 
 export default function NotUndefined<Entity extends Id>(
     entity : Entity,

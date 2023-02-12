@@ -1,8 +1,8 @@
 import Prompts from "prompts";
-import RegisterSlave from "./questions/register-slave";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
+import RegisterSlave from './questions/register-slave.js';
+import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
 import {merge} from "lodash";
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
+import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
 import {O} from "ts-toolbelt";
 
 export default async function ReplicationSlave<Type extends PostgresConnectionOptions>(
@@ -32,7 +32,7 @@ export default async function ReplicationSlave<Type extends PostgresConnectionOp
 
     while (true) {
 
-        let option = await Prompts(FromQuestion(new RegisterSlave()));
+        const option = await Prompts(FromQuestion(new RegisterSlave()));
 
         if(option.register) {
 

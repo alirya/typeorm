@@ -1,11 +1,12 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../connection";
-import Insert from "../../dist/id/model/insert";
-import GenerateGrandParent from "../grand-parent/generate";
-import GrandParent from "../grand-parent/grand-parent";
-import Generate from "./generate";
-import Parent from "./parent";
-import {OmitParameters} from '@alirya/object/omit';
+// import {DataSource} from "typeorm";
+import Connection from '../connection.js';
+import Insert from '../../dist/id/model/insert.js';
+import GenerateGrandParent from '../grand-parent/generate.js';
+import GrandParent from '../grand-parent/grand-parent.js';
+import Generate from './generate.js';
+import Parent from './parent.js';
+import {OmitParameters} from '@alirya/object/omit.js';
+import {DataSource} from 'typeorm';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -16,9 +17,9 @@ describe('insert test', () => {
     let grandParent : GrandParent;
     let parent : Parent;
 
-    it('open connection', (done)=>{
+    it('open connection', ()=>{
 
-        Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
+        return Connection().connect().then((con)=>connection = con);
     });
 
     it('insert grand parent', async ()=>{

@@ -1,8 +1,8 @@
-import Config from "./config";
-import {EnvironmentParameters} from "@alirya/object/environment";
-import Last from "@alirya/array/value/value/last";
-import Create from "./create";
-import {InflateParameter} from '@alirya/object/inflate';
+import Config from './config.js';
+import {EnvironmentParameters} from "@alirya/object/environment.js";
+import Last from "@alirya/array/value/value/last.js";
+import Create from './create.js';
+import {InflateParameter} from '@alirya/object/inflate.js';
 
 export type EnvironmentPrefix = 'DATABASE'|'database'|'DB'|'db';
 /**

@@ -1,6 +1,6 @@
-import CodeFromQuery from "./code-from-query";
-import PublicMigrationGenerateCommand from "../../migration-generate-command/public-migration-generate-command";
-import {Query} from "typeorm/driver/Query";
+import CodeFromQuery from './code-from-query.js';
+import PublicMigrationGenerateCommand from '../../migration-generate-command/public-migration-generate-command.js';
+import {Query} from "typeorm/driver/Query.js";
 
 export default function ClassFromQueries(
     name: string,

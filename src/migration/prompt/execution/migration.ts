@@ -1,12 +1,12 @@
 import {EntitySchema} from "typeorm";
-import OperationType from "../operation/operation";
-import Option from "../operation/option/option";
-import Write from "./write";
-import Create from "./create";
+import OperationType from '../operation/operation.js';
+import Option from '../operation/option/option.js';
+import Write from './write.js';
+import Create from './create.js';
 import {DataSource} from "typeorm";
-import Callable from "@alirya/function/callable";
-import Identity from "@alirya/function/identity";
-import NoOp from "@alirya/function/no-op";
+import Callable from "@alirya/function/callable.js";
+import Identity from "@alirya/function/identity.js";
+import NoOp from "@alirya/function/no-op.js";
 
 export default async function Migration(
     operation : OperationType,
@@ -14,7 +14,7 @@ export default async function Migration(
     entities : Map<Function | string | EntitySchema, string>,
     path : Callable<[string], string> = Identity,
     log : Callable<[string], void> = NoOp,
-    extension : string = 'ts',
+    extension  = 'ts',
 ) : Promise<any> {
 
     switch (operation.operation) {

@@ -1,11 +1,11 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../connection";
-import Class from '@alirya/class/class';
-import Generator from "../../dist/migration/generate/data-source-generator";
-import Write from "../../dist/migration/generate/write";
-import GrandParent from "./grand-parent";
-import Generate from "./generate";
-import Insert from "../../dist/id/model/insert";
+import {DataSource} from "typeorm";
+import Connection from '../connection.js';
+import Class from '@alirya/class/class.js';
+import Generator from '../../dist/migration/generate/data-source-generator.js';
+import Write from '../../dist/migration/generate/write.js';
+import GrandParent from './grand-parent.js';
+import Generate from './generate.js';
+import Insert from '../../dist/id/model/insert.js';
 
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
@@ -14,9 +14,9 @@ describe('insert test', () => {
 
     let connection : DataSource;
 
-    it('open connection', (done)=>{
+    it('open connection', ()=>{
 
-        Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
+        return Connection().connect().then((con)=>connection = con);
     });
 
     it('insert', async ()=>{

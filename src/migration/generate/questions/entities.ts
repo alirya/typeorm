@@ -1,11 +1,11 @@
 import {PromptObject} from "prompts";
-import StrictOmit from "@alirya/object/strict-omit";
-import Questions from "@alirya/prompt/questions/questions";
-import Question from '@alirya/prompt/question/question';
-import Option from "../../prompt/operation/option/option";
+import StrictOmit from "@alirya/object/strict-omit.js";
+import Questions from "@alirya/prompt/questions/questions.js";
+import Question from '@alirya/prompt/question/question.js';
+import Option from '../../prompt/operation/option/option.js';
 import {EntitySchema} from "typeorm";
-import Name from "@alirya/object/string/name";
-import String from "@alirya/string/boolean/string";
+import Name from "@alirya/object/string/name.js";
+import String from "@alirya/string/boolean/string.js";
 
 export default function Entities(
     entities: Map<Function | string | EntitySchema, string>

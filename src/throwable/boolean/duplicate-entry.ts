@@ -1,6 +1,6 @@
-import SqlError from '../mysql';
-import Mysql from './mysql';
-import Postgres from './postgres';
+import SqlError from '../mysql.js';
+import Mysql from './mysql.js';
+import Postgres from './postgres.js';
 
 export default function DuplicateEntry(value : any) : value is SqlError {
 

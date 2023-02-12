@@ -1,15 +1,15 @@
-import ValidatorInterface from "@alirya/validator/simple";
-import {NumberParameters} from "@alirya/number/validator/number";
-import {PositiveParameters} from "@alirya/number/validator/positive";
-import {GreaterParameters} from "@alirya/number/validator/greater";
-import {LowerParameters} from "@alirya/number/validator/lower";
-import {ValuePartialParameters} from "@alirya/array/validator/value-partial";
-import {AndParameters} from "@alirya/array/validatable/and";
-import InvalidMessageMap from "@alirya/array/message/message/list/invalid";
+import ValidatorInterface from "@alirya/validator/simple.js";
+import {NumberParameters} from "@alirya/number/validator/number.js";
+import {PositiveParameters} from "@alirya/number/validator/positive.js";
+import {GreaterParameters} from "@alirya/number/validator/greater.js";
+import {LowerParameters} from "@alirya/number/validator/lower.js";
+import {ValuePartialParameters} from "@alirya/array/validator/value-partial.js";
+import {AndParameters} from "@alirya/array/validatable/and.js";
+import InvalidMessageMap from "@alirya/array/message/message/list/invalid.js";
 
 export default function Limit(maximum : number) : ValidatorInterface<any, number> {
 
-    let validator : ValidatorInterface<any, number>[] = [
+    const validator : ValidatorInterface<any, number>[] = [
         NumberParameters() as ValidatorInterface<any, number>,
         PositiveParameters()  as ValidatorInterface<number, number>,
         GreaterParameters(1, true)  as ValidatorInterface<number, number>,

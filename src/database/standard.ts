@@ -1,8 +1,8 @@
-import Database from "./database";
-import Config from "../config/config";
+import Database from './database.js';
+import Config from '../config/config.js';
 import {DataSourceOptions} from "typeorm";
-import FromConfig from "../config/data-source-options/from-config";
-import Create from "../config/create";
+import FromConfig from '../config/data-source-options/from-config.js';
+import Create from '../config/create.js';
 import {DataSource} from "typeorm";
 
 export default class Standard implements Database {

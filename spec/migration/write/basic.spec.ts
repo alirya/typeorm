@@ -1,9 +1,12 @@
-import {DataSource} from "typeorm/data-source/DataSource";
-import Connection from "../../connection";
-import Write from "../../../dist/migration/generate/write";
-import Generator from "../../../dist/migration/generate/data-source-generator";
-import Class from '@alirya/class/class';
+import {DataSource} from "typeorm";
+import Connection from '../../connection.js';
+import Write from '../../../dist/migration/generate/write.js';
+import Generator from '../../../dist/migration/generate/data-source-generator.js';
+import Class from '@alirya/class/class.js';
 import FsExtra from "fs-extra";
+import Children from '../../children/children.js';
+import Parent from '../../parent/parent.js';
+import GrandParent from '../../grand-parent/grand-parent.js';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 2147483647;
 
@@ -16,14 +19,14 @@ function PathReplace(path) : string {
 
 let connection : DataSource;
 
-it('open connection', (done)=>{
+it('open connection', ()=>{
 
-    Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
+    return Connection().connect().then((con)=>connection = con);
 });
 
 it('clean migrations directories', async ()=>{
 
-    for (let metadata of connection.entityMetadatas) {
+    for (const metadata of connection.entityMetadatas) {
 
         {
             const path = PathReplace((metadata.target as Class & { migrationPath: string }).migrationPath);
@@ -41,11 +44,29 @@ it('clean migrations directories', async ()=>{
 
 it('delete existing', async ()=>{
 
-    const metadatas = new Set(connection.entityMetadatas)
+    const metadatas = new Set(connection.entityMetadatas);
+
+    const list = [
+        Children,
+        Parent,
+        GrandParent,
+    ];
+
+    let sortedMetadata = list.map(list => {
+
+        for (let metadata of metadatas) {
+
+            if(metadata.target === list) {
+                return metadata;
+            }
+        }
+
+        throw new Error('metadata not found');
+    });
 
     while (metadatas.size) {
 
-        for (const metadata of metadatas) {
+        for (const metadata of sortedMetadata) {
 
             try {
 
@@ -53,11 +74,12 @@ it('delete existing', async ()=>{
 
                 metadatas.delete(metadata);
 
-                console.log(`deleting ${metadata.tableName} success`)
+                console.log(`deleting ${metadata.tableName} success`);
 
             } catch (error) {
 
-                console.log(`deleting ${metadata.tableName} error, skipping`)
+                console.log(`deleting ${metadata.tableName} error, skipping`);
+                console.log(error);
             }
 
         }
@@ -85,7 +107,7 @@ it('check table', async ()=>{
 
     const runner = connection.createQueryRunner();
 
-    for (let metadata of connection.entityMetadatas) {
+    for (const metadata of connection.entityMetadatas) {
 
         const exists = await runner.hasTable(metadata.tableName);
 

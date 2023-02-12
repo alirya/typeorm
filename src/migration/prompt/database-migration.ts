@@ -1,15 +1,15 @@
-import OperationType from "./operation/operation";
-import Callable from "@alirya/function/callable";
-import Identity from "@alirya/function/identity";
-import NoOp from "@alirya/function/no-op";
-import Database from "../../database/database";
-import Migration from "./migration";
+import OperationType from './operation/operation.js';
+import Callable from "@alirya/function/callable.js";
+import Identity from "@alirya/function/identity.js";
+import NoOp from "@alirya/function/no-op.js";
+import Database from '../../database/database.js';
+import Migration from './migration.js';
 
 export default function DatabaseMigration(
     database : Database,
     path : Callable<[string], string> = Identity,
     log : Callable<[string], void> = NoOp,
-    extension : string = 'ts',
+    extension  = 'ts',
 ) : Promise<OperationType> {
 
     return Migration(database.connection, database.config.entities, path, log, extension)

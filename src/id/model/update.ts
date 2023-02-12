@@ -1,6 +1,6 @@
 import {EntityManager, ObjectType} from 'typeorm';
-import Id from '../id';
-import StandardUpdate from '../../entity/update';
+import Id from '../id.js';
+import StandardUpdate from '../../entity/update.js';
 
 
 export default function Update<Entity extends Required<Id>>(

@@ -1,4 +1,4 @@
-import Name from '@alirya/object/string/name';
+import Name from '@alirya/object/string/name.js';
 
 export default function Undefined(
     valid : boolean,

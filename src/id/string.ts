@@ -1,5 +1,5 @@
 import {PrimaryColumn} from 'typeorm';
-import Id from './id';
+import Id from './id.js';
 
 /**
  * integer primary

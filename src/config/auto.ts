@@ -1,9 +1,9 @@
-import Config from "./config";
-import File from "./file";
-import Environment from "./environment";
+import Config from './config.js';
+import File from './file.js';
+import Environment from './environment.js';
 import {merge} from "lodash";
-import Create from "./create";
-import Constant from "@alirya/function/constant";
+import Create from './create.js';
+import Constant from "@alirya/function/constant.js";
 
 /**
  *

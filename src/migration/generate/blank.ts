@@ -1,10 +1,10 @@
-import Generate, {GenerateQuery} from "./generate";
+import Generate, {GenerateQuery} from './generate.js';
 import {EntityMetadata} from "typeorm";
-import {Query} from "typeorm/driver/Query";
-import ClassFromQueries from "./string/class-from-queries";
-import {TrimPrefixParameters} from '@alirya/string/trim-prefix';
+import {Query} from "typeorm/driver/Query.js";
+import ClassFromQueries from './string/class-from-queries.js';
+import {TrimPrefixParameters} from '@alirya/string/trim-prefix.js';
 
-export default function Blank(entity: EntityMetadata, name: string, extension: string = 'ts') : Generate {
+export default function Blank(entity: EntityMetadata, name: string, extension = 'ts') : Generate {
 
     const map : Map<EntityMetadata, GenerateQuery[]> = new Map<EntityMetadata, GenerateQuery[]>()
 

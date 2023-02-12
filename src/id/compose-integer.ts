@@ -1,6 +1,6 @@
 import {__decorate, __metadata} from "tslib";
 import {PrimaryColumn} from "typeorm";
-import Id from "./id";
+import Id from './id.js';
 
 
 export default function ComposeInteger<Type>(entity : { new (...args: any[]):  Type }) : { new (...args: any[]):  Type } & { new () : Id<number|string> }
@@ -29,5 +29,5 @@ export default function ComposeInteger<Type>(
         break;
     }
 
-    return entity;
+    return entity as { new (...args: any[]):  Type } & { new () : Id<number|string> };
 }

@@ -1,8 +1,8 @@
-import TypeObject from '@alirya/object/boolean/object';
-import TypeString from '@alirya/string/boolean/string';
-import TypeNumber from '@alirya/number/boolean/number';
-import PostgresError from '../postgres';
-import TypeArray from '@alirya/array/boolean/array';
+import TypeObject from '@alirya/object/boolean/object.js';
+import TypeString from '@alirya/string/boolean/string.js';
+import TypeNumber from '@alirya/number/boolean/number.js';
+import PostgresError from '../postgres.js';
+import TypeArray from '@alirya/array/boolean/array.js';
 
 export default function Postgres(value : any) : value is PostgresError;
 export default function Postgres(value : PostgresError) : value is PostgresError;

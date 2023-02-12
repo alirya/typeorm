@@ -1,5 +1,5 @@
-import Timestamp from './timestamp';
-import RequiredReadonly from './required-readonly';
+import Timestamp from './timestamp.js';
+import RequiredReadonly from './required-readonly.js';
 
 export default class RequiredReadonlyStandard implements RequiredReadonly {
 

@@ -1,15 +1,15 @@
-import ValidatorInterface from '@alirya/validator/validator';
-import {ValuePartialParameters} from '@alirya/array/validator/value-partial';
-import {OrParameters} from '@alirya/array/validatable/or';
-import InvalidMessageMap from '@alirya/array/message/message/list/invalid';
-import Validatable from '@alirya/validatable/validatable';
-import Message from '@alirya/message/message';
-import {NumericParameters} from "@alirya/string/validator/numeric";
-import Positive from "../../number/validator/positive";
+import ValidatorInterface from '@alirya/validator/validator.js';
+import {ValuePartialParameters} from '@alirya/array/validator/value-partial.js';
+import {OrParameters} from '@alirya/array/validatable/or.js';
+import InvalidMessageMap from '@alirya/array/message/message/list/invalid.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Message from '@alirya/message/message.js';
+import {NumericParameters} from "@alirya/string/validator/numeric.js";
+import Positive from '../../number/validator/positive.js';
 
 export default function Numeric(messages : (results : (Message & Validatable)[])=>any = InvalidMessageMap) : ValidatorInterface<any, string|number> {
 
-    let validator : ValidatorInterface<any, number>[] = [
+    const validator : ValidatorInterface<any, number>[] = [
         NumericParameters() as ValidatorInterface<any, string>,
         Positive()  as ValidatorInterface<number, number>,
     ];

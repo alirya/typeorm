@@ -1,12 +1,12 @@
 import Prompts from "prompts";
-import Config from "./config";
-import VendorQuestion, {VendorType} from "./prompt/questions/vendor";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question";
-import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing";
-import Vendor from "./prompt/vendor";
+import Config from './config.js';
+import VendorQuestion, {VendorType} from './prompt/questions/vendor.js';
+import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
+import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing.js";
+import Vendor from './prompt/vendor.js';
 import {DatabaseType} from "typeorm";
-import Drivers from "../database/array/types";
-import Create from "./create";
+import Drivers from '../database/array/types.js';
+import Create from './create.js';
 
 export default function Prompt(
     initial : Partial<Config>|Promise<Partial<Config>> = {},

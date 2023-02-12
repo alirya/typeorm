@@ -1,8 +1,8 @@
-import {VendorType} from "./questions/vendor";
-import Postgres from "./postgres";
-import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions";
-import Config from "../config";
-import Create from "../create";
+import {VendorType} from './questions/vendor.js';
+import Postgres from './postgres.js';
+import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
+import Config from '../config.js';
+import Create from '../create.js';
 import {merge} from "lodash";
 
 export default function Vendor(

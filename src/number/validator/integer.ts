@@ -1,9 +1,9 @@
-import ValidatorInterface from "@alirya/validator/simple";
-import {ValuePartialParameters} from "@alirya/array/validator/value-partial";
-import {IntegerParameters} from "@alirya/number/validator/integer";
-import {NumberParameters} from "@alirya/number/validator/number";
-import {AndParameters} from "@alirya/array/validatable/and";
-import InvalidMessageList from "@alirya/array/message/message/list/invalid";
+import ValidatorInterface from "@alirya/validator/simple.js";
+import {ValuePartialParameters} from "@alirya/array/validator/value-partial.js";
+import {IntegerParameters} from "@alirya/number/validator/integer.js";
+import {NumberParameters} from "@alirya/number/validator/number.js";
+import {AndParameters} from "@alirya/array/validatable/and.js";
+import InvalidMessageList from "@alirya/array/message/message/list/invalid.js";
 
 export default function Integer() : ValidatorInterface<any, string>  {
 

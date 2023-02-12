@@ -1,11 +1,11 @@
 import {promises as Fs} from "fs";
 import {dirname} from "path";
-import Generate from "./generate";
-import Callable from "@alirya/function/callable";
-import Class from "@alirya/class/class";
-import Clone from "./clone";
-import Identity from "@alirya/function/identity";
-import NoOp from "@alirya/function/no-op";
+import Generate from './generate.js';
+import Callable from "@alirya/function/callable.js";
+import Class from "@alirya/class/class.js";
+import Clone from './clone.js';
+import Identity from "@alirya/function/identity.js";
+import NoOp from "@alirya/function/no-op.js";
 
 /**
  * Write {@param generate} to file

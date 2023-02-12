@@ -1,11 +1,11 @@
-import Id from '../../id';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
-import Name from '@alirya/object/string/name';
+import Id from '../../id.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Name from '@alirya/object/string/name.js';
 
 export default function IdRequired(object : Value<Id> & Validatable) {
 
-    let entity = Name(object.value);
+    const entity = Name(object.value);
 
     if(object.valid) {
 

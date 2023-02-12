@@ -1,7 +1,7 @@
-// import Builder from "../../../dist/config/builder";
-// import Standard from "../../../dist/database/standard";
-// import Config from "../../../dist/config/config";
-// import {spawn, spawnSync, exec} from "child_process";
+// import Builder from "../../../dist/config/builder.js";
+// import Standard from "../../../dist/database/standard.js";
+// import Config from "../../../dist/config/config.js";
+// import {spawn, spawnSync, exec} from "child_process.js";
 // import {resolve} from "path";
 //
 // it('force console log', () => { spyOn(console, 'log').and.callThrough();});

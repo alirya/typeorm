@@ -1,9 +1,9 @@
-import Insert from '../../dist/entity/insert';
-import Connection from '../connection';
-import GrandParentGenerate from '../grand-parent/generate';
-import ChildrenGenerate from '../children/generate';
-import ParentGenerate from '../parent/generate';
-import {DataSource} from "typeorm/data-source/DataSource";
+import Insert from '../../dist/entity/insert.js';
+import Connection from '../connection.js';
+import GrandParentGenerate from '../grand-parent/generate.js';
+import ChildrenGenerate from '../children/generate.js';
+import ParentGenerate from '../parent/generate.js';
+import {DataSource} from "typeorm";
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -12,45 +12,45 @@ let prent : number;
 
 let connection : DataSource;
 
-it('open connection', (done)=>{
+it('open connection', ()=>{
 
-    Connection().connect().then((con)=>connection = con).then(done).catch(fail).then(done);
+    return Connection().connect().then((con)=>connection = con);
 });
 
 
-it('grand-parent', (done)=>{
+it('grand-parent', ()=>{
 
-    let entity = GrandParentGenerate();
+    const entity = GrandParentGenerate();
 
-    Insert(connection.manager, entity).then((result)=>{
+    return Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
         expect(typeof result.id).toBe('number');
         grandParent = <number>result.id;
 
-    }).then(done).catch(fail).then(done);
+    });
 });
 
-it('parent', (done)=>{
+it('parent', ()=>{
 
-    let entity = ParentGenerate(grandParent);
-    Insert(connection.manager, entity).then((result)=>{
+    const entity = ParentGenerate(grandParent);
+    return Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
         expect(typeof result.id).toBe('number');
         prent = <number>result.id;
 
-    }).then(done).catch(fail).then(done);
+    });
 });
 
-it('children', (done)=>{
+it('children', ()=>{
 
-    let entity = ChildrenGenerate(prent);
+    const entity = ChildrenGenerate(prent);
 
-    Insert(connection.manager, entity).then((result)=>{
+    return Insert(connection.manager, entity).then((result)=>{
 
         expect(result).toEqual(entity);
         expect(typeof result.id).toBe('number');
-        done();
+
     });
 });

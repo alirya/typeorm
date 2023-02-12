@@ -1,5 +1,5 @@
-import {EntityNotFoundError} from 'typeorm/error/EntityNotFoundError';
-import Name from "@alirya/object/string/name";
+import {EntityNotFoundError} from 'typeorm/error/EntityNotFoundError.js';
+import Name from "@alirya/object/string/name.js";
 
 export default function NotFound(value : object) : value is EntityNotFoundError {
 

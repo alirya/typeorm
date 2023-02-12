@@ -1,4 +1,4 @@
-import Pagination from "./pagination";
+import Pagination from "./pagination.js";
 
 
 export default interface Paginated extends Pagination {

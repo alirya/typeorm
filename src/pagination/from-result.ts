@@ -1,5 +1,5 @@
-import Pagination from "./pagination";
-import Paginated from "./paginated";
+import Pagination from "./pagination.js";
+import Paginated from './paginated.js';
 
 
 export default function FromResult(

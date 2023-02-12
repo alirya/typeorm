@@ -1,5 +1,5 @@
-import New from '@alirya/function/new';
-import UndefinedMessage from '../string/undefined';
+import New from '@alirya/function/new.js';
+import UndefinedMessage from '../string/undefined.js';
 
 export default function Undefined(
     entity : object,

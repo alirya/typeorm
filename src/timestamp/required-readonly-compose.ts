@@ -1,6 +1,6 @@
-import Timestamp from './timestamp';
-import RequiredReadonly from './required-readonly';
-import {PropertyLazyStaticParameters} from "@alirya/object/property-lazy-static";
+import Timestamp from './timestamp.js';
+import RequiredReadonly from './required-readonly.js';
+import {PropertyLazyStaticParameters} from "@alirya/object/property-lazy-static.js";
 
 
 export default function RequiredReadonlyCompose<Destination extends Timestamp>(destination : Destination, target : Timestamp) : RequiredReadonly {

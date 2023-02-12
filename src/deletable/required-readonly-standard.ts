@@ -1,5 +1,5 @@
-import RequiredReadonly from './required-readonly';
-import Deletable from './deletable';
+import RequiredReadonly from './required-readonly.js';
+import Deletable from './deletable.js';
 
 export default class RequiredReadonlyStandard<Argument, Return> implements RequiredReadonly {
 

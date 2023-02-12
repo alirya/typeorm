@@ -1,6 +1,6 @@
-import Config from "../config";
+import Config from '../config.js';
 import {DataSourceOptions} from "typeorm";
-import { OmitParameters } from "@alirya/object/omit";
+import { OmitParameters } from "@alirya/object/omit.js";
 
 export default function FromConfig(config: Config) : DataSourceOptions {
 

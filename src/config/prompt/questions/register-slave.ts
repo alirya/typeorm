@@ -1,6 +1,6 @@
-import Register from "../register/register";
-import Questions from "@alirya/prompt/questions/questions";
-import Question from "@alirya/prompt/question/question";
+import Register from '../register/register.js';
+import Questions from "@alirya/prompt/questions/questions.js";
+import Question from "@alirya/prompt/question/question.js";
 
 export default class RegisterSlave implements Questions<Register> {
 

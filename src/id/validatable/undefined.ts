@@ -1,10 +1,10 @@
-import Id from '../id';
-import IsUndefined from '@alirya/undefined/boolean/undefined';
-import NoIdString from './string/id-undefined';
-import {CallbackParameters} from '@alirya/validator/validatable/callback';
-import Value from '@alirya/value/value';
-import Validatable from '@alirya/validatable/validatable';
-import Message from '@alirya/message/message';
+import Id from '../id.js';
+import IsUndefined from '@alirya/undefined/boolean/undefined.js';
+import NoIdString from './string/id-undefined.js';
+import {CallbackParameters} from '@alirya/validator/validatable/callback.js';
+import Value from '@alirya/value/value.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Message from '@alirya/message/message.js';
 import {Required} from 'utility-types';
 
 type Return<Entity extends Id> =

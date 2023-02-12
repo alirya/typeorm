@@ -1,8 +1,8 @@
-import Event from "./event";
-import Database from "../database";
-import Callable from "@alirya/function/callable";
-import {MysqlConnectionOptions} from "typeorm/driver/mysql/MysqlConnectionOptions";
-import Config from "../../config/config";
+import Event from './event.js';
+import Database from '../database.js';
+import Callable from "@alirya/function/callable.js";
+import {MysqlConnectionOptions} from "typeorm/driver/mysql/MysqlConnectionOptions.js";
+import Config from '../../config/config.js';
 
 export default class Standard implements Event {
 

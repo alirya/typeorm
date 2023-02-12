@@ -1,4 +1,4 @@
-import {UpdateResult as OrmUpdateResult} from 'typeorm/query-builder/result/UpdateResult';
+import {UpdateResult as OrmUpdateResult} from 'typeorm/query-builder/result/UpdateResult.js';
 
 export default function Updated(
     valid : boolean,

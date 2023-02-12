@@ -1,6 +1,6 @@
 import {EntityMetadata} from "typeorm";
-import Generate, {GenerateQuery} from "./generate";
-import CloneRecursive from "@alirya/object/clone-recursive";
+import Generate, {GenerateQuery} from './generate.js';
+import CloneRecursive from "@alirya/object/clone-recursive.js";
 
 export default function Clone<Generated extends Generate>(generated: Generated) : Generated {
 

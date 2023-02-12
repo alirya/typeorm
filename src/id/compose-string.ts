@@ -1,6 +1,6 @@
 import {__decorate, __metadata} from "tslib";
 import {PrimaryColumn} from "typeorm";
-import Id from "./id";
+import Id from './id.js';
 
 export default function ComposeString<Type>(entity : { new (...args: any[]):  Type }) : { new (...args: any[]):  Type } & { new () : Id<string> }
 export default function ComposeString<Type>(entity : { new (...args: any[]):  Type }, type : 'varchar') : { new (...args: any[]):  Type } & { new () : Id<string> }
@@ -27,5 +27,5 @@ export default function ComposeString<Type>(
         break;
     }
 
-    return entity;
+    return entity as { new (...args: any[]):  Type } & { new () : Id<string> };
 }

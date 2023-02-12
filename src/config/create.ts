@@ -1,8 +1,8 @@
-import Config from "./config";
+import Config from './config.js';
 import {EntitySchema} from "typeorm";
-import Class from "@alirya/class/class";
+import Class from "@alirya/class/class.js";
 import {DataSourceOptions} from "typeorm";
-import IsMap from "@alirya/map/boolean/map";
+import IsMap from "@alirya/map/boolean/map.js";
 
 export default function Create(config : Partial<Config>|DataSourceOptions) : Config {
 

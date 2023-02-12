@@ -1,9 +1,9 @@
-import Id from './id';
-import RequiredReadonly from './required-readonly';
-import Numeric from "@alirya/string/ensure/numeric";
-import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined';
-import Name from '@alirya/object/string/name';
-import SafeCast from '@alirya/string/safe-cast';
+import Id from './id.js';
+import RequiredReadonly from './required-readonly.js';
+import Numeric from "@alirya/string/ensure/numeric.js";
+import {NotUndefinedParameters} from '@alirya/undefined/ensure/not-undefined.js';
+import Name from '@alirya/object/string/name.js';
+import SafeCast from '@alirya/string/safe-cast.js';
 
 export default class RequiredReadonlyNumeric implements RequiredReadonly<number|string> {
 

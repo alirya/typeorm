@@ -1,8 +1,8 @@
-import Config from "../config/config";
+import Config from '../config/config.js';
 import {DataSource} from "typeorm";
-import Standard from "./standard";
-import Event from "./event/event";
-import Null from "./event/null";
+import Standard from './standard.js';
+import Event from './event/event.js';
+import Null from './event/null.js';
 
 export default class Listenable extends Standard {
 

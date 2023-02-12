@@ -1,9 +1,15 @@
 import {Entity, Column, Index, ManyToOne, OneToMany} from 'typeorm';
-import IdAuto from '../../dist/id/increment';
-import Timestamp from '../../dist/timestamp/timestamp';
-import GrandParent from '../grand-parent/grand-parent';
-import Children from '../children/children';
-import Compose from "../../dist/timestamp/compose";
+import IdAuto from '../../dist/id/increment.js';
+import Timestamp from '../../dist/timestamp/timestamp.js';
+import GrandParent from '../grand-parent/grand-parent.js';
+import Children from '../children/children.js';
+import Compose from '../../dist/timestamp/compose.js';
+
+import {fileURLToPath} from 'url';
+import {dirname} from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 @Entity({name:'parent'})
 export default class Parent extends Compose(IdAuto('int')) {

@@ -1,5 +1,5 @@
-import {EntityNotFoundError} from 'typeorm/error/EntityNotFoundError';
-import {ObjectType} from 'typeorm/common/ObjectType';
+import {EntityNotFoundError} from 'typeorm/error/EntityNotFoundError.js';
+import {ObjectType} from 'typeorm/common/ObjectType.js';
 import {EntitySchema} from 'typeorm';
 
 export default class NotFound<Value> extends EntityNotFoundError {
