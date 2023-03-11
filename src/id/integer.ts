@@ -30,3 +30,5 @@ export default function Integer(type : 'bigint'|'int' = 'bigint') {
     }
 
 }
+
+export {Integer as IdInteger};

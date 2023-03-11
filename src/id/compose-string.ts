@@ -29,3 +29,6 @@ export default function ComposeString<Type>(
 
     return entity as { new (...args: any[]):  Type } & { new () : Id<string> };
 }
+
+
+export {ComposeString as ComposeIdString}

@@ -10,16 +10,22 @@ import {ValuePartialParameters} from "@alirya/array/validator/value-partial.js";
 import {AndParameters} from "@alirya/array/validatable/and.js";
 import InvalidMessageList from "@alirya/array/message/message/list/invalid.js";
 import {ObjectParameters} from "@alirya/object/validator/object.js";
+import Validator from '@alirya/validator/simple.js';
 
-export default function Pagination(maximum: number)  {
+export function PaginationRecord(maximum: number) : RecordMap<Required<Pagination>, ValidatorInterface> {
 
-    const record : RecordMap<Required<Pagination>, ValidatorInterface> = {
+    return {
         page : Page(),
         limit : Limit(maximum),
     }
+}
 
-    const pagination = MapAllParameters(record, AndRecord, InvalidMessageRecord);
+export default function Pagination(maximum: number) : Validator<object, Pagination>  {
+
+    const pagination = MapAllParameters(PaginationRecord(maximum), AndRecord, InvalidMessageRecord);
 
     return ValuePartialParameters([ObjectParameters(), pagination], AndParameters, InvalidMessageList);
-
 }
+
+export const PaginationValidator = Pagination;
+export const PaginationValidatorRecord = PaginationRecord;

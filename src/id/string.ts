@@ -28,7 +28,8 @@ export default function String(type : 'text'|'varchar' = 'varchar') {
         case 'varchar' : return StringVarcharClass;
         case 'text' : return StringClass;
     }
-
 }
+
+export {String as IdString};
 
 

@@ -31,3 +31,5 @@ export default function ComposeIncrement<Type>(
 
     return entity as { new (...args: any[]):  Type } & { new () : Id<number|string> };
 }
+
+export {ComposeIncrement as ComposeIdIncrement}

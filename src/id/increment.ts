@@ -29,3 +29,4 @@ export default function Increment(type : 'bigint'|'int' = 'bigint') {
 
 }
 
+export {Increment as IdIncrement};

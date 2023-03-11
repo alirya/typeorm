@@ -31,3 +31,5 @@ export default function ComposeInteger<Type>(
 
     return entity as { new (...args: any[]):  Type } & { new () : Id<number|string> };
 }
+
+export {ComposeInteger as ComposeIdInteger}
