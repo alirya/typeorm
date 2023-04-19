@@ -4,3 +4,5 @@ enum Null {
 }
 
 export default Null;
+
+export {Null as NullOrder}

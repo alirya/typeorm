@@ -16,3 +16,5 @@ export default function Mode() : ValidatorInterface<any, number> {
     return ValuePartialParameters(validator, AndParameters, InvalidMessageMap);
 
 }
+
+export {Mode as OrderModeValidator}

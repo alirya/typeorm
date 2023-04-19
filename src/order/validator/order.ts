@@ -28,3 +28,5 @@ export default function Order<
 
     return  ArrayValuePartialParameters.Parameters<any>([ObjectParameters(), key, value], AndParameters, InvalidMessageList, false);
 }
+
+export {Order as OrderValidator}

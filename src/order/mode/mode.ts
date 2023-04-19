@@ -4,3 +4,5 @@ enum Mode {
 }
 
 export default Mode;
+
+export {Mode as OrderMode}
