@@ -69,7 +69,7 @@ const environment = {
 it('test', ()=>{
 
     expect(
-        Environment(environment as ProcessEnv)
+        Environment(environment/* as ProcessEnv*/)
     ).toEqual(
         expectation
     )

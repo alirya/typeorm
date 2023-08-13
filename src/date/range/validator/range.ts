@@ -25,3 +25,5 @@ export default function Range() : Validator<object, CreatedInterface> {
 
     return  ValuePartialParameters([ObjectParameters(), object], AndParameters, InvalidMessageList, false);
 }
+
+export {Range as DateRangeValidator}
