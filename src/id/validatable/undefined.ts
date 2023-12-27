@@ -1,10 +1,10 @@
 import Id from '../id.js';
-import IsUndefined from '@alirya/undefined/boolean/undefined.js';
+import IsUndefined from '@axiona/undefined/boolean/undefined.js';
 import NoIdString from './string/id-undefined.js';
-import {CallbackParameters} from '@alirya/validator/validatable/callback.js';
-import Value from '@alirya/value/value.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import Message from '@alirya/message/message.js';
+import {CallbackParameters} from '@axiona/validator/validatable/callback.js';
+import Value from '@axiona/value/value.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import Message from '@axiona/message/message.js';
 import {Required} from 'utility-types';
 
 type Return<Entity extends Id> =

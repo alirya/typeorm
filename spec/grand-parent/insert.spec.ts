@@ -1,6 +1,6 @@
 import {DataSource} from "typeorm";
 import Connection from '../connection.js';
-import Class from '@alirya/class/class.js';
+import Class from '@axiona/class/class.js';
 import Generator from '../../dist/migration/generate/data-source-generator.js';
 import Write from '../../dist/migration/generate/write.js';
 import GrandParent from './grand-parent.js';

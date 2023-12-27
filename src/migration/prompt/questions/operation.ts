@@ -1,7 +1,7 @@
 import Option from '../operation/option/option.js';
 import OperationType from '../operation/operation.js';
-import Question from "@alirya/prompt/question/question.js";
-import Questions from "@alirya/prompt/questions/questions.js";
+import Question from "@axiona/prompt/question/question.js";
+import Questions from "@axiona/prompt/questions/questions.js";
 
 export default class Operation implements Questions<OperationType> {
 

@@ -1,6 +1,6 @@
-import Question from "@alirya/prompt/question/question.js";
+import Question from "@axiona/prompt/question/question.js";
 import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
-import Questions from "@alirya/prompt/questions/questions.js";
+import Questions from "@axiona/prompt/questions/questions.js";
 
 export default class Postgres implements Questions<Omit<PostgresConnectionOptions, 'type'>> {
 

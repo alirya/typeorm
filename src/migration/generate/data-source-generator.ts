@@ -2,11 +2,11 @@ import {DataSource, EntityMetadata} from "typeorm";
 import EntityQueryMatch from './boolean/entity-query-match.js';
 import {GenerateQuery} from './generate.js';
 import ClassFromQueries from './string/class-from-queries.js';
-import Callable from "@alirya/function/callable.js";
+import Callable from "@axiona/function/callable.js";
 import Generate from './generate.js';
 import PublicMigrationGenerateCommand from '../migration-generate-command/public-migration-generate-command.js';
-import NoOp from "@alirya/function/no-op.js";
-import { TrimPrefixParameters } from "@alirya/string/trim-prefix.js";
+import NoOp from "@axiona/function/no-op.js";
+import { TrimPrefixParameters } from "@axiona/string/trim-prefix.js";
 
 export default async function DataSourceGenerator(
     name: string,

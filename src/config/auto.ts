@@ -3,7 +3,7 @@ import File from './file.js';
 import Environment from './environment.js';
 import {merge} from "lodash";
 import Create from './create.js';
-import Constant from "@alirya/function/constant.js";
+import Constant from "@axiona/function/constant.js";
 
 /**
  *

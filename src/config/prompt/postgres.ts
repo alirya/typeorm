@@ -4,7 +4,7 @@ import PostgresOption from './postgres-option.js';
 import ReplicationSlave from './replication-slave.js';
 import ReplicationMaster from './replication-master.js';
 import {merge} from "lodash";
-import Filter from "@alirya/object/filter-recursive.js";
+import Filter from "@axiona/object/filter-recursive.js";
 
 
 export default async function Postgres(config: PostgresConnectionOptions) : Promise<PostgresConnectionOptions> {

@@ -1,9 +1,9 @@
 import Generate from './generate.js';
-import Callable from "@alirya/function/callable.js";
+import Callable from "@axiona/function/callable.js";
 import Database from '../../database/database.js';
 import MappedWrite from './mapped-write.js';
 import DataSourceGenerator from './data-source-generator.js';
-import NoOp from "@alirya/function/no-op.js";
+import NoOp from "@axiona/function/no-op.js";
 
 export default async function DatabaseWrite(
     name : string,

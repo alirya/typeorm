@@ -1,5 +1,5 @@
 import Faker from 'faker';
-import StrictAssign from '@alirya/object/strict-assign.js';
+import StrictAssign from '@axiona/object/strict-assign.js';
 import Parent from './parent.js';
 import GrandParent from '../grand-parent/grand-parent.js';
 

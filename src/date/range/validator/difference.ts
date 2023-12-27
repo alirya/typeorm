@@ -1,5 +1,5 @@
 import CreatedInterface from '../range.js';
-import Validator from "@alirya/validator/simple.js";
+import Validator from "@axiona/validator/simple.js";
 import {DateRangeValidator} from "./range.js";
 import  moment from "moment";
 import {unitOfTime} from "moment";

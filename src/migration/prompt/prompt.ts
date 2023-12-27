@@ -1,5 +1,5 @@
 import Prompts from "prompts";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
+import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
 import Operation from './questions/operation.js';
 import OperationType from './operation/operation.js';
 

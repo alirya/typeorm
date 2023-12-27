@@ -1,5 +1,5 @@
 import {UpdateResult as OrmUpdateResult} from 'typeorm';
-import {CallbackParameters} from '@alirya/function/assert/callback.js';
+import {CallbackParameters} from '@axiona/function/assert/callback.js';
 import Guard from '../boolean/updated.js';
 import UndefinedError from './throwable/undefined.js';
 

@@ -1,7 +1,7 @@
 import {DataSource} from "typeorm";
 import Connection from '../../../connection.js';
 import Migration from '../../../../dist/migration/prompt/migration.js';
-import {MethodParameters} from '@alirya/function/method.js';
+import {MethodParameters} from '@axiona/function/method.js';
 import Database from '../../../../dist/database/database.js';
 
 

@@ -2,7 +2,7 @@ import Environment from '../../../../dist/config/environment.js';
 import ProcessEnv = NodeJS.ProcessEnv;
 import Config from '../../../../dist/config/config.js';
 import Create from '../../../../dist/config/create.js';
-import {OmitParameters} from '@alirya/object/omit.js';
+import {OmitParameters} from '@axiona/object/omit.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

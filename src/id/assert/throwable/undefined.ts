@@ -1,6 +1,6 @@
 import UndefinedMessage from '../string/undefined.js';
 import Id from '../../id.js';
-import New from '@alirya/function/new.js';
+import New from '@axiona/function/new.js';
 
 export default function NotUndefined<Entity extends Id>(
     entity : Entity,

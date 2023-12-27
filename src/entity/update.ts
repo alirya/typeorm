@@ -1,11 +1,11 @@
 import {EntityManager, ObjectType, UpdateResult} from 'typeorm';
 import Updated from './boolean/updated.js';
-import { UniqueParameters } from '@alirya/array/unique.js';
-import OmitUndefined from '@alirya/object/omit-undefined.js';
-import {ExtractParameters, ExtractReturn} from '@alirya/object/extract.js';
-import NotEmpty from '@alirya/object/boolean/not-empty.js';
+import { UniqueParameters } from '@axiona/array/unique.js';
+import OmitUndefined from '@axiona/object/omit-undefined.js';
+import {ExtractParameters, ExtractReturn} from '@axiona/object/extract.js';
+import NotEmpty from '@axiona/object/boolean/not-empty.js';
 import NotFound from '../throwable/not-found.js';
-import Name from '@alirya/object/string/name.js';
+import Name from '@axiona/object/string/name.js';
 import PrimaryKeyRequired from './assert/not-undefined.js';
 import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity.js';
 

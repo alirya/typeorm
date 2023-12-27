@@ -1,8 +1,8 @@
 import Prompts from "prompts";
 import Config from './config.js';
 import VendorQuestion, {VendorType} from './prompt/questions/vendor.js';
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
-import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing.js";
+import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
+import FilterMissing from "@axiona/prompt/prompt-object/array/filter-missing.js";
 import Vendor from './prompt/vendor.js';
 import {DatabaseType} from "typeorm";
 import Drivers from '../database/array/types.js';

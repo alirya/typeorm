@@ -1,5 +1,5 @@
 import {UpdateResult} from 'typeorm/query-builder/result/UpdateResult.js';
-import Number from '@alirya/number/boolean/number.js';
+import Number from '@axiona/number/boolean/number.js';
 
 export default function Affected(result : UpdateResult) : number {
 

@@ -1,5 +1,5 @@
 import {Optional, Required} from 'utility-types';
-import NotUndefinedType from '@alirya/undefined/boolean/not-undefined.js';
+import NotUndefinedType from '@axiona/undefined/boolean/not-undefined.js';
 
 
 export default function NotUndefined<

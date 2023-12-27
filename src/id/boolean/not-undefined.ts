@@ -1,6 +1,6 @@
 import {Required} from 'utility-types';
 import Id from '../id.js';
-import NotUndefinedType from '@alirya/undefined/boolean/not-undefined.js';
+import NotUndefinedType from '@axiona/undefined/boolean/not-undefined.js';
 
 /**
  * check if id is set

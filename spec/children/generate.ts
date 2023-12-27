@@ -1,6 +1,6 @@
 import Children from './children.js';
 import Faker from 'faker';
-import StrictAssign from '@alirya/object/strict-assign.js';
+import StrictAssign from '@axiona/object/strict-assign.js';
 import Parent from '../parent/parent.js';
 
 export default function Generate(parent : number) {

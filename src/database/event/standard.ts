@@ -1,6 +1,6 @@
 import Event from './event.js';
 import Database from '../database.js';
-import Callable from "@alirya/function/callable.js";
+import Callable from "@axiona/function/callable.js";
 import {MysqlConnectionOptions} from "typeorm/driver/mysql/MysqlConnectionOptions.js";
 import Config from '../../config/config.js';
 

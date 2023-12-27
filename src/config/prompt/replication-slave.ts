@@ -1,6 +1,6 @@
 import Prompts from "prompts";
 import RegisterSlave from './questions/register-slave.js';
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
+import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
 import {merge} from "lodash";
 import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
 import {O} from "ts-toolbelt";

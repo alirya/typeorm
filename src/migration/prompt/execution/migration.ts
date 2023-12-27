@@ -4,9 +4,9 @@ import Option from '../operation/option/option.js';
 import Write from './write.js';
 import Create from './create.js';
 import {DataSource} from "typeorm";
-import Callable from "@alirya/function/callable.js";
-import Identity from "@alirya/function/identity.js";
-import NoOp from "@alirya/function/no-op.js";
+import Callable from "@axiona/function/callable.js";
+import Identity from "@axiona/function/identity.js";
+import NoOp from "@axiona/function/no-op.js";
 
 export default async function Migration(
     operation : OperationType,

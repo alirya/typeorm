@@ -1,4 +1,4 @@
-import New from '@alirya/function/new.js';
+import New from '@axiona/function/new.js';
 import NotUndefinedMessage from '../string/not-undefined.js';
 
 export default function NotUndefined(

@@ -1,9 +1,9 @@
 import Generate from './generate.js';
-import Callable from "@alirya/function/callable.js";
-import Class from "@alirya/class/class.js";
+import Callable from "@axiona/function/callable.js";
+import Class from "@axiona/class/class.js";
 import Write from './write.js';
 import {EntitySchema} from "typeorm";
-import NoOp from "@alirya/function/no-op.js";
+import NoOp from "@axiona/function/no-op.js";
 
 
 export default async function MappedWrite(

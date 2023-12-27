@@ -1,5 +1,5 @@
 import Pagination from '../pagination.js';
-import Positive from '@alirya/number/ensure/positive.js';
+import Positive from '@axiona/number/ensure/positive.js';
 
 export default function SkipTake(pagination: Pagination) : {take:number, skip:number} {
 

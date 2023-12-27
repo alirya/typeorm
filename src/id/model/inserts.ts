@@ -2,7 +2,7 @@ import {EntityManager, ObjectType} from 'typeorm';
 import Undefined from '../assert/undefined.js';
 import Id from '../id.js';
 import {QueryDeepPartialEntity} from 'typeorm/query-builder/QueryPartialEntity.js';
-import First from '@alirya/array/value/value/first.js';
+import First from '@axiona/array/value/value/first.js';
 /**
  * basic insert operation
  *

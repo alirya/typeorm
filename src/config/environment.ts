@@ -1,8 +1,8 @@
 import Config from './config.js';
-import {EnvironmentParameters} from "@alirya/object/environment.js";
-import Last from "@alirya/array/value/value/last.js";
+import {EnvironmentParameters} from "@axiona/object/environment.js";
+import Last from "@axiona/array/value/value/last.js";
 import Create from './create.js';
-import {InflateParameter} from '@alirya/object/inflate.js';
+import {InflateParameter} from '@axiona/object/inflate.js';
 
 export type EnvironmentPrefix = 'DATABASE'|'database'|'DB'|'db';
 /**

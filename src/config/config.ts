@@ -1,6 +1,6 @@
 import {DataSourceOptions} from "typeorm";
 import {EntitySchema} from "typeorm";
-import Class from "@alirya/class/class.js";
+import Class from "@axiona/class/class.js";
 
 export default interface Config extends Omit<DataSourceOptions, 'entities'|'subscribers'|'migrations'> {
 

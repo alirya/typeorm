@@ -1,7 +1,7 @@
 import OperationType from './operation/operation.js';
-import Callable from "@alirya/function/callable.js";
-import Identity from "@alirya/function/identity.js";
-import NoOp from "@alirya/function/no-op.js";
+import Callable from "@axiona/function/callable.js";
+import Identity from "@axiona/function/identity.js";
+import NoOp from "@axiona/function/no-op.js";
 import Database from '../../database/database.js';
 import Migration from './migration.js';
 

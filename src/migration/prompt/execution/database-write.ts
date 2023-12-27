@@ -1,7 +1,7 @@
-import Callable from "@alirya/function/callable.js";
+import Callable from "@axiona/function/callable.js";
 import GenerateType from '../../generate/generate.js';
-import NoOp from "@alirya/function/no-op.js";
-import Identity from "@alirya/function/identity.js";
+import NoOp from "@axiona/function/no-op.js";
+import Identity from "@axiona/function/identity.js";
 import Database from '../../../database/database.js';
 import Write from './write.js';
 

@@ -1,7 +1,7 @@
 import LimitedRange from "../../../../../dist/date/range/validator/difference.js";
-import {LowerParameters} from '@alirya/number/validator/lower.js';
-import LowerString from '@alirya/number/assert/string/lower.js';
-import Validators from '@alirya/validator/simple.js';
+import {LowerParameters} from '@axiona/number/validator/lower.js';
+import LowerString from '@axiona/number/assert/string/lower.js';
+import Validators from '@axiona/validator/simple.js';
 import moment from "moment";
 
 

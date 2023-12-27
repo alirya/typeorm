@@ -1,7 +1,7 @@
 import Prompts from "prompts";
 import PostgresQuestions from './questions/postgres.js';
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
-import FilterMissing from "@alirya/prompt/prompt-object/array/filter-missing.js";
+import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
+import FilterMissing from "@axiona/prompt/prompt-object/array/filter-missing.js";
 import {PostgresConnectionOptions} from "typeorm/driver/postgres/PostgresConnectionOptions.js";
 
 export default function PostgresOption(config: PostgresConnectionOptions) : Promise<PostgresConnectionOptions> {

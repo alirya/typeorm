@@ -1,10 +1,10 @@
-import ValidatorInterface from '@alirya/validator/validator.js';
-import {ValuePartialParameters} from '@alirya/array/validator/value-partial.js';
-import {OrParameters} from '@alirya/array/validatable/or.js';
-import InvalidMessageMap from '@alirya/array/message/message/list/invalid.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import Message from '@alirya/message/message.js';
-import {NumericParameters} from "@alirya/string/validator/numeric.js";
+import ValidatorInterface from '@axiona/validator/validator.js';
+import {ValuePartialParameters} from '@axiona/array/validator/value-partial.js';
+import {OrParameters} from '@axiona/array/validatable/or.js';
+import InvalidMessageMap from '@axiona/array/message/message/list/invalid.js';
+import Validatable from '@axiona/validatable/validatable.js';
+import Message from '@axiona/message/message.js';
+import {NumericParameters} from "@axiona/string/validator/numeric.js";
 import Positive from '../../number/validator/positive.js';
 
 export default function Numeric(messages : (results : (Message & Validatable)[])=>any = InvalidMessageMap) : ValidatorInterface<any, string|number> {

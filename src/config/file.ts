@@ -1,6 +1,6 @@
 import Config from './config.js';
 import Create from './create.js';
-import {ParseAsyncParameters} from "@alirya/filesystem/read/parse-async.js";
+import {ParseAsyncParameters} from "@axiona/filesystem/read/parse-async.js";
 
 export default function File(
     path : string,

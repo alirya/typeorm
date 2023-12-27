@@ -1,6 +1,6 @@
 import {PromptObject} from "prompts";
-import StrictOmit from "@alirya/object/strict-omit.js";
-import Questions from "@alirya/prompt/questions/questions.js";
+import StrictOmit from "@axiona/object/strict-omit.js";
+import Questions from "@axiona/prompt/questions/questions.js";
 
 export interface ReplicationResult {
     replication : boolean

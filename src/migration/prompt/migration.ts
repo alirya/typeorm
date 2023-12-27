@@ -2,11 +2,11 @@ import OperationType from './operation/operation.js';
 import ExecutionMigration from './execution/migration.js';
 import {DataSource} from "typeorm";
 import {EntitySchema} from "typeorm";
-import Callable from "@alirya/function/callable.js";
-import Identity from "@alirya/function/identity.js";
-import NoOp from "@alirya/function/no-op.js";
+import Callable from "@axiona/function/callable.js";
+import Identity from "@axiona/function/identity.js";
+import NoOp from "@axiona/function/no-op.js";
 import Prompt from './prompt.js';
-import Const from "@alirya/function/const.js";
+import Const from "@axiona/function/const.js";
 
 export default function Migration(
     connection : DataSource,

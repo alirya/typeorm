@@ -7,7 +7,7 @@ import Generate from './generate.js';
 import Parent from '../parent/parent.js';
 import GenerateParent from '../parent/generate.js';
 import Children from './children.js';
-import {OmitParameters} from '@alirya/object/omit.js';
+import {OmitParameters} from '@axiona/object/omit.js';
 import {DataSource} from 'typeorm';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});

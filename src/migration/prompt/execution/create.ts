@@ -3,14 +3,14 @@ import Prompts from "prompts";
 import Name from '../../generate/questions/name.js';
 import Entities from '../../generate/questions/entities.js';
 import {DataSource} from "typeorm";
-import FromQuestion from "@alirya/prompt/prompt-object/array/from-question.js";
-import Class from "@alirya/class/class.js";
+import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
+import Class from "@axiona/class/class.js";
 import GenerateWrite from '../../generate/write.js';
 import DataSourceGenerator from '../../generate/data-source-generator.js';
-import Callable from "@alirya/function/callable.js";
+import Callable from "@axiona/function/callable.js";
 import Generate from '../../generate/generate.js';
-import NoOp from "@alirya/function/no-op.js";
-import Identity from "@alirya/function/identity.js";
+import NoOp from "@axiona/function/no-op.js";
+import Identity from "@axiona/function/identity.js";
 import Blank from '../../generate/blank.js';
 
 export default function Create(

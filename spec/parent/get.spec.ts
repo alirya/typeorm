@@ -5,7 +5,7 @@ import GenerateGrandParent from '../grand-parent/generate.js';
 import GrandParent from '../grand-parent/grand-parent.js';
 import Generate from './generate.js';
 import Parent from './parent.js';
-import {OmitParameters} from '@alirya/object/omit.js';
+import {OmitParameters} from '@axiona/object/omit.js';
 import {DataSource} from 'typeorm';
 
 
