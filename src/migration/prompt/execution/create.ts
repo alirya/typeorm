@@ -6,7 +6,6 @@ import {DataSource} from "typeorm";
 import FromQuestion from "@axiona/prompt/prompt-object/array/from-question.js";
 import Class from "@axiona/class/class.js";
 import GenerateWrite from '../../generate/write.js';
-import DataSourceGenerator from '../../generate/data-source-generator.js';
 import Callable from "@axiona/function/callable.js";
 import Generate from '../../generate/generate.js';
 import NoOp from "@axiona/function/no-op.js";

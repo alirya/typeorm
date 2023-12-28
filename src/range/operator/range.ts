@@ -1,5 +1,5 @@
 import RangeType from '../range.js';
-import {LessThan, SelectQueryBuilder, MoreThan, Like, Between, In} from "typeorm";
+import {LessThan, MoreThan, Between} from "typeorm";
 import {FindOperator} from "typeorm/find-options/FindOperator.js";
 import Callable from '@axiona/function/callable.js';
 import Identity from '@axiona/function/identity.js';

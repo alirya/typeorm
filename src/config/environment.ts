@@ -1,5 +1,4 @@
 import Config from './config.js';
-import {EnvironmentParameters} from "@axiona/object/environment.js";
 import Last from "@axiona/array/value/value/last.js";
 import Create from './create.js';
 import {InflateParameter} from '@axiona/object/inflate.js';
